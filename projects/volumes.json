@@ -1,0 +1,179 @@
+{
+  "desk-buddy-bot": {
+    "clearance_mm": {
+      "head_swivel": 0.3,
+      "arms": 0.2,
+      "legs": 0.2,
+      "name_tab": 0.3
+    },
+    "parts": {
+      "body": {
+        "file": "body.stl",
+        "volume_mm3": 86748.7,
+        "size_mm": [
+          64.0,
+          69.5,
+          69.6
+        ],
+        "watertight": true
+      },
+      "head": {
+        "file": "head.stl",
+        "volume_mm3": 22764.3,
+        "size_mm": [
+          32.0,
+          28.0,
+          28.0
+        ],
+        "watertight": true
+      },
+      "arm": {
+        "file": "arm.stl",
+        "volume_mm3": 5046.5,
+        "size_mm": [
+          50.0,
+          14.0,
+          8.0
+        ],
+        "watertight": true
+      },
+      "leg": {
+        "file": "leg.stl",
+        "volume_mm3": 5094.5,
+        "size_mm": [
+          33.0,
+          18.0,
+          20.0
+        ],
+        "watertight": true
+      },
+      "name-plate": {
+        "file": "name-plate.stl",
+        "volume_mm3": 3266.4,
+        "size_mm": [
+          60.0,
+          21.0,
+          3.2
+        ],
+        "watertight": true
+      },
+      "pin": {
+        "file": "pin.stl",
+        "volume_mm3": 599.7,
+        "size_mm": [
+          9.2,
+          9.2,
+          18.0
+        ],
+        "watertight": true
+      }
+    }
+  },
+  "crank-catapult": {
+    "gear": {
+      "module_mm": 1.5,
+      "pinion_teeth": 12,
+      "gear_teeth": 36,
+      "center_distance_mm": 36.0,
+      "ratio": 3.0
+    },
+    "clearance_mm": {
+      "axles": 0.3,
+      "hinge": 0.3,
+      "stop": 0.2,
+      "crank_socket": 0.1
+    },
+    "parts": {
+      "base": {
+        "file": "base.stl",
+        "volume_mm3": 90835.7,
+        "size_mm": [
+          130.0,
+          90.0,
+          40.0
+        ],
+        "watertight": true
+      },
+      "pinion": {
+        "file": "pinion-12t.stl",
+        "volume_mm3": 1192.3,
+        "size_mm": [
+          21.0,
+          21.0,
+          6.0
+        ],
+        "watertight": true
+      },
+      "gear": {
+        "file": "gear-36t.stl",
+        "volume_mm3": 13193.1,
+        "size_mm": [
+          57.0,
+          57.0,
+          14.0
+        ],
+        "watertight": true
+      },
+      "crank": {
+        "file": "crank.stl",
+        "volume_mm3": 4011.8,
+        "size_mm": [
+          48.2,
+          16.0,
+          20.0
+        ],
+        "watertight": true
+      },
+      "axle": {
+        "file": "axle.stl",
+        "volume_mm3": 681.3,
+        "size_mm": [
+          8.4,
+          8.4,
+          32.0
+        ],
+        "watertight": true
+      },
+      "arm": {
+        "file": "arm.stl",
+        "volume_mm3": 11332.6,
+        "size_mm": [
+          92.0,
+          22.0,
+          12.0
+        ],
+        "watertight": true
+      },
+      "hinge-pin": {
+        "file": "hinge-pin.stl",
+        "volume_mm3": 647.6,
+        "size_mm": [
+          8.8,
+          8.8,
+          28.0
+        ],
+        "watertight": true
+      },
+      "stop-peg": {
+        "file": "stop-peg.stl",
+        "volume_mm3": 368.9,
+        "size_mm": [
+          10.0,
+          10.0,
+          12.4
+        ],
+        "watertight": true
+      },
+      "name-plate": {
+        "file": "name-plate.stl",
+        "volume_mm3": 1293.6,
+        "size_mm": [
+          42.0,
+          14.0,
+          2.2
+        ],
+        "watertight": true
+      }
+    }
+  }
+}

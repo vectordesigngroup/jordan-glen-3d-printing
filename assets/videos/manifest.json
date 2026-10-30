@@ -1,0 +1,98 @@
+[
+  {
+    "slug": "what-is-3d-printing",
+    "title": "What Is 3D Printing?",
+    "file": "assets/videos/what-is-3d-printing.mp4",
+    "poster": "assets/videos/what-is-3d-printing-poster.jpg",
+    "duration_s": 37.5,
+    "caption": "Imagine building something from nothing, one thin layer at a time! That's 3D printing, also called additive manufacturing."
+  },
+  {
+    "slug": "how-a-printer-works",
+    "title": "How a 3D Printer Works",
+    "file": "assets/videos/how-a-printer-works.mp4",
+    "poster": "assets/videos/how-a-printer-works-poster.jpg",
+    "duration_s": 38.53,
+    "caption": "Let's meet the parts of an FDM 3D printer! Plastic string called filament starts on a spool."
+  },
+  {
+    "slug": "safety",
+    "title": "Stay Safe in the Maker Space",
+    "file": "assets/videos/safety.mp4",
+    "poster": "assets/videos/safety-poster.jpg",
+    "duration_s": 34.13,
+    "caption": "Great makers are safe makers! The nozzle gets very hot, and so does the build plate, so never touch them while a printer is running or cooling."
+  },
+  {
+    "slug": "materials",
+    "title": "Choosing Your Material",
+    "file": "assets/videos/materials.mp4",
+    "poster": "assets/videos/materials-poster.jpg",
+    "duration_s": 37.0,
+    "caption": "Different jobs need different filaments! PLA is the best choice for school."
+  },
+  {
+    "slug": "cad-design",
+    "title": "Design Your Own in CAD",
+    "file": "assets/videos/cad-design.mp4",
+    "poster": "assets/videos/cad-design-poster.jpg",
+    "duration_s": 34.7,
+    "caption": "Every print starts as an idea on a screen! CAD means computer-aided design, and there's free software to try."
+  },
+  {
+    "slug": "model-libraries",
+    "title": "Find Free 3D Models",
+    "file": "assets/videos/model-libraries.mp4",
+    "poster": "assets/videos/model-libraries-poster.jpg",
+    "duration_s": 35.03,
+    "caption": "You don't always have to start from scratch! Free libraries are packed with ready-to-print models."
+  },
+  {
+    "slug": "slicing",
+    "title": "Slicing: Model to Layers",
+    "file": "assets/videos/slicing.mp4",
+    "poster": "assets/videos/slicing-poster.jpg",
+    "duration_s": 36.23,
+    "caption": "A printer can't read a 3D model directly."
+  },
+  {
+    "slug": "troubleshooting",
+    "title": "Fix Common Print Problems",
+    "file": "assets/videos/troubleshooting.mp4",
+    "poster": "assets/videos/troubleshooting-poster.jpg",
+    "duration_s": 34.87,
+    "caption": "Even experts have prints that go wrong, and that's okay! Warping is when corners curl up."
+  },
+  {
+    "slug": "business",
+    "title": "From Idea to Business",
+    "file": "assets/videos/business.mp4",
+    "poster": "assets/videos/business-poster.jpg",
+    "duration_s": 36.0,
+    "caption": "Your invention could be a real business! First, make a prototype and test it."
+  },
+  {
+    "slug": "capstone",
+    "title": "Your Capstone Invention",
+    "file": "assets/videos/capstone.mp4",
+    "poster": "assets/videos/capstone-poster.jpg",
+    "duration_s": 34.63,
+    "caption": "It's time for your big project! Start by finding a real problem, then design a solution in CAD."
+  },
+  {
+    "slug": "vex-robotics",
+    "title": "3D Printing for VEX Robotics",
+    "file": "assets/videos/vex-robotics.mp4",
+    "poster": "assets/videos/vex-robotics-poster.jpg",
+    "duration_s": 34.53,
+    "caption": "Want a faster, smarter robot? Print your own custom parts! Make sensor mounts, cable guides, and intakes that fit your exact design."
+  },
+  {
+    "slug": "take-home-project",
+    "title": "Your Take-Home Project",
+    "file": "assets/videos/take-home-project.mp4",
+    "poster": "assets/videos/take-home-project-poster.jpg",
+    "duration_s": 29.33,
+    "caption": "Time to make something to keep! Grades five and six build the Desk Buddy Bot, a snap-together pen-holder robot with a swivel head and a name plate."
+  }
+]

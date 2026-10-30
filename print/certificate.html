@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Certificate of completion</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    body { background: white; }
+    .sheet { max-width: 800px; margin: 24px auto; padding: 32px; border: 8px solid #142033; }
+    h1 { font-family: Fraunces, Georgia, serif; font-size: 2.6rem; margin-bottom: 0; }
+    .name { font-size: 2rem; }
+  </style>
+</head>
+<body>
+  <article class="sheet">
+    <p class="kicker">Jordan Glen School</p>
+    <h1>Certificate of completion</h1>
+    <p>This certifies that</p>
+    <p class="name" id="student">Student</p>
+    <p>finished the 3D printing course track <strong id="track">Grades 5–8</strong> and the take-home project <strong id="project">Maker project</strong>.</p>
+    <p>They designed, printed, tested, and can explain one improvement.</p>
+    <p id="when"></p>
+    <p><strong>Created for Jordan Glen School by Vector Design Group</strong></p>
+    <button class="btn" type="button" onclick="print()">Print</button>
+  </article>
+  <script>
+    const q = new URLSearchParams(location.search);
+    document.getElementById("student").textContent = q.get("name") || "Student";
+    document.getElementById("track").textContent = q.get("track") || "Grades 5–8";
+    document.getElementById("project").textContent = q.get("project") || "course project";
+    document.getElementById("when").textContent = new Date().toLocaleDateString();
+  </script>
+</body>
+</html>
