@@ -35,6 +35,11 @@
     (function () {
       const KEY = "jg3d-gallery-votes";
       const host = document.querySelector("[data-gallery]");
+      function escapeAttr(value) {
+        return String(value == null ? "" : value).replace(/[&<>"']/g, function (ch) {
+          return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&#39;" })[ch];
+        });
+      }
       function votes() {
         try { return JSON.parse(localStorage.getItem(KEY) || "{}"); }
         catch (err) { return {}; }
@@ -44,7 +49,7 @@
         const mine = votes();
         host.innerHTML = items.map(function (item) {
           const count = Number(mine[item.id]) || 0;
-          return "<article class='mini-card'><img src='" + item.image + "' alt=''><h2>" + item.title + "</h2><p>" + item.name + " · " + item.challenge + "</p><p>" + item.blurb + "</p><button class='btn vote' type='button' data-vote='" + item.id + "'>Vote <span>" + count + "</span></button></article>";
+          return "<article class='mini-card'><img src='" + escapeAttr(item.image) + "' alt='" + escapeAttr(item.title) + "'><h2>" + escapeAttr(item.title) + "</h2><p>" + escapeAttr(item.name) + " · " + escapeAttr(item.challenge) + "</p><p>" + escapeAttr(item.blurb) + "</p><button class='btn vote' type='button' data-vote='" + escapeAttr(item.id) + "'>Vote <span>" + count + "</span></button></article>";
         }).join("");
         host.querySelectorAll("[data-vote]").forEach(function (button) {
           button.addEventListener("click", function () {

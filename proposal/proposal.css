@@ -182,6 +182,7 @@ ul.clean li, ol.clean li { margin: 6px 0; }
 @media print {
   .print-only { display: block; }
   video { display: none !important; }
+  section[aria-labelledby="watch-heading"] { display: none !important; }
   body.proposal {
     background: white !important;
     color: black !important;
@@ -193,5 +194,5 @@ ul.clean li, ol.clean li { margin: 6px 0; }
   a { color: black; }
   table { min-width: 0; font-size: 10pt; }
   .table-scroll { overflow: visible; }
-  section { break-inside: avoid; }
+  .metric, .step, .prop, .bar-row, tr { break-inside: avoid; }
 }

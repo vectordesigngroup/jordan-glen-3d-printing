@@ -6,7 +6,7 @@ Created for Jordan Glen School by Vector Design Group.
 
 ## Course map
 
-`mindmap/course-map.md` is the markmap source. The home page draws it with vendored Markmap files in `assets/vendor/` (no CDN). `mindmap/course-map.html` is a full-screen offline copy, and `mindmap/course-map.png` is the printable expanded map.
+`mindmap/course-map.md` is the markmap source. The home page draws it with vendored Markmap files in `assets/vendor/` (no CDN). `mindmap/course-map.html` is a full-screen offline copy, and `mindmap/course-map.png` is the printable expanded map. After regenerating the HTML with Markmap, run `python3 mindmap/postprocess.py` so the language, heading, favicon, and lesson links stay in place.
 
 ## Tracks
 

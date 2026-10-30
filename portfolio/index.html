@@ -54,7 +54,9 @@
     <section class="panel" id="photos">
       <h2>Photos</h2>
       <p class="no-print">Each picture must be under about 250 KB after it is stored. Four pictures maximum. The browser keeps them on this device only.</p>
-      <input class="no-print" id="photo" type="file" accept="image/*">
+      <label class="no-print" for="photo">Add a photo of your work
+        <input id="photo" type="file" accept="image/*">
+      </label>
       <p id="photo-msg" class="no-print" aria-live="polite"></p>
       <div class="gallery-grid" id="photo-list"></div>
     </section>
