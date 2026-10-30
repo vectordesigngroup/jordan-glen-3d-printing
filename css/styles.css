@@ -253,6 +253,21 @@ html[data-theme="dark"] .btn.primary { color: #1a1030; }
   box-shadow: var(--shadow);
 }
 .hero-canvas canvas { width: 100%; height: 420px; display: block; }
+.hero-promo {
+  grid-column: 1 / -1;
+  margin: 0;
+}
+.hero-promo figcaption {
+  font-weight: 750;
+  margin: 0 0 8px;
+}
+.hero-promo video {
+  width: 100%;
+  max-height: 520px;
+  background: #101826;
+  border-radius: 24px;
+  border: 1px solid var(--line);
+}
 .css-printer {
   display: none;
   height: 420px;
