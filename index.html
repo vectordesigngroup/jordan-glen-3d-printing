@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jordan Glen School 3D Printing Course</title>
+  <meta name="description" content="Interactive 3D printing course for Jordan Glen School grades 5–8, made by Vector Design Group.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-track="56">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="#top">
+      <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="16" fill="#142033"/>
+        <path d="M10 46h44M14 40h36M18 34h28M22 28h20M26 22h12" stroke="#2ee6d6" stroke-width="4" stroke-linecap="round"/>
+        <circle cx="46" cy="16" r="6" fill="#ff4d8d"/>
+      </svg>
+      <span><strong>Jordan Glen 3D</strong><span>Grades 5–8 makers</span></span>
+    </a>
+    <nav class="section-nav" aria-label="Course sections">
+      <a href="#what-is-3d-printing">1 What</a>
+      <a href="#how-a-printer-works">2 Printer</a>
+      <a href="#safety">3 Safety</a>
+      <a href="#materials">4 Materials</a>
+      <a href="#cad-design">5 CAD</a>
+      <a href="#model-libraries">6 Libraries</a>
+      <a href="#slicing">7 Slicing</a>
+      <a href="#troubleshooting">8 Fixes</a>
+      <a href="#vex-robotics">9 VEX</a>
+      <a href="#business">10 Business</a>
+      <a href="#capstone">11 Capstone</a>
+    </nav>
+    <div class="header-actions">
+      <div class="progress-pill" title="Badges saved on this device for the track you picked">
+        <span data-progress-count>0 / 11</span>
+        <span class="bar" aria-hidden="true"><span data-progress-bar></span></span>
+      </div>
+      <button class="icon-btn" type="button" data-theme-toggle aria-pressed="false">Dark mode</button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div>
+        <p class="kicker">Jordan Glen School · Archer / Gainesville, Florida</p>
+        <h1>Print the idea <em>in your head.</em></h1>
+        <p class="lede">A hands-on 3D printing course with two tracks. Grades 5–6 build with shapes, colors, and keychains. Grades 7–8 add tolerances, infill math, parametric CAD, and a gear-powered take-home machine.</p>
+        <div class="track-toggle" role="group" aria-label="Grade track">
+          <button type="button" data-track="56" aria-pressed="true">Grades 5–6</button>
+          <button type="button" data-track="78" aria-pressed="false">Grades 7–8</button>
+        </div>
+        <div class="hero-actions">
+          <a class="btn primary" href="#what-is-3d-printing">Start module 1</a>
+          <a class="btn" href="#take-home-project">Take-home lab</a>
+        </div>
+      </div>
+      <div class="hero-canvas">
+        <canvas aria-label="Animated 3D preview of a model being printed layer by layer"></canvas>
+        <div class="css-printer" aria-hidden="true"><div class="stack"><i></i><i></i><i></i><i></i><i></i></div></div>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <div class="badge-shelf" aria-label="Badges for this track">
+        <div class="badge" data-badge="what-is-3d-printing"><strong>Layer One</strong>What</div>
+        <div class="badge" data-badge="how-a-printer-works"><strong>Machine Reader</strong>Printer</div>
+        <div class="badge" data-badge="safety"><strong>Safety Crew</strong>Safety</div>
+        <div class="badge" data-badge="materials"><strong>Material Scout</strong>Materials</div>
+        <div class="badge" data-badge="cad-design"><strong>Shape Builder</strong>CAD</div>
+        <div class="badge" data-badge="model-libraries"><strong>Library Card</strong>Libraries</div>
+        <div class="badge" data-badge="slicing"><strong>Slicer</strong>Slicing</div>
+        <div class="badge" data-badge="troubleshooting"><strong>Fixer</strong>Fixes</div>
+        <div class="badge" data-badge="vex-robotics"><strong>Gridsmith</strong>VEX</div>
+        <div class="badge" data-badge="business"><strong>Pitch Maker</strong>Business</div>
+        <div class="badge" data-badge="capstone"><strong>Capstone</strong>Final</div>
+        <div class="badge" data-badge="take-home"><strong>Take it home</strong>Lab</div>
+      </div>
+
+      <section class="module" id="what-is-3d-printing">
+        <div class="module-head">
+          <div>
+            <p class="module-index">Module 01</p>
+            <h2>What is 3D printing?</h2>
+          </div>
+        </div>
+        <ul class="goals">
+          <li><span>Goal</span>Tell additive manufacturing apart from carving material away.</li>
+          <li><span>Goal</span>Place a few true events on a short history line.</li>
+          <li><span>Goal</span>Name real uses in medicine, space, food, and buildings, without the science-fiction extras.</li>
+        </ul>
+        <p class="track-56">A 3D printer is like a very careful hot-glue robot. It draws a shape, steps up a tiny bit, and draws again. Stack enough drawings and you can hold the object.</p>
+        <p class="track-78">3D printing is additive manufacturing. A digital model is sliced into layers and a machine adds material only where the part needs it. Subtractive work, like milling or carving, starts with a block and cuts the scrap away.</p>
+        <div class="panel video-layout">
+          <div class="player" data-video="what-is-3d-printing">
+            <div class="poster" aria-hidden="true">
+              <svg viewBox="0 0 420 220">
+                <text x="24" y="42" fill="#fff" font-family="Fraunces, Georgia, serif" font-size="28">What is 3D printing?</text>
+                <g class="layer"><rect x="70" y="150" width="280" height="16" rx="6" fill="#2ee6d6"/></g>
+                <g class="layer"><rect x="90" y="128" width="240" height="16" rx="6" fill="#ff4d8d"/></g>
+                <g class="layer"><rect x="120" y="106" width="180" height="16" rx="6" fill="#ffb020"/></g>
+              </svg>
+            </div>
+            <video controls playsinline preload="none">
+              <source src="assets/videos/what-is-3d-printing.mp4" type="video/mp4">
+            </video>
+            <p class="player-status">Custom explainer slot. Drop in the mp4 and this poster steps aside.</p>
+          </div>
+          <aside class="caption-card">
+            <p class="kicker">On-screen intro</p>
+            <h3>Adding, not carving</h3>
+            <p class="caption-line">A printer builds a solid by stacking thin layers of plastic. The computer decides the path. The machine only melts and moves.</p>
+          </aside>
+        </div>
+        <div class="yt-grid">
+          <figure class="yt">
+            <iframe src="https://www.youtube-nocookie.com/embed/HlvK6DLwCz4" title="Nat Geo Kids: How 3D Printers Work, with Kamri Noel" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            <figcaption>Nat Geo Kids — How 3D Printers Work</figcaption>
+          </figure>
+          <figure class="yt">
+            <iframe src="https://www.youtube-nocookie.com/embed/1Jwxn6EzW84" title="NASA Marshall: 3-D Printing in Zero Gravity" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            <figcaption>NASA Marshall — 3-D Printing in Zero Gravity</figcaption>
+          </figure>
+        </div>
+        <figure class="panel info-card reveal">
+          <svg viewBox="0 0 880 360" role="img" aria-labelledby="addTitle addDesc">
+            <title id="addTitle">Additive printing beside subtractive carving</title>
+            <desc id="addDesc">Left: a chisel cuts a gear out of a block and leaves chips. Right: a nozzle stacks layers into the same gear. A timeline runs along the bottom from 1984 to 2014.</desc>
+            <rect width="880" height="360" rx="24" fill="#102033"/>
+            <text x="36" y="42" fill="#ffb020" font-family="Outfit, sans-serif" font-size="14" font-weight="700">SUBTRACTIVE</text>
+            <text x="470" y="42" fill="#2ee6d6" font-family="Outfit, sans-serif" font-size="14" font-weight="700">ADDITIVE</text>
+            <g class="pop">
+              <rect x="40" y="70" width="150" height="120" rx="8" fill="#8aa0b8"/>
+              <path d="M70 150c30-70 90-70 110-10" fill="#c9d6e5"/>
+              <path class="draw" d="M40 190l40-50 30 20 40-60" fill="none" stroke="#ffb020" stroke-width="6"/>
+              <circle cx="250" cy="120" r="10" fill="#d7dee8"/>
+              <circle cx="280" cy="150" r="7" fill="#d7dee8"/>
+              <text x="40" y="220" fill="#edf3ff" font-family="Outfit, sans-serif" font-size="16">Start with a block. Cut away the scrap.</text>
+            </g>
+            <g class="pop">
+              <rect x="500" y="150" width="220" height="14" rx="4" fill="#2ee6d6"/>
+              <rect x="520" y="132" width="180" height="14" rx="4" fill="#3ee0c8"/>
+              <rect x="545" y="114" width="140" height="14" rx="4" fill="#ff4d8d"/>
+              <rect x="570" y="96" width="90" height="14" rx="4" fill="#ffb020"/>
+              <path d="M760 70 l18 28 h-10 l8 22 -20-16 h10 z" fill="#ff4d8d"/>
+              <text x="500" y="220" fill="#edf3ff" font-family="Outfit, sans-serif" font-size="16">Start with nothing. Add only the part.</text>
+            </g>
+            <g font-family="Outfit, sans-serif" font-size="13" fill="#d5e2f2">
+              <path class="draw" d="M50 280 H830" stroke="#8d7bff" stroke-width="4" fill="none"/>
+              <g class="pop"><circle cx="90" cy="280" r="8" fill="#ffb020"/><text x="70" y="310">1984 Hull</text><text x="70" y="328">files SLA patent</text></g>
+              <g class="pop"><circle cx="280" cy="280" r="8" fill="#2ee6d6"/><text x="250" y="310">1988–89 Crump</text><text x="250" y="328">FDM / Stratasys</text></g>
+              <g class="pop"><circle cx="490" cy="280" r="8" fill="#ff4d8d"/><text x="450" y="310">2005 RepRap</text><text x="450" y="328">open printers</text></g>
+              <g class="pop"><circle cx="680" cy="280" r="8" fill="#b6ef4a"/><text x="640" y="310">2009 patents</text><text x="640" y="328">desktop boom</text></g>
+              <g class="pop"><circle cx="820" cy="280" r="8" fill="#fff"/><text x="760" y="310">2014 ISS</text><text x="760" y="328">first prints</text></g>
+            </g>
+          </svg>
+          <figcaption>Real uses, said carefully: hospitals print models and some custom guides; the ISS has printed tools from files sent from Earth; paste and chocolate printers exist; a few companies print concrete walls. None of that means a school PLA printer can make a pizza, a house, or a spare organ.</figcaption>
+        </figure>
+        <div class="panel">
+          <h3>Interactive: build or carve</h3>
+          <div class="row" role="group" aria-label="Manufacturing style">
+            <button class="choice" type="button" data-make="add" aria-pressed="true">Add layers</button>
+            <button class="choice" type="button" data-make="sub" aria-pressed="false">Carve a block</button>
+          </div>
+          <p data-make-result>Additive: the gear appears as layers stack up. Waste is mostly support plastic and a skirt, not a pile of chips.</p>
+          <svg viewBox="0 0 360 120" aria-hidden="true" id="make-art">
+            <g data-add-art>
+              <rect x="40" y="78" width="120" height="12" fill="#2ee6d6"/>
+              <rect x="55" y="64" width="90" height="12" fill="#ff4d8d"/>
+              <rect x="70" y="50" width="60" height="12" fill="#ffb020"/>
+            </g>
+          </svg>
+        </div>
+        <div class="two">
+          <article class="panel track-56">
+            <h3>Project: layer cookie</h3>
+            <p>Stack three cardboard circles, each smaller than the one under it. That is a layer cake model of a dome. Then design the same idea as a keychain tag in Tinkercad: your initials, 4 mm thick, with a 5 mm hole.</p>
+          </article>
+          <article class="panel track-78">
+            <h3>Project: waste compare</h3>
+            <p>Sketch a 40 mm gear. Estimate the block you would carve (include the grip the tool needs) and the plastic a printer would add. Write one sentence on which process throws away more material for a one-off part, and when carving still wins.</p>
+          </article>
+        </div>
+        <form class="panel quiz track-56" data-section="what-is-3d-printing" data-pass="3">
+          <h3>Quick check · grades 5–6</h3>
+          <fieldset><legend>3D printing is mostly…</legend>
+            <label><input type="radio" name="w56a" value="1"> adding material in layers</label>
+            <label><input type="radio" name="w56a" value="0"> carving a block smaller</label>
+            <p class="why" hidden>Additive means the part grows from nothing, layer by layer.</p>
+          </fieldset>
+          <fieldset><legend>Which one is subtractive?</legend>
+            <label><input type="radio" name="w56b" value="0"> stacking paper cutouts</label>
+            <label><input type="radio" name="w56b" value="1"> whittling a stamp from an eraser</label>
+            <p class="why" hidden>Whittling removes material. That is subtractive.</p>
+          </fieldset>
+          <fieldset><legend>A true space story is…</legend>
+            <label><input type="radio" name="w56c" value="1"> astronauts printed tools on the space station</label>
+            <label><input type="radio" name="w56c" value="0"> printers beam finished metal wrenches through space</label>
+            <p class="why" hidden>The file traveled as data. The printer on the station made the object.</p>
+          </fieldset>
+          <fieldset><legend>Your school printer can reliably…</legend>
+            <label><input type="radio" name="w56d" value="0"> print a whole house by Friday</label>
+            <label><input type="radio" name="w56d" value="1"> print a small plastic tag or clip</label>
+            <p class="why" hidden>Desktop FDM is great at small plastic parts. Houses need giant concrete printers and a full building crew.</p>
+          </fieldset>
+          <button class="btn primary" type="submit">Check answers</button>
+          <p class="quiz-result" aria-live="polite"></p>
+        </form>
+        <form class="panel quiz track-78" data-section="what-is-3d-printing" data-pass="3">
+          <h3>Quick check · grades 7–8</h3>
+          <fieldset><legend>Chuck Hull’s 1984 patent is for…</legend>
+            <label><input type="radio" name="w78a" value="1"> stereolithography (SLA), curing resin with light</label>
+            <label><input type="radio" name="w78a" value="0"> the first desktop PLA hobby printer</label>
+            <p class="why" hidden>SLA came first commercially. FDM, the melted-filament process in most school printers, is Scott Crump’s later invention.</p>
+          </fieldset>
+          <fieldset><legend>Why did cheap desktop printers spread after about 2009?</legend>
+            <label><input type="radio" name="w78b" value="1"> key FDM patents expired and open projects like RepRap shared designs</label>
+            <label><input type="radio" name="w78b" value="0"> plastic became a brand-new material that year</label>
+            <p class="why" hidden>The machines got easier to copy when core patents lapsed and the RepRap community published plans.</p>
+          </fieldset>
+          <fieldset><legend>A careful claim about medicine is…</legend>
+            <label><input type="radio" name="w78c" value="0"> school printers already make living organs</label>
+            <label><input type="radio" name="w78c" value="1"> printed anatomical models and some surgical guides are real; printed organs are still research</label>
+            <p class="why" hidden>Models and guides are in use. Printing living replacement organs is not a classroom result.</p>
+          </fieldset>
+          <fieldset><legend>Strength of an FDM part depends on…</legend>
+            <label><input type="radio" name="w78d" value="1"> how well the layers weld, so direction matters</label>
+            <label><input type="radio" name="w78d" value="0"> only the color of the filament</label>
+            <p class="why" hidden>Layers can split. A clip printed on its side can be stronger than the same clip printed standing up.</p>
+          </fieldset>
+          <button class="btn primary" type="submit">Check answers</button>
+          <p class="quiz-result" aria-live="polite"></p>
+        </form>
+      <section class="module" id="how-a-printer-works">
+        <div class="module-head"><div><p class="module-index">Module 02</p><h2>How a printer works</h2></div></div>
+        <ul class="goals">
+          <li><span>Goal</span>Name the nozzle, hotend, extruder, bed, gantry, and filament.</li>
+          <li><span>Goal</span>Explain how a part grows one layer at a time.</li>
+          <li><span>Goal</span>Point to each part on a diagram.</li>
+        </ul>
+        <p class="track-56">Think of a robot holding a tiny hot glue gun. The glue stick is the filament. The robot draws, lifts a hair, and draws again.</p>
+        <p class="track-78">Most school machines are FDM: fused deposition modeling. A cold extruder pushes solid filament into a hotend. The nozzle lays a road of melt. The gantry steps up by the layer height, often 0.12–0.28 mm, and the next road welds on.</p>
+        <div class="panel video-layout">
+          <div class="player" data-video="how-a-printer-works">
+            <div class="poster" aria-hidden="true"><svg viewBox="0 0 420 220"><text x="24" y="48" fill="#fff" font-family="Fraunces, Georgia, serif" font-size="28">How a printer works</text><rect class="layer" x="70" y="150" width="200" height="14" rx="4" fill="#2ee6d6"/><rect class="layer" x="90" y="132" width="160" height="14" rx="4" fill="#ff4d8d"/><circle cx="300" cy="120" r="16" fill="#ffb020"/></svg></div>
+            <video controls playsinline preload="none"><source src="assets/videos/how-a-printer-works.mp4" type="video/mp4"></video>
+            <p class="player-status">Custom explainer slot for how-a-printer-works.mp4.</p>
+          </div>
+          <aside class="caption-card"><p class="kicker">On-screen intro</p><h3>Melt, move, stack</h3><p class="caption-line">Filament goes in solid, comes out as a thin hot line, and freezes into the layer under it.</p></aside>
+        </div>
+        <div class="yt-grid">
+          <figure class="yt"><iframe src="https://www.youtube-nocookie.com/embed/f94CnlQ0eq4" title="Jared Owen: How does a 3D Printer work?" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe><figcaption>Jared Owen — How does a 3D Printer work?</figcaption></figure>
+          <figure class="yt"><iframe src="https://www.youtube-nocookie.com/embed/dGajFRaS834" title="Digital Trends: How Does 3D Printing Work?" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe><figcaption>Digital Trends — How Does 3D Printing Work?</figcaption></figure>
+        </div>
+        <div class="panel printer-layout">
+          <figure class="info-card reveal">
+            <svg viewBox="0 0 640 420" role="img" aria-labelledby="printerTitle printerDesc">
+              <title id="printerTitle">Cutaway of a desktop FDM printer</title>
+              <desc id="printerDesc">A spool feeds filament into an extruder, through a hotend and nozzle. The nozzle rides a gantry above a heated bed where a part is stacked in layers.</desc>
+              <rect width="640" height="420" rx="20" fill="#102033"/>
+              <g data-part-shape="bed"><rect x="90" y="300" width="420" height="22" rx="4" fill="#8aa0b8"/><rect x="120" y="278" width="150" height="10" fill="#2ee6d6"/><rect x="130" y="266" width="130" height="10" fill="#7af0e4"/><rect x="145" y="254" width="100" height="10" fill="#ff4d8d"/></g>
+              <g data-part-shape="gantry"><rect x="70" y="70" width="16" height="250" fill="#d7dee8"/><rect x="520" y="70" width="16" height="250" fill="#d7dee8"/><rect x="70" y="150" width="466" height="14" fill="#ffb020"/></g>
+              <g data-part-shape="extruder"><rect x="300" y="118" width="54" height="36" rx="6" fill="#8d7bff"/><circle cx="318" cy="136" r="8" fill="#1a1030"/></g>
+              <g data-part-shape="hotend"><rect x="316" y="154" width="22" height="28" fill="#ff4d8d"/></g>
+              <g data-part-shape="nozzle"><path d="M316 182 h22 l-6 16 h-10 z" fill="#ffb020"/></g>
+              <g data-part-shape="spool"><circle cx="80" cy="120" r="36" fill="none" stroke="#2ee6d6" stroke-width="10"/><path class="draw" d="M110 120 C180 80 240 160 320 130" fill="none" stroke="#2ee6d6" stroke-width="4"/></g>
+              <g data-part-shape="part"><text x="150" y="250" fill="#edf3ff" font-size="13" font-family="Outfit, sans-serif">layers</text></g>
+            </svg>
+            <figcaption>Click a name. The matching part lights up. The extruder pushes. The hotend melts. The nozzle deposits. The gantry moves. The bed holds the part.</figcaption>
+          </figure>
+          <div>
+            <div class="row">
+              <button class="chip" type="button" data-printer-part="spool">Filament</button>
+              <button class="chip" type="button" data-printer-part="extruder">Extruder</button>
+              <button class="chip" type="button" data-printer-part="hotend">Hotend</button>
+              <button class="chip" type="button" data-printer-part="nozzle">Nozzle</button>
+              <button class="chip" type="button" data-printer-part="gantry">Gantry</button>
+              <button class="chip" type="button" data-printer-part="bed">Bed</button>
+              <button class="chip" type="button" data-printer-part="part">Layers</button>
+            </div>
+            <p class="detail" data-printer-detail>Pick a part of the printer.</p>
+          </div>
+        </div>
+        <div class="two">
+          <article class="panel track-56"><h3>Project: trace a layer</h3><p>On graph paper, draw your initials as a path the nozzle could follow without lifting. Then draw the same letters one square smaller on top. Two layers. That is the whole idea.</p></article>
+          <article class="panel track-78"><h3>Project: layer math</h3><p>A 12 mm tall tag at 0.20 mm layers needs 12 / 0.20 = 60 layers. At 0.12 mm it needs 100 layers. Write which one shows less stair-step on a curve, and why the finer one takes longer.</p></article>
+        </div>
+        <form class="panel quiz track-56" data-section="how-a-printer-works" data-pass="3">
+          <h3>Quick check · grades 5–6</h3>
+          <fieldset><legend>The nozzle is…</legend><label><input type="radio" name="p56a" value="1"> the hot tip where plastic comes out</label><label><input type="radio" name="p56a" value="0"> the spool of cold plastic</label><p class="why" hidden>The nozzle is the small hot tip. The spool is the filament supply.</p></fieldset>
+          <fieldset><legend>The extruder…</legend><label><input type="radio" name="p56b" value="1"> pushes the filament forward</label><label><input type="radio" name="p56b" value="0"> is the table the print sits on</label><p class="why" hidden>Pushing is the extruder’s job. The bed is the table.</p></fieldset>
+          <fieldset><legend>A part gets taller because…</legend><label><input type="radio" name="p56c" value="0"> the printer pours the whole shape at once</label><label><input type="radio" name="p56c" value="1"> each new layer is drawn on top of the last one</label><p class="why" hidden>FDM is layer by layer. Nothing appears fully formed.</p></fieldset>
+          <fieldset><legend>While it is printing, the nozzle is…</legend><label><input type="radio" name="p56d" value="1"> hot enough to burn skin</label><label><input type="radio" name="p56d" value="0"> only as warm as a mug of cocoa</label><p class="why" hidden>PLA nozzles are often near 200°C. That is far hotter than cocoa.</p></fieldset>
+          <button class="btn primary" type="submit">Check answers</button><p class="quiz-result" aria-live="polite"></p>
+        </form>
+        <form class="panel quiz track-78" data-section="how-a-printer-works" data-pass="3">
+          <h3>Quick check · grades 7–8</h3>
+          <fieldset><legend>Which part melts the plastic?</legend><label><input type="radio" name="p78a" value="0"> the extruder gear</label><label><input type="radio" name="p78a" value="1"> the hotend</label><p class="why" hidden>The extruder only drives the filament. Melting happens in the hotend.</p></fieldset>
+          <fieldset><legend>A 0.20 mm layer height means…</legend><label><input type="radio" name="p78b" value="1"> each new slice is about 0.20 mm thick</label><label><input type="radio" name="p78b" value="0"> the nozzle hole is 0.20 mm wide</label><p class="why" hidden>Layer height is the vertical step. Nozzle diameter is the width of the hole, often 0.4 mm.</p></fieldset>
+          <fieldset><legend>Why do layers stick?</legend><label><input type="radio" name="p78c" value="1"> the new melt welds to the plastic underneath before it cools</label><label><input type="radio" name="p78c" value="0"> a glue is mixed into every filament</label><p class="why" hidden>FDM bonds by heat and pressure, not by a separate glue in the filament.</p></fieldset>
+          <fieldset><legend>The gantry is…</legend><label><input type="radio" name="p78d" value="1"> the motion system that carries the nozzle</label><label><input type="radio" name="p78d" value="0"> the brand name of the plastic</label><p class="why" hidden>Gantry means the moving frame: belts, rails, or screws in X, Y, and Z.</p></fieldset>
+          <button class="btn primary" type="submit">Check answers</button><p class="quiz-result" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section class="module" id="safety">
+        <div class="module-head"><div><p class="module-index">Module 03</p><h2>Safety and the maker space</h2></div></div>
+        <ul class="goals">
+          <li><span>Goal</span>Keep hands off hot parts and moving belts.</li>
+          <li><span>Goal</span>Say why ventilation and distance matter.</li>
+          <li><span>Goal</span>Know which tools only a teacher uses.</li>
+        </ul>
+        <p class="track-56">The printer is not a toy oven. The nozzle and sometimes the bed are hot, the belts can pinch, and the plastic smell means you should not hover over the machine.</p>
+        <p class="track-78">FDM gives off ultrafine particles and volatile gases. NIOSH and school-health guidance say to ventilate, avoid standing over a running printer, use the lowest temperature that still prints well, and prefer PLA over higher-temperature materials such as ABS in classrooms. A long print is a fire risk if nobody is around and the building air system is off.</p>
+        <div class="panel video-layout">
+          <div class="player" data-video="safety">
+            <div class="poster" aria-hidden="true"><svg viewBox="0 0 420 220"><text x="24" y="48" fill="#fff" font-family="Fraunces, Georgia, serif" font-size="28">Safety first</text><path d="M70 160 h80 l10-40 h40 l10 40 h80" fill="none" stroke="#ffb020" stroke-width="8"/><circle cx="210" cy="90" r="28" fill="none" stroke="#ff4d8d" stroke-width="8"/></svg></div>
+            <video controls playsinline preload="none"><source src="assets/videos/safety.mp4" type="video/mp4"></video>
+            <p class="player-status">Custom explainer slot for safety.mp4.</p>
+          </div>
+          <aside class="caption-card"><p class="kicker">On-screen intro</p><h3>Hot, moving, and breathing room</h3><p class="caption-line">Hands off the nozzle. Hair and sleeves back. A teacher stays in charge. Give the printer fresh air and some space.</p></aside>
+        </div>
+        <div class="yt-grid one">
+          <figure class="yt"><iframe src="https://www.youtube-nocookie.com/embed/B84CgaPdixc" title="CNC Kitchen: The Beginner 3D Printing Guide I Wish I Had" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe><figcaption>CNC Kitchen — beginner guide, including setup habits around a real machine</figcaption></figure>
+        </div>
+        <figure class="panel info-card reveal">
+          <svg viewBox="0 0 880 320" role="img" aria-labelledby="safeTitle safeDesc">
+            <title id="safeTitle">Maker space safety scene</title>
+            <desc id="safeDesc">A printer sits near a window fan. A hand is kept away from the red-hot nozzle. A drink is marked as a bad idea. Tools rest in a tray. An adult stands with the student.</desc>
+            <rect width="880" height="320" rx="24" fill="#102033"/>
+            <rect x="80" y="70" width="260" height="160" rx="12" fill="#1c3148" stroke="#8aa0b8"/>
+            <rect x="120" y="150" width="180" height="16" fill="#8aa0b8"/>
+            <path d="M200 150 l8-36 h16 l8 36" fill="#ff4d8d"/>
+            <circle cx="216" cy="100" r="10" fill="#ffb020"/>
+            <path class="draw" d="M520 60 q40 30 20 70" fill="none" stroke="#2ee6d6" stroke-width="6"/>
+            <text x="500" y="50" fill="#2ee6d6" font-family="Outfit, sans-serif" font-size="16">Air leaves the room</text>
+            <rect x="620" y="180" width="180" height="28" rx="6" fill="#24364c"/>
+            <rect x="640" y="168" width="16" height="28" fill="#c9d6e5"/>
+            <rect x="670" y="160" width="40" height="36" fill="#8d7bff"/>
+            <circle cx="150" cy="250" r="18" fill="#ff8d7a"/><text x="180" y="256" fill="#fff" font-size="14" font-family="Outfit, sans-serif">No drinks on the printer table</text>
+            <circle cx="700" cy="90" r="22" fill="#b6ef4a"/><text x="730" y="86" fill="#fff" font-size="14" font-family="Outfit, sans-serif">Teacher nearby</text>
+            <text x="730" y="106" fill="#d5e2f2" font-size="14" font-family="Outfit, sans-serif">Students watch the rules</text>
+          </svg>
+          <figcaption>Sources for the rules: NIOSH guidance on 3D printer emissions, and school health pages such as Washington State Department of Health. PLA is the default here. Scrapers and flush cutters are teacher tools.</figcaption>
+        </figure>
+        <div class="panel">
+          <h3>Interactive: spot the hazard</h3>
+          <div class="scene" style="height:220px;background:linear-gradient(#d9e6f5,#fff);border-radius:16px;position:relative">
+            <button class="hazard" style="left:18%;top:30%" type="button" data-safe="0" data-note="The nozzle is hot, often near 200°C for PLA. Look, do not touch." aria-label="Hand near the nozzle">!</button>
+            <button class="hazard" style="left:62%;top:24%" type="button" data-safe="1" data-note="Moving air out of the room is a good control. Standing in the exhaust is not." aria-label="Window fan">ok</button>
+            <button class="hazard" style="left:40%;top:62%" type="button" data-safe="0" data-note="Food and drinks stay off the printer table. Wash hands before you eat." aria-label="Drink cup">!</button>
+            <button class="hazard" style="left:74%;top:58%" type="button" data-safe="0" data-note="Loose hair and hoodie strings can catch in belts. Tie them back." aria-label="Loose hair near belts">!</button>
+          </div>
+          <p data-hazard-note>Tap a mark. Gold means you have not checked it yet.</p>
+        </div>
+        <div class="two">
+          <article class="panel track-56"><h3>Project: safety card</h3><p>Make a four-panel card: hot nozzle, no food, hair back, get a teacher. You may draw it or print a flat tag later. Put it by the printer only if your teacher says the wording is right.</p></article>
+          <article class="panel track-78"><h3>Project: room check</h3><p>With a teacher, note where air can leave, whether the printer is enclosed, and who may start a print that runs past the bell. Write three controls: distance, ventilation, and supervision. Do not change the machine.</p></article>
+        </div>
+        <form class="panel quiz track-56" data-section="safety" data-pass="3">
+          <h3>Quick check · grades 5–6</h3>
+          <fieldset><legend>The nozzle while printing is…</legend><label><input type="radio" name="s56a" value="1"> hot enough to burn</label><label><input type="radio" name="s56a" value="0"> safe to tap with a finger</label><p class="why" hidden>Do not touch the nozzle, hotend, or a hot bed.</p></fieldset>
+          <fieldset><legend>A water bottle belongs…</legend><label><input type="radio" name="s56b" value="0"> on the printer bed</label><label><input type="radio" name="s56b" value="1"> away from the machine</label><p class="why" hidden>Drinks spill into electronics and onto hot parts. Eat somewhere else.</p></fieldset>
+          <fieldset><legend>Who removes a stuck print with a scraper?</legend><label><input type="radio" name="s56c" value="1"> a teacher, or you only if they are coaching you</label><label><input type="radio" name="s56c" value="0"> whoever is closest, as fast as possible</label><p class="why" hidden>Scrapers cut. The point faces away from hands and bodies.</p></fieldset>
+          <fieldset><legend>If you smell hot plastic, you should…</legend><label><input type="radio" name="s56d" value="0"> lean in to sniff the nozzle</label><label><input type="radio" name="s56d" value="1"> step back and tell the teacher</label><p class="why" hidden>Distance is part of the protection. Do not hover.</p></fieldset>
+          <button class="btn primary" type="submit">Check answers</button><p class="quiz-result" aria-live="polite"></p>
+        </form>
+        <form class="panel quiz track-78" data-section="safety" data-pass="3">
+          <h3>Quick check · grades 7–8</h3>
+          <fieldset><legend>Why is PLA the school default instead of ABS?</legend><label><input type="radio" name="s78a" value="1"> ABS needs more heat, warps more, and gives off more troublesome fumes such as styrene</label><label><input type="radio" name="s78a" value="0"> PLA is always food-safe and needs no ventilation</label><p class="why" hidden>PLA is easier and lower temperature. It still needs ventilation, and school prints are not food-safe.</p></fieldset>
+          <fieldset><legend>A dust mask from art class…</legend><label><input type="radio" name="s78b" value="0"> fully solves ultrafine particles and gases</label><label><input type="radio" name="s78b" value="1"> is not the main control. Ventilation and distance matter more</label><p class="why" hidden>School guidance treats enclosure, exhaust, and not hovering as the real controls.</p></fieldset>
+          <fieldset><legend>An overnight print with the air system off is…</legend><label><input type="radio" name="s78c" value="1"> a bad plan. Printers are not left unattended</label><label><input type="radio" name="s78c" value="0"> fine if the door is locked</label><p class="why" hidden>Heaters can fail. Someone responsible has to be able to stop the machine, and the room still needs air movement.</p></fieldset>
+          <fieldset><legend>Lowest useful nozzle temperature…</legend><label><input type="radio" name="s78d" value="1"> usually means fewer emissions, if the print still sticks</label><label><input type="radio" name="s78d" value="0"> always makes the part stronger</label><p class="why" hidden>Hotter often means more particles and gases. Stay inside the filament label.</p></fieldset>
+          <button class="btn primary" type="submit">Check answers</button><p class="quiz-result" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section class="module" id="materials">
+        <div class="module-head"><div><p class="module-index">Module 04</p><h2>Materials</h2></div></div>
+        <ul class="goals">
+          <li><span>Goal</span>Compare PLA, PETG, TPU, and ABS.</li>
+          <li><span>Goal</span>Explain why this makerspace starts with PLA.</li>
+          <li><span>Goal</span>Pick a material for a job, including “do not print that here.”</li>
+        </ul>
+        <p class="track-56">Filament is the colorful spaghetti. PLA is the one we use. It prints at a lower temperature, sticks more easily, and comes in almost any color. It can still get soft in a hot car.</p>
+        <p class="track-78">These are all thermoplastics. PLA (polylactic acid) is made from plant starch and softens near 60°C. PETG is tougher and a bit more heat resistant, and it strings. TPU is elastic. ABS is strong and heat tolerant, warps, and releases styrene; it is not the classroom default. Typical nozzle ranges, always overridden by the spool label: PLA about 190–220°C, PETG about 230–250°C, TPU about 220–240°C printed slowly, ABS about 230–260°C with a hot bed and an enclosure.</p>
+        <div class="panel video-layout">
+          <div class="player" data-video="materials">
+            <div class="poster" aria-hidden="true"><svg viewBox="0 0 420 220"><text x="24" y="48" fill="#fff" font-family="Fraunces, Georgia, serif" font-size="28">Meet the filaments</text><circle class="layer" cx="90" cy="140" r="28" fill="none" stroke="#b6ef4a" stroke-width="10"/><circle class="layer" cx="170" cy="140" r="28" fill="none" stroke="#2ee6d6" stroke-width="10"/><circle class="layer" cx="250" cy="140" r="28" fill="none" stroke="#ff4d8d" stroke-width="10"/><circle class="layer" cx="330" cy="140" r="28" fill="none" stroke="#ffb020" stroke-width="10"/></svg></div>
+            <video controls playsinline preload="none"><source src="assets/videos/materials.mp4" type="video/mp4"></video>
+            <p class="player-status">Custom explainer slot for materials.mp4.</p>
+          </div>
+          <aside class="caption-card"><p class="kicker">On-screen intro</p><h3>PLA is the school filament</h3><p class="caption-line">Four plastics, four jobs. If it has to live in a hot car or touch food, this printer is the wrong tool.</p></aside>
+        </div>
+        <div class="yt-grid one">
+          <figure class="yt"><iframe src="https://www.youtube-nocookie.com/embed/5iZ-iXB7uUA" title="MakerBuildIt: Guide to 3D Printing Filament, PLA ABS PETG TPU and more" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe><figcaption>MakerBuildIt — PLA, ABS, PETG, TPU and more</figcaption></figure>
+        </div>
+        <figure class="panel info-card reveal">
+          <svg viewBox="0 0 880 340" role="img" aria-labelledby="matTitle matDesc">
+            <title id="matTitle">Filament comparison</title>
+            <desc id="matDesc">Four spools. PLA is easy and colorful. PETG is tougher. TPU bends. ABS is fume-heavy and not for this classroom.</desc>
+            <rect width="880" height="340" rx="24" fill="#102033"/>
+            <g class="pop" font-family="Outfit, sans-serif" fill="#edf3ff">
+              <g transform="translate(40,40)"><circle cx="70" cy="70" r="48" fill="none" stroke="#b6ef4a" stroke-width="14"/><path d="M70 40c10 16 8 28 0 40c-8-12-10-24 0-40z" fill="#b6ef4a"/><text x="20" y="150" font-size="20">PLA</text><text x="20" y="172" font-size="13" fill="#d5e2f2">Easy · colors · school default</text></g>
+              <g transform="translate(250,40)"><circle cx="70" cy="70" r="48" fill="none" stroke="#2ee6d6" stroke-width="14"/><path d="M50 78h40l-8 18h-24z" fill="#2ee6d6"/><text x="20" y="150" font-size="20">PETG</text><text x="20" y="172" font-size="13" fill="#d5e2f2">Tougher · can string</text></g>
+              <g transform="translate(460,40)"><circle cx="70" cy="70" r="48" fill="none" stroke="#ff4d8d" stroke-width="14"/><path d="M40 80c20-30 40-30 60 0" fill="none" stroke="#ff4d8d" stroke-width="6"/><text x="20" y="150" font-size="20">TPU</text><text x="20" y="172" font-size="13" fill="#d5e2f2">Flexible · print slowly</text></g>
+              <g transform="translate(670,40)"><circle cx="70" cy="70" r="48" fill="none" stroke="#ffb020" stroke-width="14"/><path d="M70 40 v30 M55 78c0 16 30 16 30 0" fill="none" stroke="#ffb020" stroke-width="5"/><text x="20" y="150" font-size="20">ABS</text><text x="20" y="172" font-size="13" fill="#d5e2f2">Warps · fumes · not here</text></g>
+            </g>
+          </svg>
+          <figcaption>PLA wins at Jordan Glen because it prints cooler, warps less, and is widely available. “Plant-based” does not mean you can compost a failed print in the garden or use it for food. Layer grooves and some brass nozzles make food contact a no.</figcaption>
+        </figure>
+        <div class="panel">
+          <h3>Interactive: which filament?</h3>
+          <div class="row">
+            <button class="choice" type="button" data-job="keychain">A colorful keychain</button>
+            <button class="choice" type="button" data-job="clip">A tough cable clip</button>
+            <button class="choice" type="button" data-job="wheel">A bendy tire</button>
+            <button class="choice" type="button" data-job="car">A part for a hot car dashboard</button>
+          </div>
+          <p data-job-result>Pick a job.</p>
+        </div>
+        <div class="two">
+          <article class="panel track-56"><h3>Project: color plan</h3><p>Choose three PLA colors for a name tag. Write what each color means (name, border, hole). You are designing with PLA only.</p></article>
+          <article class="panel track-78"><h3>Project: material card</h3><p>Make a one-page card for PETG versus PLA: nozzle range from the spool you actually have, bed, strength, stringing, and whether a teacher must run it. Include the line “not food-safe.”</p></article>
+        </div>
+        <form class="panel quiz track-56" data-section="materials" data-pass="3">
+          <h3>Quick check · grades 5–6</h3>
+          <fieldset><legend>Our school filament is…</legend><label><input type="radio" name="m56a" value="1"> PLA</label><label><input type="radio" name="m56a" value="0"> ABS</label><p class="why" hidden>PLA is the default. ABS stays off the class printer.</p></fieldset>
+          <fieldset><legend>TPU is the one that…</legend><label><input type="radio" name="m56b" value="1"> can bend like rubber</label><label><input type="radio" name="m56b" value="0"> is the best choice for a rigid name tag</label><p class="why" hidden>TPU is flexible. A name tag wants stiff PLA.</p></fieldset>
+          <fieldset><legend>A PLA tag in a hot car may…</legend><label><input type="radio" name="m56c" value="1"> soften and warp</label><label><input type="radio" name="m56c" value="0"> turn into metal</label><p class="why" hidden>PLA’s glass transition is near 60°C. A closed car gets hotter than that.</p></fieldset>
+          <fieldset><legend>School prints and snacks…</legend><label><input type="radio" name="m56d" value="0"> are fine if the PLA is plant-based</label><label><input type="radio" name="m56d" value="1"> do not mix. Do not print cups or candy tools</label><p class="why" hidden>Grooves hold bacteria, and “plant-based” is not a food-safety stamp.</p></fieldset>
+          <button class="btn primary" type="submit">Check answers</button><p class="quiz-result" aria-live="polite"></p>
+        </form>
+        <form class="panel quiz track-78" data-section="materials" data-pass="3">
+          <h3>Quick check · grades 7–8</h3>
+          <fieldset><legend>PETG compared with PLA is usually…</legend><label><input type="radio" name="m78a" value="1"> tougher, a little harder to print, and more likely to string</label><label><input type="radio" name="m78a" value="0"> always safer to breathe than PLA</label><p class="why" hidden>PETG is a functional step up. It still needs ventilation, and the spool label sets the temperature.</p></fieldset>
+          <fieldset><legend>A spool that feels brittle and prints with pops may be…</legend><label><input type="radio" name="m78b" value="1"> damp. Dry it the way the teacher’s guide says</label><label><input type="radio" name="m78b" value="0"> cured by printing hotter with the door shut and no adult</label><p class="why" hidden>PETG and TPU absorb water. Drying is a teacher-run step, not a student experiment with an oven.</p></fieldset>
+          <fieldset><legend>The gram estimate on this site uses…</legend><label><input type="radio" name="m78c" value="1"> about 1.24 g/cm³ for PLA, then an infill model</label><label><input type="radio" name="m78c" value="0"> the weight of water, exactly</label><p class="why" hidden>PLA is a bit denser than water. The slicer is still the real measurement.</p></fieldset>
+          <fieldset><legend>ABS in this room…</legend><label><input type="radio" name="m78d" value="0"> is the best first material because it is “professional”</label><label><input type="radio" name="m78d" value="1"> is avoided. Heat, warp, and styrene fumes do not fit a class default</label><p class="why" hidden>ABS can be the right industrial choice in a ventilated enclosure. It is the wrong default beside students.</p></fieldset>
+          <button class="btn primary" type="submit">Check answers</button><p class="quiz-result" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section class="module" id="cad-design">
+        <div class="module-head"><div><p class="module-index">Module 05</p><h2>Designing in free CAD</h2></div></div>
+        <ul class="goals">
+          <li><span>Goal</span>Pick a free CAD tool that fits your grade.</li>
+          <li><span>Goal</span>Build a solid from simple shapes and a hole.</li>
+          <li><span>Goal</span>Know that an STL or 3MF is what a slicer wants.</li>
+        </ul>
+        <p class="track-56">Grades 5–6 start in <a href="https://www.tinkercad.com/">Tinkercad</a>. You drag boxes, cylinders, and roofs. A hole shape subtracts. Group them and you have a solid. <a href="https://www.blockscad3d.com/">BlocksCAD</a> is the same idea with snap-together code blocks if you like Scratch.</p>
+        <p class="track-78">Stay in Tinkercad until holes, alignment, and millimeters feel normal. Then move to a parametric modeler: <a href="https://www.autodesk.com/education/edu-software/overview">Autodesk Fusion (free education access)</a> or <a href="https://www.onshape.com/en/education/">Onshape Education</a>. <a href="https://www.freecad.org/">FreeCAD</a> is fully open source. <a href="https://sketchup.trimble.com/en/plans-and-pricing/sketchup-free">SketchUp Free</a> (now on Trimble) is a lighter web modeler. Parametric means you can change a number, like “pin clearance 0.3 mm,” and the part updates.</p>
+        <div class="panel">
+          <h3>Which tool fits</h3>
+          <div class="compare">
+            <article><h3>Grades 5–6</h3><p><strong>Best start:</strong> Tinkercad. <strong>Next:</strong> BlocksCAD. Design in millimeters. Export STL.</p></article>
+            <article><h3>Grades 7–8</h3><p><strong>Best start:</strong> Tinkercad, then Fusion or Onshape. Use sketches, extrudes, and assemblies. FreeCAD if you want open source offline.</p></article>
+          </div>
+        </div>
+        <div class="panel video-layout">
+          <div class="player" data-video="cad-design">
+            <div class="poster" aria-hidden="true"><svg viewBox="0 0 420 220"><text x="24" y="48" fill="#fff" font-family="Fraunces, Georgia, serif" font-size="28">Shapes become solids</text><rect class="layer" x="60" y="120" width="80" height="50" fill="#2ee6d6"/><circle class="layer" cx="200" cy="145" r="28" fill="#ff4d8d"/><polygon class="layer" points="280,170 340,170 340,110" fill="#ffb020"/></svg></div>
+            <video controls playsinline preload="none"><source src="assets/videos/cad-design.mp4" type="video/mp4"></video>
+            <p class="player-status">Custom explainer slot for cad-design.mp4.</p>
+          </div>
+          <aside class="caption-card"><p class="kicker">On-screen intro</p><h3>Sketch, extrude, export</h3><p class="caption-line">A flat shape pulled upward becomes a solid. A hole is a shape you subtract. The slicer never sees your screen. It sees the file you export.</p></aside>
+        </div>
+        <div class="yt-grid">
+          <figure class="yt"><iframe src="https://www.youtube-nocookie.com/embed/LrU2zm_g7lE" title="Autodesk Tinkercad: Welcome to Tinkercad" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe><figcaption>Autodesk Tinkercad — Welcome to Tinkercad</figcaption></figure>
+          <figure class="yt"><iframe src="https://www.youtube-nocookie.com/embed/Fi3KuC-2PWk" title="Fairmont State SciTech: Intro to CAD for VEX IQ" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe><figcaption>Fairmont State SciTech — Intro to CAD for VEX IQ</figcaption></figure>
+        </div>
+        <figure class="panel info-card reveal">
+          <svg viewBox="0 0 880 240" role="img" aria-labelledby="cadTitle cadDesc">
+            <title id="cadTitle">CAD workflow from sketch to STL</title>
+            <desc id="cadDesc">Four steps with arrows: draw shapes, group or extrude, cut a hole, export an STL to the slicer.</desc>
+            <rect width="880" height="240" rx="24" fill="#102033"/>
+            <g fill="#edf3ff" font-family="Outfit, sans-serif" font-size="16">
+              <g class="pop"><rect x="30" y="50" width="160" height="110" rx="16" fill="#1c3148"/><rect x="55" y="80" width="50" height="40" fill="#2ee6d6"/><circle cx="140" cy="100" r="22" fill="#ff4d8d"/><text x="50" y="190">1. Shapes</text></g>
+              <path class="draw" d="M200 110 H250" stroke="#ffb020" stroke-width="6" fill="none"/>
+              <g class="pop"><rect x="260" y="50" width="160" height="110" rx="16" fill="#1c3148"/><rect x="290" y="78" width="100" height="54" fill="#8d7bff"/><text x="280" y="190">2. Extrude</text></g>
+              <path class="draw" d="M430 110 H480" stroke="#ffb020" stroke-width="6" fill="none"/>
+              <g class="pop"><rect x="490" y="50" width="160" height="110" rx="16" fill="#1c3148"/><rect x="520" y="78" width="100" height="54" fill="#8d7bff"/><circle cx="570" cy="105" r="14" fill="#102033"/><text x="510" y="190">3. Cut a hole</text></g>
+              <path class="draw" d="M660 110 H700" stroke="#ffb020" stroke-width="6" fill="none"/>
+              <g class="pop"><rect x="710" y="50" width="140" height="110" rx="16" fill="#1c3148"/><text x="735" y="115" fill="#b6ef4a" font-size="22">STL</text><text x="730" y="190">4. Export</text></g>
+            </g>
+          </svg>
+          <figcaption>Work in millimeters. A 6.3 mm hole is not “about a quarter inch” unless you convert on purpose: 0.25 inch is 6.35 mm.</figcaption>
+        </figure>
+        <div class="panel split">
+          <div>
+            <h3>Interactive: extrude a shape</h3>
+            <div class="row">
+              <button class="chip" type="button" data-shape="box" aria-pressed="true">Box</button>
+              <button class="chip" type="button" data-shape="cylinder">Cylinder</button>
+              <button class="chip" type="button" data-shape="wedge">Wedge</button>
+              <button class="chip" type="button" data-shape="hole">With a hole</button>
+            </div>
+            <label class="slider">Height <span data-extrude-label>48 mm tall in this sketch</span>
+              <input id="extrude-height" data-extrude-height type="range" min="16" max="120" value="48">
+            </label>
+            <p>This is a sketch, not a saved STL. Rebuild the same idea in Tinkercad and export it.</p>
+          </div>
+          <div class="shape-stage"><div class="extrude" data-extrude style="height:48px"></div></div>
+        </div>
+        <div class="two">
+          <article class="panel track-56"><h3>Project: name tag</h3><p>In Tinkercad, make a 60 × 20 × 4 mm tag. Add your initials as raised letters. Cut a 5 mm hole. Download the STL. The take-home Desk Buddy uses a remix of this plate.</p></article>
+          <article class="panel track-78"><h3>Project: parametric pin</h3><p>In Fusion or Onshape, model a 6.0 mm pin and a hole. Drive the hole with a parameter named clearance, default 0.3 mm, so the hole is 6.3 mm. Change clearance to 0.2 and confirm the hole updates. Export both as STL.</p></article>
+        </div>
+        <form class="panel quiz track-56" data-section="cad-design" data-pass="3">
+          <h3>Quick check · grades 5–6</h3>
+          <fieldset><legend>The best first CAD tool in this course is…</legend><label><input type="radio" name="c56a" value="1"> Tinkercad</label><label><input type="radio" name="c56a" value="0"> a random paid phone game</label><p class="why" hidden>Tinkercad is free, browser-based, and built for beginners.</p></fieldset>
+          <fieldset><legend>A hole in Tinkercad is…</legend><label><input type="radio" name="c56b" value="1"> a shape set to hole, then grouped</label><label><input type="radio" name="c56b" value="0"> a sticker you add after printing</label><p class="why" hidden>Holes are negative solids. Group them with the part.</p></fieldset>
+          <fieldset><legend>The slicer wants…</legend><label><input type="radio" name="c56c" value="0"> a screenshot</label><label><input type="radio" name="c56c" value="1"> a 3D file such as STL</label><p class="why" hidden>Export STL or 3MF. A picture has no thickness.</p></fieldset>
+          <fieldset><legend>BlocksCAD is useful if you like…</legend><label><input type="radio" name="c56d" value="1"> Snap-together code blocks</label><label><input type="radio" name="c56d" value="0"> only drawing on paper</label><p class="why" hidden>BlocksCAD connects block coding to 3D shapes.</p></fieldset>
+          <button class="btn primary" type="submit">Check answers</button><p class="quiz-result" aria-live="polite"></p>
+        </form>
+        <form class="panel quiz track-78" data-section="cad-design" data-pass="3">
+          <h3>Quick check · grades 7–8</h3>
+          <fieldset><legend>Parametric means…</legend><label><input type="radio" name="c78a" value="1"> important sizes are named numbers you can change</label><label><input type="radio" name="c78a" value="0"> the model can only be one size forever</label><p class="why" hidden>Change the clearance parameter and the hole should update.</p></fieldset>
+          <fieldset><legend>A sensible next tool after Tinkercad is…</legend><label><input type="radio" name="c78b" value="1"> Fusion education or Onshape Education</label><label><input type="radio" name="c78b" value="0"> a spreadsheet with no 3D view</label><p class="why" hidden>Both are free for students and handle assemblies. FreeCAD is the open-source alternative.</p></fieldset>
+          <fieldset><legend>Design units for these projects…</legend><label><input type="radio" name="c78c" value="1"> millimeters</label><label><input type="radio" name="c78c" value="0"> unlabelled “units” you guess later</label><p class="why" hidden>Printers and VEX drawings in this course are in millimeters, with inches only when the official VEX note uses them.</p></fieldset>
+          <fieldset><legend>Before you export, you should…</legend><label><input type="radio" name="c78d" value="0"> leave the model as a stack of ungrouped sketches</label><label><input type="radio" name="c78d" value="1"> make sure it is a solid, in millimeters, with the flat face you want on the bed</label><p class="why" hidden>The slicer prints the solid you exported, including tiny gaps you forgot to join.</p></fieldset>
+          <button class="btn primary" type="submit">Check answers</button><p class="quiz-result" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section class="module" id="model-libraries">
+        <div class="module-head"><div><p class="module-index">Module 06</p><h2>Free 3D model libraries</h2></div></div>
+        <ul class="goals">
+          <li><span>Goal</span>Find a model on a real library site.</li>
+          <li><span>Goal</span>Read a Creative Commons license before you download.</li>
+          <li><span>Goal</span>Credit the maker every time.</li>
+        </ul>
+        <p>Libraries to know: <a href="https://www.printables.com/">Printables</a>, <a href="https://www.thingiverse.com/">Thingiverse</a>, <a href="https://www.myminifactory.com/">MyMiniFactory</a>, <a href="https://thangs.com/">Thangs</a>, <a href="https://science.nasa.gov/3d-resources/">NASA 3D Resources</a>, <a href="https://3d.si.edu/">Smithsonian 3D</a>, and the free filter on <a href="https://cults3d.com/en">Cults</a>. A download button is not the same as permission to sell.</p>
+        <p class="track-56">If the license says NonCommercial, you may print it for class and for a gift. You may not sell it at the school fair. If it says NoDerivatives, do not change it. Always write the maker’s name.</p>
+        <p class="track-78">Copyright exists as soon as someone makes a model. A Creative Commons license is how they give permission in advance. CC BY needs credit. CC BY-SA needs credit and the same license on your remix. CC BY-NC blocks sales. CC BY-ND blocks changes. CC0 is a public-domain dedication. NASA and Smithsonian files can have their own terms on the item page. Read that page.</p>
+        <div class="panel video-layout">
+          <div class="player" data-video="model-libraries">
+            <div class="poster" aria-hidden="true"><svg viewBox="0 0 420 220"><text x="24" y="48" fill="#fff" font-family="Fraunces, Georgia, serif" font-size="28">Read the license</text><rect class="layer" x="50" y="90" width="70" height="90" rx="6" fill="#2ee6d6"/><rect class="layer" x="140" y="90" width="70" height="90" rx="6" fill="#ff4d8d"/><rect class="layer" x="230" y="90" width="70" height="90" rx="6" fill="#ffb020"/></svg></div>
+            <video controls playsinline preload="none"><source src="assets/videos/model-libraries.mp4" type="video/mp4"></video>
+            <p class="player-status">Custom explainer slot for model-libraries.mp4.</p>
+          </div>
+          <aside class="caption-card"><p class="kicker">On-screen intro</p><h3>Credit is part of the download</h3><p class="caption-line">Someone designed that file. Their license tells you if you may print it, change it, or sell it.</p></aside>
+        </div>
+        <div class="yt-grid one">
+          <figure class="yt"><iframe src="https://www.youtube-nocookie.com/embed/srVPLrmlBJY" title="University of Guelph Library: What are Creative Commons Licenses?" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe><figcaption>University of Guelph Library — What are Creative Commons Licenses?</figcaption></figure>
+        </div>
+        <figure class="panel info-card reveal">
+          <svg viewBox="0 0 880 260" role="img" aria-labelledby="libTitle libDesc">
+            <title id="libTitle">From a model library to a credited print</title>
+            <desc id="libDesc">A shelf of model cards, a magnifying glass on a license badge, an arrow to a printer, and a credit line with the maker’s name.</desc>
+            <rect width="880" height="260" rx="24" fill="#102033"/>
+            <g class="pop">
+              <rect x="40" y="40" width="90" height="120" rx="8" fill="#1c3148" stroke="#2ee6d6"/>
+              <rect x="150" y="40" width="90" height="120" rx="8" fill="#1c3148" stroke="#ff4d8d"/>
+              <rect x="260" y="40" width="90" height="120" rx="8" fill="#1c3148" stroke="#ffb020"/>
+              <text x="52" y="180" fill="#b6ef4a" font-family="Outfit, sans-serif" font-size="14">CC BY</text>
+              <text x="158" y="180" fill="#ff8ab8" font-family="Outfit, sans-serif" font-size="14">CC BY-NC</text>
+              <text x="268" y="180" fill="#ffb020" font-family="Outfit, sans-serif" font-size="14">All rights</text>
+            </g>
+            <circle cx="470" cy="100" r="36" fill="none" stroke="#8d7bff" stroke-width="8"/>
+            <path class="draw" d="M496 126 l30 30" stroke="#8d7bff" stroke-width="8"/>
+            <path class="draw" d="M560 100 H700" stroke="#2ee6d6" stroke-width="6"/>
+            <path d="M740 70 h70 v70 h-70 z" fill="#24364c" stroke="#edf3ff"/>
+            <text x="40" y="230" fill="#edf3ff" font-family="Outfit, sans-serif" font-size="16">Credit line: Title, by Maker, license, source link.</text>
+          </svg>
+          <figcaption>License guide: <a href="https://creativecommons.org/cc-licenses/">Creative Commons licenses</a>. Thingiverse and Printables show the license on each thing. If you cannot find one, do not assume you may sell it.</figcaption>
+        </figure>
+        <div class="panel">
+          <h3>Interactive: license decoder</h3>
+          <div class="row">
+            <button class="chip" type="button" data-license="by">CC BY</button>
+            <button class="chip" type="button" data-license="sa">CC BY-SA</button>
+            <button class="chip" type="button" data-license="nc">CC BY-NC</button>
+            <button class="chip" type="button" data-license="nd">CC BY-ND</button>
+            <button class="chip" type="button" data-license="zero">CC0</button>
+            <button class="chip" type="button" data-license="all">All rights reserved</button>
+          </div>
+          <p data-license-result>Pick a license mark.</p>
+        </div>
+        <div class="two">
+          <article class="panel track-56"><h3>Project: credit strip</h3><p>Find one keychain or animal on Printables or Thingiverse that is CC BY or CC0. Write the title, the maker, and the license on a paper strip you could tape to the print. Do not download an NC model if you hope to sell anything later.</p></article>
+          <article class="panel track-78"><h3>Project: remix or not</h3><p>Pick two models. For each, say if you may (1) print for class, (2) change the file, (3) sell a print at a fair. Quote the license name from the page. If a NASA model has extra terms, those win over your guess.</p></article>
+        </div>
+        <form class="panel quiz track-56" data-section="model-libraries" data-pass="3">
+          <h3>Quick check · grades 5–6</h3>
+          <fieldset><legend>Before you print someone else’s file you…</legend><label><input type="radio" name="l56a" value="1"> read the license and write their name</label><label><input type="radio" name="l56a" value="0"> only check that the picture looks cool</label><p class="why" hidden>The license is the permission. Credit is the thank-you.</p></fieldset>
+          <fieldset><legend>CC BY-NC means…</legend><label><input type="radio" name="l56b" value="0"> sell as many as you want</label><label><input type="radio" name="l56b" value="1"> no selling. Class and gifts can still be okay</label><p class="why" hidden>NC means noncommercial. A school fair sale is commercial.</p></fieldset>
+          <fieldset><legend>CC BY-ND means…</legend><label><input type="radio" name="l56c" value="1"> do not change the model</label><label><input type="radio" name="l56c" value="0"> change it any way you like</label><p class="why" hidden>ND is no derivatives. Print it as the maker shared it.</p></fieldset>
+          <fieldset><legend>Printables and Thingiverse are…</legend><label><input type="radio" name="l56d" value="1"> libraries of files other people designed</label><label><input type="radio" name="l56d" value="0"> automatic permission to start a shop</label><p class="why" hidden>Each file has its own license. The website is not a blanket “yes.”</p></fieldset>
+          <button class="btn primary" type="submit">Check answers</button><p class="quiz-result" aria-live="polite"></p>
+        </form>
+        <form class="panel quiz track-78" data-section="model-libraries" data-pass="3">
+          <h3>Quick check · grades 7–8</h3>
+          <fieldset><legend>Copyright on a model…</legend><label><input type="radio" name="l78a" value="1"> starts when the maker creates it, even with no © symbol</label><label><input type="radio" name="l78a" value="0"> only exists if they paid for a patent</label><p class="why" hidden>Copyright and patents are different. A design file is copyrighted automatically.</p></fieldset>
+          <fieldset><legend>CC BY-SA on a remix means…</legend><label><input type="radio" name="l78b" value="1"> your new file keeps the same ShareAlike license, with credit</label><label><input type="radio" name="l78b" value="0"> you may lock the remix as all-rights-reserved</label><p class="why" hidden>ShareAlike passes the same freedoms forward.</p></fieldset>
+          <fieldset><legend>CC0 means…</legend><label><input type="radio" name="l78c" value="1"> the maker dedicated the work to the public domain as far as they can</label><label><input type="radio" name="l78c" value="0"> you must pay a royalty</label><p class="why" hidden>CC0 is the most open mark. Credit is still good practice, and other laws can still apply.</p></fieldset>
+          <fieldset><legend>A NASA 3D model…</legend><label><input type="radio" name="l78d" value="0"> is always free to sell because it is from a government lab</label><label><input type="radio" name="l78d" value="1"> still needs the terms on that item’s page</label><p class="why" hidden>Read the item. Do not invent a license from the agency name.</p></fieldset>
+          <button class="btn primary" type="submit">Check answers</button><p class="quiz-result" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section class="module" id="slicing">
+        <div class="module-head"><div><p class="module-index">Module 07</p><h2>Slicing and printing</h2></div></div>
+        <ul class="goals">
+          <li><span>Goal</span>Say what a slicer does.</li>
+          <li><span>Goal</span>Change layer height, infill, and supports on purpose.</li>
+          <li><span>Goal</span>Estimate time and grams, then trust the slicer preview more.</li>
+        </ul>
+        <p class="track-56">A slicer cuts the model into layers and writes the path. Free ones: <a href="https://www.prusa3d.com/p/prusaslicer/">PrusaSlicer</a>, <a href="https://ultimaker.com/software/ultimaker-cura/">UltiMaker Cura</a>, <a href="https://bambulab.com/en/download/studio">Bambu Studio</a>, and <a href="https://github.com/OrcaSlicer/OrcaSlicer">OrcaSlicer</a>. Thicker layers are faster and more visible. Infill is the pattern inside. Supports hold up steep overhangs.</p>
+        <p class="track-78">The slicer turns a solid into G-code: temperatures, paths, and speeds. Layer height is usually 25–75% of the nozzle diameter. More perimeters often add more strength than a jump from 15% to 40% infill. Supports cost time and leave scars. The calculator below is the same classroom model used on the take-home lab: shell share plus infill, PLA at 1.24 g/cm³, about 12 mm³/s at 0.20 mm layers. It is not a slicer.</p>
+        <div class="panel video-layout">
+          <div class="player" data-video="slicing">
+            <div class="poster" aria-hidden="true"><svg viewBox="0 0 420 220"><text x="24" y="48" fill="#fff" font-family="Fraunces, Georgia, serif" font-size="28">Slice it</text><path class="layer" d="M40 160 H200" stroke="#2ee6d6" stroke-width="8"/><path class="layer" d="M50 140 H180" stroke="#ff4d8d" stroke-width="6"/><path class="layer" d="M70 120 H150" stroke="#ffb020" stroke-width="4"/></svg></div>
+            <video controls playsinline preload="none"><source src="assets/videos/slicing.mp4" type="video/mp4"></video>
+            <p class="player-status">Custom explainer slot for slicing.mp4.</p>
+          </div>
+          <aside class="caption-card"><p class="kicker">On-screen intro</p><h3>The slicer is the translator</h3><p class="caption-line">Your STL is a shape. The slicer turns it into layers, infill, supports, and a time estimate.</p></aside>
+        </div>
+        <div class="yt-grid one">
+          <figure class="yt"><iframe src="https://www.youtube-nocookie.com/embed/_kIqMPNQNSw" title="3D Revolution: PrusaSlicer Beginner Tutorial" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe><figcaption>3D Revolution — PrusaSlicer beginner tutorial</figcaption></figure>
+        </div>
+        <figure class="panel info-card reveal">
+          <svg viewBox="0 0 880 280" role="img" aria-labelledby="sliceTitle sliceDesc">
+            <title id="sliceTitle">Layer height and infill</title>
+            <desc id="sliceDesc">A short stack of thick layers beside a tall stack of thin layers, plus a grid infill pattern inside a rounded rectangle.</desc>
+            <rect width="880" height="280" rx="24" fill="#102033"/>
+            <g class="pop">
+              <rect x="60" y="150" width="140" height="22" fill="#ffb020"/>
+              <rect x="60" y="122" width="140" height="22" fill="#ff4d8d"/>
+              <rect x="60" y="94" width="140" height="22" fill="#2ee6d6"/>
+              <text x="60" y="210" fill="#fff" font-family="Outfit, sans-serif">0.28 mm · fast, visible steps</text>
+            </g>
+            <g class="pop">
+              <g fill="#8d7bff">
+                <rect x="360" y="168" width="140" height="8"/>
+                <rect x="360" y="156" width="140" height="8"/>
+                <rect x="360" y="144" width="140" height="8"/>
+                <rect x="360" y="132" width="140" height="8"/>
+                <rect x="360" y="120" width="140" height="8"/>
+                <rect x="360" y="108" width="140" height="8"/>
+                <rect x="360" y="96" width="140" height="8"/>
+              </g>
+              <text x="360" y="210" fill="#fff" font-family="Outfit, sans-serif">0.12 mm · slower, smoother</text>
+            </g>
+            <g class="pop">
+              <rect x="620" y="80" width="180" height="100" rx="12" fill="none" stroke="#2ee6d6" stroke-width="8"/>
+              <path d="M640 90 v80 M670 90 v80 M700 90 v80 M730 90 v80 M760 90 v80 M640 110 h160 M640 140 h160 M640 170 h160" stroke="#ff4d8d" stroke-width="3"/>
+              <text x="620" y="210" fill="#fff" font-family="Outfit, sans-serif">Infill holds the roof up</text>
+            </g>
+          </svg>
+          <figcaption>Supports are temporary scaffolding for steep overhangs. They are not part of the finished object. A brim is a flat extra outline that helps the first layer stay down.</figcaption>
+        </figure>
+        <div class="panel">
+          <h3>Interactive: time and grams for a 5,000 mm³ keychain</h3>
+          <label class="slider">Layer height <input id="layer-height" type="range" min="0.08" max="0.32" step="0.02" value="0.2"></label>
+          <label class="slider">Infill percent <input id="infill" type="range" min="0" max="100" step="5" value="15"></label>
+          <svg viewBox="0 0 320 80" aria-hidden="true"><rect x="20" y="10" width="280" height="60" rx="10" fill="none" stroke="#8d7bff" stroke-width="4"/><path id="infill-pattern" d="M30 20 H290 M30 35 H290 M30 50 H290 M30 65 H290" stroke="#2ee6d6" fill="none"/></svg>
+          <div class="metric">
+            <div>Plastic<strong data-slice-grams>0 g</strong></div>
+            <div>Time<strong data-slice-time>0 min</strong></div>
+            <div>Of the solid used<strong data-slice-fill>0%</strong></div>
+          </div>
+          <p>Classroom estimate only. PrusaSlicer or Cura will disagree a little, and that preview wins.</p>
+        </div>
+        <div class="two">
+          <article class="panel track-56"><h3>Project: two slices</h3><p>Open your name-tag STL. Slice it once at 0.20 mm and 15% infill, no supports if it sits flat. Write the slicer’s time and grams. Change only the layer height to 0.28 mm and write the new numbers.</p></article>
+          <article class="panel track-78"><h3>Project: strength vs time</h3><p>Slice a small hook three ways: 2 perimeters at 15% infill, 4 perimeters at 15%, and 2 perimeters at 50%. Record time and grams from the slicer. Predict which fails first if you hang a light bag, and say why walls might matter more than infill.</p></article>
+        </div>
+        <form class="panel quiz track-56" data-section="slicing" data-pass="3">
+          <h3>Quick check · grades 5–6</h3>
+          <fieldset><legend>A slicer…</legend><label><input type="radio" name="sl56a" value="1"> turns the model into layers and printer instructions</label><label><input type="radio" name="sl56a" value="0"> heats the nozzle by itself on the desk</label><p class="why" hidden>The slicer is software. The printer does the heating.</p></fieldset>
+          <fieldset><legend>Infill is…</legend><label><input type="radio" name="sl56b" value="1"> the pattern inside the part</label><label><input type="radio" name="sl56b" value="0"> the color of the filament</label><p class="why" hidden>Infill is hidden structure. 15% is plenty for many tags.</p></fieldset>
+          <fieldset><legend>Supports are for…</legend><label><input type="radio" name="sl56c" value="0"> every flat print</label><label><input type="radio" name="sl56c" value="1"> steep parts that would otherwise print in the air</label><p class="why" hidden>A flat tag on its back usually needs no supports.</p></fieldset>
+          <fieldset><legend>This page’s calculator…</legend><label><input type="radio" name="sl56d" value="1"> is a classroom estimate</label><label><input type="radio" name="sl56d" value="0"> is more accurate than the slicer</label><p class="why" hidden>Use it to see the trend. Use the slicer for the real job.</p></fieldset>
+          <button class="btn primary" type="submit">Check answers</button><p class="quiz-result" aria-live="polite"></p>
+        </form>
+        <form class="panel quiz track-78" data-section="slicing" data-pass="3">
+          <h3>Quick check · grades 7–8</h3>
+          <fieldset><legend>Dropping layer height from 0.28 to 0.12 mm usually…</legend><label><input type="radio" name="sl78a" value="1"> adds layers, time, and surface detail</label><label><input type="radio" name="sl78a" value="0"> always uses less plastic</label><p class="why" hidden>Height changes the count of layers more than the volume. Time goes up.</p></fieldset>
+          <fieldset><legend>G-code is…</legend><label><input type="radio" name="sl78b" value="1"> the instruction file the printer follows</label><label><input type="radio" name="sl78b" value="0"> a type of flexible filament</label><p class="why" hidden>The slicer writes G-code. You rarely edit it by hand in this class.</p></fieldset>
+          <fieldset><legend>For many clips, strength comes first from…</legend><label><input type="radio" name="sl78c" value="1"> more perimeters and a smart print direction</label><label><input type="radio" name="sl78c" value="0"> filling the entire part to 100% no matter what</label><p class="why" hidden>Walls carry a lot of the load. 100% infill is slow and can warp.</p></fieldset>
+          <fieldset><legend>The 12 mm³/s number in the estimator…</legend><label><input type="radio" name="sl78d" value="0"> is the exact flow of every school printer</label><label><input type="radio" name="sl78d" value="1"> is a baseline so the class can compare settings</label><p class="why" hidden>Real flow depends on the nozzle, material, and speed limits.</p></fieldset>
+          <button class="btn primary" type="submit">Check answers</button><p class="quiz-result" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section class="module" id="troubleshooting">
+        <div class="module-head"><div><p class="module-index">Module 08</p><h2>Troubleshooting</h2></div></div>
+        <ul class="goals">
+          <li><span>Goal</span>Recognize stringing, warping, spaghetti, and a bad first layer.</li>
+          <li><span>Goal</span>Name the first fix a teacher would try.</li>
+          <li><span>Goal</span>Change one thing at a time.</li>
+        </ul>
+        <p class="track-56">Prints fail in ways you can see. Hairs between parts are stringing. Lifted corners are warping. A tangle of plastic where the part used to be is spaghetti. A messy first layer means the nozzle height is wrong. Tell a teacher. Do not turn knobs alone.</p>
+        <p class="track-78">Diagnose, then change one setting. Stringing: dry filament, then temperature and retraction inside the spool’s range. Warping: clean bed, brim, no drafts; ABS is worse than PLA. Spaghetti: the part released or an overhang had no support. First layer: too close grinds the bed, too far leaves round loose lines. Prusa’s first-layer guide is a solid reference for the picture, even on other machines.</p>
+        <div class="panel video-layout">
+          <div class="player" data-video="troubleshooting">
+            <div class="poster" aria-hidden="true"><svg viewBox="0 0 420 220"><text x="24" y="48" fill="#fff" font-family="Fraunces, Georgia, serif" font-size="28">What went wrong?</text><path class="layer" d="M40 150 C80 80 120 160 160 100" fill="none" stroke="#ff4d8d" stroke-width="3"/><path class="layer" d="M200 160 l20-30 20 20 30-40" fill="none" stroke="#ffb020" stroke-width="4"/></svg></div>
+            <video controls playsinline preload="none"><source src="assets/videos/troubleshooting.mp4" type="video/mp4"></video>
+            <p class="player-status">Custom explainer slot for troubleshooting.mp4.</p>
+          </div>
+          <aside class="caption-card"><p class="kicker">On-screen intro</p><h3>Look, name it, change one thing</h3><p class="caption-line">Stringing, warping, spaghetti, and a bad first layer each have a picture and a first fix.</p></aside>
+        </div>
+        <div class="yt-grid one">
+          <figure class="yt"><iframe src="https://www.youtube-nocookie.com/embed/t_7EMnQ6Rlc" title="Teaching Tech: How a 3DBenchy can tell where your 3D prints need improvement" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe><figcaption>Teaching Tech — reading a 3DBenchy, including the first layer</figcaption></figure>
+        </div>
+        <figure class="panel info-card reveal">
+          <svg viewBox="0 0 880 300" role="img" aria-labelledby="fixTitle fixDesc">
+            <title id="fixTitle">Four print failures</title>
+            <desc id="fixDesc">Stringing shown as hairs between two towers, warping shown as a curled corner, spaghetti shown as a tangle, and a first layer that is too squished beside one that is too loose.</desc>
+            <rect width="880" height="300" rx="24" fill="#102033"/>
+            <g class="pop" font-family="Outfit, sans-serif" fill="#edf3ff" font-size="14">
+              <rect x="30" y="30" width="190" height="160" rx="12" fill="#1c3148"/>
+              <rect x="60" y="70" width="24" height="70" fill="#2ee6d6"/><rect x="150" y="70" width="24" height="70" fill="#2ee6d6"/>
+              <path d="M84 90 C110 110 120 80 150 100 M84 120 C120 90 130 140 150 120" stroke="#ff4d8d" fill="none"/>
+              <text x="48" y="215">Stringing</text>
+              <rect x="240" y="30" width="190" height="160" rx="12" fill="#1c3148"/>
+              <path d="M270 150 h120 l-10-20 h-90 z" fill="#ffb020"/>
+              <path d="M270 150 q10 -30 20 0" fill="none" stroke="#ff4d8d" stroke-width="4"/>
+              <text x="258" y="215">Warping</text>
+              <rect x="450" y="30" width="190" height="160" rx="12" fill="#1c3148"/>
+              <path d="M480 150 c20-40 10-20 30-50 c10 30 20 10 40-20 c-10 40 20 10 30 40z" fill="#ff4d8d"/>
+              <text x="468" y="215">Spaghetti</text>
+              <rect x="660" y="30" width="190" height="160" rx="12" fill="#1c3148"/>
+              <path d="M690 120 h60" stroke="#2ee6d6" stroke-width="10"/>
+              <path d="M690 145 h14 M710 145 h14 M730 145 h14" stroke="#ffb020" stroke-width="6"/>
+              <text x="678" y="215">First layer</text>
+            </g>
+          </svg>
+          <figcaption>Too-close first layers look smashed and transparent. Too-far first layers look like separate ropes. A good one is slightly squished and stuck. Reference pictures: <a href="https://help.prusa3d.com/article/first-layer-issues_1804">Prusa, first layer issues</a>.</figcaption>
+        </figure>
+        <div class="panel">
+          <h3>Interactive: name that failure</h3>
+          <div class="row">
+            <button class="symptom" type="button" data-symptom="stringing">Hairs between towers</button>
+            <button class="symptom" type="button" data-symptom="warping">Corners lifting</button>
+            <button class="symptom" type="button" data-symptom="spaghetti">A bird’s nest</button>
+            <button class="symptom" type="button" data-symptom="first">Loose or smashed first layer</button>
+          </div>
+          <p data-symptom-result>Pick a picture in words.</p>
+        </div>
+        <div class="two">
+          <article class="panel track-56"><h3>Project: failure comic</h3><p>Draw a four-panel comic of one failure and the fix you would ask a teacher to try. No knobs unless they hand them to you.</p></article>
+          <article class="panel track-78"><h3>Project: one-variable log</h3><p>Watch a teacher reprint a stringing test. Log the single change (dry filament, or −5°C, or retraction). Predict the result before the print finishes. Write whether you were right.</p></article>
+        </div>
+        <form class="panel quiz track-56" data-section="troubleshooting" data-pass="3">
+          <h3>Quick check · grades 5–6</h3>
+          <fieldset><legend>Cobweb hairs are called…</legend><label><input type="radio" name="t56a" value="1"> stringing</label><label><input type="radio" name="t56a" value="0"> infill</label><p class="why" hidden>Stringing is stray plastic between parts.</p></fieldset>
+          <fieldset><legend>A corner that curls up is…</legend><label><input type="radio" name="t56b" value="1"> warping</label><label><input type="radio" name="t56b" value="0"> a successful brim</label><p class="why" hidden>Warping lifts the part off the bed. A brim is the fix, not the curl.</p></fieldset>
+          <fieldset><legend>Spaghetti usually means…</legend><label><input type="radio" name="t56c" value="0"> the colors mixed on purpose</label><label><input type="radio" name="t56c" value="1"> the nozzle printed without the part staying put</label><p class="why" hidden>Once the part moves, the rest is a tangle.</p></fieldset>
+          <fieldset><legend>Your first move is…</legend><label><input type="radio" name="t56d" value="1"> stop and get a teacher</label><label><input type="radio" name="t56d" value="0"> reach in and grab the nozzle</label><p class="why" hidden>Hot parts and moving belts come first. Then the diagnosis.</p></fieldset>
+          <button class="btn primary" type="submit">Check answers</button><p class="quiz-result" aria-live="polite"></p>
+        </form>
+        <form class="panel quiz track-78" data-section="troubleshooting" data-pass="3">
+          <h3>Quick check · grades 7–8</h3>
+          <fieldset><legend>A good test changes…</legend><label><input type="radio" name="t78a" value="1"> one variable</label><label><input type="radio" name="t78a" value="0"> temperature, retraction, speed, and infill together</label><p class="why" hidden>If you change four things, you will not know which one helped.</p></fieldset>
+          <fieldset><legend>Damp PETG often shows up as…</legend><label><input type="radio" name="t78b" value="1"> stringing, popping, or weak layers</label><label><input type="radio" name="t78b" value="0"> a perfectly glossy first layer every time</label><p class="why" hidden>Water in the filament flashes to steam in the hotend.</p></fieldset>
+          <fieldset><legend>A brim helps warping because it…</legend><label><input type="radio" name="t78c" value="1"> adds stuck-down area around the part</label><label><input type="radio" name="t78c" value="0"> cools the nozzle</label><p class="why" hidden>More first-layer area, especially at corners, fights lift.</p></fieldset>
+          <fieldset><legend>Elephant’s foot (a squashed bottom edge) often means…</legend><label><input type="radio" name="t78d" value="0"> the nozzle is too far from the bed</label><label><input type="radio" name="t78d" value="1"> the first layer is too close or the bed is too hot</label><p class="why" hidden>Too far looks like separate lines. Too close smooshes plastic outward.</p></fieldset>
+          <button class="btn primary" type="submit">Check answers</button><p class="quiz-result" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section class="module" id="vex-robotics">
+        <div class="module-head"><div><p class="module-index">Module 09</p><h2>3D printing for VEX Robotics</h2></div></div>
+        <ul class="goals">
+          <li><span>Goal</span>Tell VEX IQ and VEX V5 hole patterns apart using official sizes.</li>
+          <li><span>Goal</span>Design a practice part around that grid, with clearance you can test.</li>
+          <li><span>Goal</span>Keep competition parts and practice parts in two different piles.</li>
+        </ul>
+        <p class="track-56"><strong>VEX IQ</strong> is the system many grades 5–6 teams build with: plastic beams, connector pins, and a snap fit. Official pitch is <strong>12.70 mm (0.5 in)</strong>. The standard snap hole is <strong>4.20 mm</strong> across and about <strong>4.57 mm</strong> deep. Square shaft holes are <strong>3.20 mm</strong>. Those numbers are from VEX’s “Important VEX IQ Beam Dimensions” drawing dated 2014-03-26, and the pitch is repeated in the VEX Library article on the plastic construction system.</p>
+        <p class="track-78"><strong>VEX V5</strong> structure is metal. Product pages for plates and C-channels say holes are on <strong>0.500 in</strong> increments and the opening is <strong>0.182 in square</strong> (VEX calls that the standard hole). The kit’s structural screws are <strong>#8-32</strong>, listed on the V5 Classroom Starter Kit and in VEX structure lessons. A round printed hole is not the same shape as that square. Start a test coupon around 4.8–5.2 mm and adjust. That range is a classroom suggestion, not a VEX specification.</p>
+        <div class="callout">
+          <p><span class="tag practice">Practice only</span> <span class="tag legal-check">Check this season</span></p>
+          <p>Custom prints are for practice robots, pits, cable organization off the field, jigs, and prototypes. Whether any printed piece may go on a competition robot is decided by <em>this season’s</em> game manual and the Q&amp;A on <a href="https://www.robotevents.com/">RobotEvents</a>, not by this course.</p>
+          <p>Checked for this page, and already different from older seasons: <strong>VIQRC 2026–2027 Level Up, Game Manual 2.0</strong>, lists 3D printed parts as prohibited for any purpose, including license plates, license plate holders, and non-functional decorations. It still allows 3D-printed controller attachments that do not physically or electrically modify the controller. <strong>V5RC 2026–2027 Override, version 0.1.2 (14 May 2026)</strong>, lists 3D printed robot parts as prohibited for any purpose, including non-functional decorations and license plates. It says 3D printed controller attachments, alignment tools, and other tools that do not go on the robot or into the field during a match are not robot parts. An older Q&amp;A (VRC 2022–2023) treated some 3D printed decorations differently. That is why “I saw it online” is not a rule. Decorations can be legal while 3D printed parts are still banned. Read the manual your event is using. This course is not a head referee.</p>
+        </div>
+        <div class="panel video-layout">
+          <div class="player" data-video="vex-robotics">
+            <div class="poster" aria-hidden="true"><svg viewBox="0 0 420 220"><text x="24" y="48" fill="#fff" font-family="Fraunces, Georgia, serif" font-size="28">VEX grids</text><g class="layer" fill="#2ee6d6"><circle cx="80" cy="140" r="6"/><circle cx="110" cy="140" r="6"/><circle cx="140" cy="140" r="6"/><circle cx="80" cy="170" r="6"/><circle cx="110" cy="170" r="6"/><circle cx="140" cy="170" r="6"/></g></svg></div>
+            <video controls playsinline preload="none"><source src="assets/videos/vex-robotics.mp4" type="video/mp4"></video>
+            <p class="player-status">Custom explainer slot for vex-robotics.mp4.</p>
+          </div>
+          <aside class="caption-card"><p class="kicker">On-screen intro</p><h3>Design to the grid. Label it practice.</h3><p class="caption-line">IQ pins and V5 screws live on a half-inch pitch. A printed mount is a practice tool until the current manual says otherwise.</p></aside>
+        </div>
+        <div class="yt-grid">
+          <figure class="yt"><iframe src="https://www.youtube-nocookie.com/embed/JvohEXX-FiY" title="VEX Robotics: Getting Started with VEX IQ Generation 2" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe><figcaption>VEX Robotics — Getting Started with VEX IQ (Gen 2)</figcaption></figure>
+          <figure class="yt"><iframe src="https://www.youtube-nocookie.com/embed/oGm897xFieQ" title="Jerry Palardy: Onshape for VEX Robotics, parts library" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe><figcaption>Onshape for VEX — parts library</figcaption></figure>
+        </div>
+        <figure class="panel info-card reveal">
+          <svg viewBox="0 0 880 320" role="img" aria-labelledby="vexTitle vexDesc">
+            <title id="vexTitle">VEX IQ beam beside VEX V5 metal</title>
+            <desc id="vexDesc">Left, a plastic beam with round snap holes on a 12.7 millimeter grid. Right, a metal bar with square holes on a half-inch grid. A printed plate is tagged practice only.</desc>
+            <rect width="880" height="320" rx="24" fill="#102033"/>
+            <g class="pop">
+              <rect x="40" y="70" width="360" height="70" rx="10" fill="#2ee6d6"/>
+              <g fill="#102033"><circle cx="80" cy="105" r="8"/><circle cx="132" cy="105" r="8"/><circle cx="184" cy="105" r="8"/><circle cx="236" cy="105" r="8"/><circle cx="288" cy="105" r="8"/><circle cx="340" cy="105" r="8"/></g>
+              <text x="40" y="180" fill="#fff" font-family="Outfit, sans-serif" font-size="16">VEX IQ · 12.70 mm pitch · 4.20 mm snap hole</text>
+            </g>
+            <g class="pop">
+              <rect x="460" y="70" width="380" height="54" fill="#c9d6e5"/>
+              <g fill="#102033"><rect x="500" y="86" width="16" height="16"/><rect x="552" y="86" width="16" height="16"/><rect x="604" y="86" width="16" height="16"/><rect x="656" y="86" width="16" height="16"/><rect x="708" y="86" width="16" height="16"/></g>
+              <text x="460" y="180" fill="#fff" font-family="Outfit, sans-serif" font-size="16">V5 metal · 0.500 in pitch · 0.182 in square · #8-32</text>
+            </g>
+            <g class="pop">
+              <rect x="280" y="210" width="200" height="70" rx="10" fill="#ff4d8d"/>
+              <text x="300" y="250" fill="#1a1030" font-family="Outfit, sans-serif" font-size="16" font-weight="700">PRACTICE PLATE</text>
+            </g>
+          </svg>
+          <figcaption>Useful practice prints: sensor mounts, cable guides, spacers, funnels for a practice field, tool holders, and team plates for the pit. VEX’s own note on creating IQ parts says not to print the snap pins, standoffs, or corner connectors. Print holes and use official pins. Commercial sale of printed VEX IQ-compatible parts is prohibited by VEX. Official CAD: <a href="https://www.vexrobotics.com/iq/downloads/cad-snapcad">VEX IQ CAD</a>, <a href="https://www.vexrobotics.com/v5-structure.html">V5 structure</a> (CAD on each part), and the <a href="https://www.onshape.com/en/blog/vex-iq-vex-v5-parts-libraries">Onshape VEX libraries</a>. Drawing: <a href="https://content.vexrobotics.com/vexiq/pdf/VEX-IQ-3D-Print-Dimensions_v20140326.PDF">IQ 3D-print dimensions PDF</a>.</figcaption>
+        </figure>
+        <div class="panel">
+          <h3>Interactive: pitch-grid mount builder</h3>
+          <div class="row">
+            <button class="chip" type="button" data-platform="iq" aria-pressed="true">VEX IQ</button>
+            <button class="chip" type="button" data-platform="v5" aria-pressed="false">VEX V5</button>
+          </div>
+          <div class="grid-builder">
+            <div class="pitch-grid" role="group" aria-label="Hole grid, 8 by 5">
+              <script>
+                document.currentScript.insertAdjacentHTML("afterend", Array.from({length:40}, (_,i)=>{
+                  const c=i%8, r=Math.floor(i/8);
+                  return `<button class="hole" type="button" aria-pressed="false" aria-label="Hole column ${c+1} row ${r+1}" data-col="${c}" data-row="${r}"></button>`;
+                }).join(""));
+              </script>
+            </div>
+            <p data-grid-result>Tap holes to grow a practice plate.</p>
+          </div>
+          <h3>Gear ratio, same math as the catapult</h3>
+          <label class="slider">Driver teeth (crank gear) <input id="driver-teeth" type="range" min="8" max="24" value="12"></label>
+          <label class="slider">Driven teeth (arm gear) <input id="driven-teeth" type="range" min="12" max="60" value="36"></label>
+          <p data-gear-result></p>
+        </div>
+        <div class="two">
+          <article class="panel track-56"><h3>Project: practice cable guide</h3><p>In Tinkercad, draw a plate with two holes 12.7 mm apart. Make the holes 4.4 mm so a test pin can start, then open them toward 4.20 mm only if your printer runs large. Label the file PRACTICE. Do not put it on a competition robot. VEX recommends drilling to 4.2 mm if the printer is not precise, and says not to print the pins themselves.</p></article>
+          <article class="panel track-78"><h3>Project: practice sensor mount</h3><p>Import a V5 or IQ CAD part into Onshape or Fusion. Design a mount that uses the real pitch. For V5, plan a round clearance test, not a copy of the 0.182 in square, and write the measured fit. Add 3–4 perimeters, 30% infill or more, and print holes across the layer lines if the part must not split. PETG only if a teacher runs that profile. Stamp it PRACTICE and cite the manual you checked.</p></article>
+        </div>
+        <form class="panel quiz track-56" data-section="vex-robotics" data-pass="3">
+          <h3>Quick check · grades 5–6</h3>
+          <fieldset><legend>VEX IQ hole pitch is…</legend><label><input type="radio" name="v56a" value="1"> 12.70 mm, which is 0.5 inch</label><label><input type="radio" name="v56a" value="0"> 10 mm, because metric is always 10</label><p class="why" hidden>VEX IQ uses a half-inch grid, written 12.70 mm on the official drawing.</p></fieldset>
+          <fieldset><legend>The official IQ snap hole is…</legend><label><input type="radio" name="v56b" value="1"> 4.20 mm across</label><label><input type="radio" name="v56b" value="0"> a #8-32 screw hole</label><p class="why" hidden>#8-32 belongs to V5 metal. IQ snap holes are 4.20 mm.</p></fieldset>
+          <fieldset><legend>You should 3D print official-style pins…</legend><label><input type="radio" name="v56c" value="0"> yes, they are the easiest part</label><label><input type="radio" name="v56c" value="1"> no. VEX says snap geometry breaks. Use real pins</label><p class="why" hidden>Print plates with holes. Keep the factory pins.</p></fieldset>
+          <fieldset><legend>A mount you printed today…</legend><label><input type="radio" name="v56d" value="1"> stays on the practice bot unless the current manual allows it</label><label><input type="radio" name="v56d" value="0"> is automatically legal because it fits</label><p class="why" hidden>Fit is not legality. Check the game manual and the Q&amp;A.</p></fieldset>
+          <button class="btn primary" type="submit">Check answers</button><p class="quiz-result" aria-live="polite"></p>
+        </form>
+        <form class="panel quiz track-78" data-section="vex-robotics" data-pass="3">
+          <h3>Quick check · grades 7–8</h3>
+          <fieldset><legend>V5 metal holes are…</legend><label><input type="radio" name="v78a" value="1"> 0.182 inch square on a 0.500 inch grid</label><label><input type="radio" name="v78a" value="0"> 4.20 mm round snap holes</label><p class="why" hidden>4.20 mm is the IQ snap. V5 structure pages list 0.182 inch square holes.</p></fieldset>
+          <fieldset><legend>The 2026–27 manuals reviewed for this course…</legend><label><input type="radio" name="v78b" value="1"> prohibit 3D printed robot parts, including non-functional decorations, with narrow exceptions for some tools and controller attachments</label><label><input type="radio" name="v78b" value="0"> allow any printed intake if it looks non-functional</label><p class="why" hidden>Those two manuals are explicit. A future update or Q&amp;A can change the event you attend. Read that one.</p></fieldset>
+          <fieldset><legend>36 teeth driven by 12 teeth is a ratio of…</legend><label><input type="radio" name="v78c" value="1"> 3 to 1. The big gear turns once per three crank turns</label><label><input type="radio" name="v78c" value="0"> 12 to 36, so the arm spins faster</label><p class="why" hidden>Ratio here is driven divided by driver. The arm side is slower and can pull harder.</p></fieldset>
+          <fieldset><legend>Strength for a practice mount comes from…</legend><label><input type="radio" name="v78d" value="1"> more walls, sensible infill, and printing so layers are not the split plane</label><label><input type="radio" name="v78d" value="0"> the brightest PLA color</label><p class="why" hidden>Orientation and walls matter. PETG can help, with a teacher’s profile.</p></fieldset>
+          <button class="btn primary" type="submit">Check answers</button><p class="quiz-result" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section class="module" id="business">
+        <div class="module-head"><div><p class="module-index">Module 10</p><h2>From idea to business</h2></div></div>
+        <ul class="goals">
+          <li><span>Goal</span>Walk a design-thinking loop: people, problem, ideas, prototype, test.</li>
+          <li><span>Goal</span>Compare making-and-selling with licensing.</li>
+          <li><span>Goal</span>Price a small product without pretending this is legal advice.</li>
+        </ul>
+        <p class="track-56">Riley, a fictional Jordan Glen student, noticed headphones falling off desks. Riley printed a hook, tested it, and sold six at the school fair for $3 with a teacher’s help. A shop later asked to make the hook. That second path is licensing: they make it, Riley’s family might get a small payment from each sale. Nothing here is a real company offer.</p>
+        <p class="track-78">Same story, more numbers. Filament, failed prints, a paper tag, and fair fees are costs. Profit is what remains after those, not the sticker price. A license might pay a royalty, a percent or a few cents per item, negotiated by adults. Patents, trademarks, and copyright are different tools. This page is a classroom picture, not legal advice. A parent or the school decides before anyone signs an NDA or talks to a company.</p>
+        <div class="panel video-layout">
+          <div class="player" data-video="business">
+            <div class="poster" aria-hidden="true"><svg viewBox="0 0 420 220"><text x="24" y="48" fill="#fff" font-family="Fraunces, Georgia, serif" font-size="28">Make it or license it</text><path class="layer" d="M60 160 H180" stroke="#2ee6d6" stroke-width="8"/><path class="layer" d="M180 160 L260 100" stroke="#ff4d8d" stroke-width="8"/><path class="layer" d="M180 160 L260 180" stroke="#ffb020" stroke-width="8"/></svg></div>
+            <video controls playsinline preload="none"><source src="assets/videos/business.mp4" type="video/mp4"></video>
+            <p class="player-status">Custom explainer slot for business.mp4.</p>
+          </div>
+          <aside class="caption-card"><p class="kicker">On-screen intro</p><h3>Two ways a good idea can travel</h3><p class="caption-line">You can make each one and sell it. Or a company can make them and pay you a slice. Both start with a person who has a problem.</p></aside>
+        </div>
+        <div class="yt-grid one">
+          <figure class="yt"><iframe src="https://www.youtube-nocookie.com/embed/OhYvDS7q_V8" title="TED: Lisa Harouni, a primer on 3D printing" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe><figcaption>TED — Lisa Harouni on 3D printing, custom products, and making</figcaption></figure>
+        </div>
+        <figure class="panel info-card reveal">
+          <svg viewBox="0 0 880 300" role="img" aria-labelledby="bizTitle bizDesc">
+            <title id="bizTitle">Design loop and the sell-or-license fork</title>
+            <desc id="bizDesc">Five steps in a loop: empathize, define, ideate, prototype, test. Then the path splits. One arrow goes to make and sell. The other goes to license.</desc>
+            <rect width="880" height="300" rx="24" fill="#102033"/>
+            <g fill="#edf3ff" font-family="Outfit, sans-serif" font-size="13">
+              <g class="pop"><circle cx="90" cy="80" r="28" fill="#2ee6d6"/><text x="60" y="130">Empathize</text></g>
+              <g class="pop"><circle cx="210" cy="80" r="28" fill="#8d7bff"/><text x="186" y="130">Define</text></g>
+              <g class="pop"><circle cx="330" cy="80" r="28" fill="#ff4d8d"/><text x="306" y="130">Ideate</text></g>
+              <g class="pop"><circle cx="450" cy="80" r="28" fill="#ffb020"/><text x="414" y="130">Prototype</text></g>
+              <g class="pop"><circle cx="570" cy="80" r="28" fill="#b6ef4a"/><text x="548" y="130">Test</text></g>
+              <path class="draw" d="M120 80 H180 M240 80 H300 M360 80 H420 M480 80 H540 M570 120 C400 200 160 180 90 110" fill="none" stroke="#fff" stroke-width="3"/>
+              <path class="draw" d="M450 160 v30 l-80 40" stroke="#2ee6d6" fill="none" stroke-width="4"/>
+              <path class="draw" d="M450 190 l80 40" stroke="#ff4d8d" fill="none" stroke-width="4"/>
+              <text x="300" y="250">Make and sell</text>
+              <text x="520" y="250">License it</text>
+            </g>
+          </svg>
+          <figcaption>Make and sell: you control each item, you do the work, you keep the price minus costs. License: a company manufactures, you earn a royalty if the contract says so. Places to sell with adults: a school fair, Etsy only through a parent account, or a local shop that agrees in writing. “Patent pending” means an application was filed, not that a patent was granted. Do not print those words unless that is actually true. An NDA is a promise to keep an idea secret. Read it with a parent before anyone signs.</figcaption>
+        </figure>
+        <div class="fork">
+          <article class="panel"><h3>Manufacture and sell</h3><p class="pro">You learn every step and keep the full price minus costs.</p><p class="con">You must make, pack, and deliver each one. A bad batch is your Saturday.</p></article>
+          <article class="panel"><h3>License it</h3><p class="pro">Someone else with real machines can reach more people.</p><p class="con">You earn a slice, not the whole price, and only if adults sign a real deal. Most school ideas are not patented, and that is okay.</p></article>
+        </div>
+        <div class="panel">
+          <h3>Interactive: cost, price, and profit</h3>
+          <label class="slider">Filament grams <input id="cost-grams" type="number" value="20" min="1"></label>
+          <label class="slider">PLA price per kilogram <input id="cost-kg" type="number" value="20" min="1"></label>
+          <label class="slider">Minutes of printer time <input id="cost-minutes" type="number" value="40" min="1"></label>
+          <label class="slider">Shop rate, dollars per hour (0 at school) <input id="cost-rate" type="number" value="0" min="0"></label>
+          <label class="slider">Markup percent <input id="cost-markup" type="number" value="80" min="0"></label>
+          <label class="slider">How many you sell <input id="cost-qty" type="number" value="6" min="1"></label>
+          <p class="track-78"><label class="slider">Packaging each <input id="cost-pack" type="number" value="0" min="0" step="0.05"></label>
+          <label class="slider">Fee percent (fair or shop) <input id="cost-fee" type="number" value="0" min="0"></label></p>
+          <div class="metric">
+            <div>Filament<strong data-cost-filament>$0</strong></div>
+            <div>Cost each<strong data-cost-unit>$0</strong></div>
+            <div>Price each<strong data-cost-price>$0</strong></div>
+          </div>
+          <p class="track-78">Revenue <strong data-cost-revenue>$0</strong> · Profit after fee <strong data-cost-profit>$0</strong>. Profit is not the markup. Failed prints and fees eat it.</p>
+        </div>
+        <form class="panel form-grid" data-save="pitch" id="pitch">
+          <h3>Product pitch worksheet</h3>
+          <p>Saved in this browser. <a href="print/product-pitch.html">Open the printable sheet</a>.</p>
+          <label>Product name <input name="name"></label>
+          <label>Who has the problem? <input name="who"></label>
+          <label>The problem in one sentence <textarea name="problem" rows="2"></textarea></label>
+          <label>Your solution <textarea name="solution" rows="2"></textarea></label>
+          <label>Make-and-sell or license, and why <textarea name="path" rows="2"></textarea></label>
+          <label>Price and what it includes <input name="price"></label>
+        </form>
+        <form class="panel form-grid track-78" data-save="plan">
+          <h3>One-page business plan</h3>
+          <p><a href="print/business-plan.html">Printable template</a>.</p>
+          <label>Customer <input name="customer"></label>
+          <label>Offer <input name="offer"></label>
+          <label>Cost to make one <input name="cost"></label>
+          <label>Price <input name="price"></label>
+          <label>How you will test ten people <textarea name="test" rows="2"></textarea></label>
+          <label>What you will not promise (no fake patent) <textarea name="limits" rows="2"></textarea></label>
+        </form>
+        <form class="panel quiz track-56" data-section="business" data-pass="3">
+          <h3>Quick check · grades 5–6</h3>
+          <fieldset><legend>Licensing means…</legend><label><input type="radio" name="b56a" value="1"> a company makes the product and may pay the inventor a slice</label><label><input type="radio" name="b56a" value="0"> you must build every item in your kitchen</label><p class="why" hidden>Licensing lets someone else manufacture. The deal is for adults to sign.</p></fieldset>
+          <fieldset><legend>“Patent pending” means…</legend><label><input type="radio" name="b56b" value="0"> the patent is approved</label><label><input type="radio" name="b56b" value="1"> someone filed an application. It might not be granted</label><p class="why" hidden>Do not write it on a project unless an application really exists.</p></fieldset>
+          <fieldset><legend>A school fair sale should…</legend><label><input type="radio" name="b56c" value="1"> happen with a teacher or parent, and only if you own the design</label><label><input type="radio" name="b56c" value="0"> use any model from the internet</label><p class="why" hidden>NC licenses and other people’s copyright block a sale.</p></fieldset>
+          <fieldset><legend>Copyright is…</legend><label><input type="radio" name="b56d" value="1"> protection for your drawing, photo, and design file</label><label><input type="radio" name="b56d" value="0"> the same thing as a patent on every hook in the world</label><p class="why" hidden>Copyright does not own the general idea of “a hook.”</p></fieldset>
+          <button class="btn primary" type="submit">Check answers</button><p class="quiz-result" aria-live="polite"></p>
+        </form>
+        <form class="panel quiz track-78" data-section="business" data-pass="3">
+          <h3>Quick check · grades 7–8</h3>
+          <fieldset><legend>Profit is…</legend><label><input type="radio" name="b78a" value="1"> money taken in minus filament, time, packaging, fees, and failures</label><label><input type="radio" name="b78a" value="0"> the sticker price</label><p class="why" hidden>Revenue is the sticker times quantity. Profit is what is left.</p></fieldset>
+          <fieldset><legend>A trademark protects…</legend><label><input type="radio" name="b78b" value="1"> a name or logo that tells buyers the product is yours</label><label><input type="radio" name="b78b" value="0"> the mechanical way a hinge works</label><p class="why" hidden>How it works is patent territory, and most student products never need one.</p></fieldset>
+          <fieldset><legend>An NDA…</legend><label><input type="radio" name="b78c" value="1"> is a secrecy promise an adult should read before anyone signs</label><label><input type="radio" name="b78c" value="0"> is a student badge you can invent</label><p class="why" hidden>Do not sign, and do not ask a company to sign, without a parent or the school.</p></fieldset>
+          <fieldset><legend>A royalty is…</legend><label><input type="radio" name="b78d" value="0"> always 10 percent by law</label><label><input type="radio" name="b78d" value="1"> whatever the contract says, often a percent or an amount per item</label><p class="why" hidden>There is no universal school royalty. Adults negotiate it. Sometimes the answer is no deal.</p></fieldset>
+          <button class="btn primary" type="submit">Check answers</button><p class="quiz-result" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section class="module" id="capstone">
+        <div class="module-head"><div><p class="module-index">Module 11</p><h2>Capstone and teacher resources</h2></div></div>
+        <ul class="goals">
+          <li><span>Goal</span>Finish a personal printed project and explain one improvement.</li>
+          <li><span>Goal</span>Use the take-home lab as the main build.</li>
+          <li><span>Goal</span>Teachers can pace, supply, and grade the unit.</li>
+        </ul>
+        <p>Plan on <strong>8 to 10 weeks</strong>. Week 1 what-it-is and safety. Week 2 printer and materials. Weeks 3–4 CAD. Week 5 libraries and slicing. Week 6 first prints and troubleshooting. Week 7 VEX practice lab for robotics students. Week 8 idea-to-business. Weeks 9–10 the take-home build, test, and a short show-and-tell.</p>
+        <div class="panel video-layout">
+          <div class="player" data-video="capstone">
+            <div class="poster" aria-hidden="true"><svg viewBox="0 0 420 220"><text x="24" y="48" fill="#fff" font-family="Fraunces, Georgia, serif" font-size="28">Your capstone</text><rect class="layer" x="70" y="140" width="280" height="16" fill="#2ee6d6"/><rect class="layer" x="100" y="118" width="220" height="16" fill="#ff4d8d"/></svg></div>
+            <video controls playsinline preload="none"><source src="assets/videos/capstone.mp4" type="video/mp4"></video>
+            <p class="player-status">Custom explainer slot for capstone.mp4.</p>
+          </div>
+          <aside class="caption-card"><p class="kicker">On-screen intro</p><h3>Show what you can make</h3><p class="caption-line">Design it, slice it, print it, test it, and tell the class one thing you changed.</p></aside>
+        </div>
+        <div class="yt-grid one">
+          <figure class="yt"><iframe src="https://www.youtube-nocookie.com/embed/cG6jfeUNwtM" title="Crick Kids: What is 3D Printing? Science for Kids" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe><figcaption>Crick Kids — making a tool that did not exist yet</figcaption></figure>
+        </div>
+        <div class="two">
+          <article class="panel">
+            <h3>Materials list</h3>
+            <ul>
+              <li>School FDM printer, 0.4 mm nozzle, PLA only unless a teacher adds PETG</li>
+              <li>1.75 mm PLA, about 2 kg per class of 20 once failures are included</li>
+              <li>Computers, browsers, Tinkercad classroom or Onshape/Fusion education seats</li>
+              <li>PrusaSlicer, Cura, Bambu Studio, or OrcaSlicer</li>
+              <li>Teacher-only: scraper, flush cutters, isopropyl for the bed if the bed allows it</li>
+              <li>Calipers for grades 7–8, rubber bands, pom-poms, a cardboard target box</li>
+              <li>Notebooks for tests and the pitch sheet</li>
+            </ul>
+          </article>
+          <article class="panel">
+            <h3>Rubric, 1 to 4</h3>
+            <ul>
+              <li>Problem and audience are clear</li>
+              <li>CAD file is original or properly credited</li>
+              <li>Print settings match the job</li>
+              <li>Assembly and tolerances were tested</li>
+              <li>One improvement is documented</li>
+              <li>Safety rules were followed</li>
+              <li>Pitch or show-and-tell is honest about what is not patented</li>
+            </ul>
+            <p><a href="print/rubric.html">Printable rubric and pacing</a> · <a href="print/certificate.html">Certificate</a></p>
+          </article>
+        </div>
+
+        <div class="take-home" id="take-home-project">
+          <div class="take-home-inner">
+            <p class="kicker">Featured lab</p>
+            <div class="project-hero">
+              <div>
+                <h3>Take-Home Lab Project</h3>
+                <p>Over the last weeks you design, print, assemble, personalize, and carry home a multi-part project. Starter files are templates. Remix them.</p>
+                <p class="track-56"><span class="tag">Grades 5–6</span> <strong>Desk Buddy Bot</strong>, about 8–12 cm. Pen cup body, phone stand on the back, swivel head, press-fit arms, feet, and a name plate from Tinkercad.</p>
+                <p class="track-78"><span class="tag">Grades 7–8</span> <strong>Crank-Gear Mini Catapult</strong>. A 12-tooth pinion driving a 36-tooth gear is a <strong>3:1</strong> ratio. The arm is slower and can pull harder. Soft pom-poms only. Aim at a box, never at a person.</p>
+              </div>
+              <svg viewBox="0 0 360 220" role="img" aria-label="Desk buddy and catapult hero drawing">
+                <rect width="360" height="220" rx="20" fill="#102033"/>
+                <g class="track-56">
+                  <circle cx="170" cy="48" r="22" fill="#ff4d8d"/>
+                  <rect x="148" y="74" width="44" height="70" rx="16" fill="#2ee6d6"/>
+                  <rect x="120" y="90" width="28" height="10" rx="4" fill="#ffb020"/>
+                  <rect x="192" y="90" width="28" height="10" rx="4" fill="#ffb020"/>
+                  <rect x="150" y="150" width="18" height="22" rx="4" fill="#8d7bff"/>
+                  <rect x="174" y="150" width="18" height="22" rx="4" fill="#8d7bff"/>
+                  <path d="M196 100 h40 l8 50 h-20 z" fill="#b6ef4a"/>
+                </g>
+                <g class="track-78">
+                  <rect x="40" y="150" width="200" height="18" rx="4" fill="#8aa0b8"/>
+                  <circle cx="90" cy="130" r="18" fill="none" stroke="#2ee6d6" stroke-width="6"/>
+                  <circle cx="150" cy="120" r="36" fill="none" stroke="#ff4d8d" stroke-width="8"/>
+                  <path d="M170 120 L250 60" stroke="#ffb020" stroke-width="8"/>
+                  <circle cx="258" cy="52" r="10" fill="#b6ef4a"/>
+                </g>
+              </svg>
+            </div>
+
+            <div class="panel video-layout">
+              <div class="player" data-video="take-home-project">
+                <div class="poster" aria-hidden="true"><svg viewBox="0 0 420 220"><text x="24" y="48" fill="#fff" font-family="Fraunces, Georgia, serif" font-size="28">Take it home</text><rect class="layer" x="80" y="140" width="200" height="18" fill="#ffb020"/><circle class="layer" cx="180" cy="100" r="28" fill="#ff4d8d"/></svg></div>
+                <video controls playsinline preload="none"><source src="assets/videos/take-home-project.mp4" type="video/mp4"></video>
+                <p class="player-status">Custom explainer slot for take-home-project.mp4.</p>
+              </div>
+              <aside class="caption-card"><p class="kicker">On-screen intro</p><h3>Print the parts. Make it yours. Test it.</h3><p class="caption-line track-56">Desk Buddy Bot: cup, head, arms, feet, plate, pins. It leaves with you.</p><p class="caption-line track-78">Catapult: gears, crank, arm, stop. Pom-poms only, aimed away from people.</p></aside>
+            </div>
+            <div class="yt-grid">
+              <figure class="yt"><iframe src="https://www.youtube-nocookie.com/embed/LrU2zm_g7lE" title="Autodesk Tinkercad: Welcome to Tinkercad" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe><figcaption>Tinkercad — personalize the plate</figcaption></figure>
+              <figure class="yt"><iframe src="https://www.youtube-nocookie.com/embed/t_7EMnQ6Rlc" title="Teaching Tech: How a 3DBenchy shows print problems" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe><figcaption>Teaching Tech — read the test print before you change the design</figcaption></figure>
+            </div>
+
+            <div class="track-56" data-project="buddy">
+              <h3>Desk Buddy parts</h3>
+              <p>Pins are 6.0 mm. Head hole is 6.3 mm (0.3 mm clearance, it should turn). Arm holes are 6.2 mm (0.2 mm, a firm push). Leg posts are 8.0 mm into 8.2 mm holes. If a pin is loose, reprint that hole 0.1 mm smaller. If it will not start, open it 0.1 mm. Do not sand toward your hand.</p>
+              <figure class="info-card reveal">
+                <svg viewBox="0 0 880 280" role="img" aria-labelledby="buddyExp buddyExpD">
+                  <title id="buddyExp">Exploded Desk Buddy</title>
+                  <desc id="buddyExpD">Numbered parts: head, pin, body with pen cup and phone stand, two arms, two feet, name plate.</desc>
+                  <rect width="880" height="280" rx="20" fill="#102033"/>
+                  <g fill="#edf3ff" font-family="Outfit, sans-serif" font-size="14">
+                    <g class="pop"><circle cx="120" cy="70" r="28" fill="#ff4d8d"/><text x="100" y="120">1 Head</text></g>
+                    <g class="pop"><rect x="200" y="50" width="12" height="40" fill="#ffb020"/><text x="180" y="120">2 Pin</text></g>
+                    <g class="pop"><rect x="280" y="40" width="70" height="90" rx="16" fill="#2ee6d6"/><text x="270" y="160">3 Body</text></g>
+                    <g class="pop"><rect x="400" y="70" width="50" height="12" fill="#8d7bff"/><text x="390" y="120">4 Arms ×2</text></g>
+                    <g class="pop"><rect x="520" y="80" width="28" height="16" fill="#b6ef4a"/><text x="500" y="120">5 Feet ×2</text></g>
+                    <g class="pop"><rect x="640" y="70" width="70" height="16" fill="#fff"/><text x="630" y="120">6 Name plate</text></g>
+                  </g>
+                </svg>
+              </figure>
+              <table class="parts">
+                <thead><tr><th>Part</th><th>Suggested slice</th><th>Qty</th><th>Grams</th><th>Time</th></tr></thead>
+                <tbody>
+                  <tr data-part data-volume="86748.7" data-layer="0.2" data-infill="18" data-perimeters="3" data-qty="1"><td>Body, pen cup and phone stand</td><td>PLA · 0.20 mm · 18% · 3 walls</td><td>1</td><td data-grams></td><td data-time></td></tr>
+                  <tr data-part data-volume="22764.3" data-layer="0.2" data-infill="15" data-perimeters="3" data-qty="1"><td>Head</td><td>PLA · 0.20 mm · 15% · 3 walls</td><td>1</td><td data-grams></td><td data-time></td></tr>
+                  <tr data-part data-volume="5046.5" data-layer="0.2" data-infill="20" data-perimeters="3" data-qty="2"><td>Arm</td><td>PLA · 0.20 mm · 20% · 3 walls</td><td>2</td><td data-grams></td><td data-time></td></tr>
+                  <tr data-part data-volume="5094.5" data-layer="0.2" data-infill="20" data-perimeters="3" data-qty="2"><td>Leg / foot</td><td>PLA · 0.20 mm · 20% · 3 walls</td><td>2</td><td data-grams></td><td data-time></td></tr>
+                  <tr data-part data-volume="3266.4" data-layer="0.2" data-infill="15" data-perimeters="3" data-qty="1"><td>Name plate</td><td>PLA · 0.20 mm · 15% · 3 walls</td><td>1</td><td data-grams></td><td data-time></td></tr>
+                  <tr data-part data-volume="599.7" data-layer="0.16" data-infill="100" data-perimeters="4" data-qty="3"><td>Pin</td><td>PLA · 0.16 mm · 100% · 4 walls</td><td>3</td><td data-grams></td><td data-time></td></tr>
+                </tbody>
+              </table>
+              <p>One robot, this estimator: <strong data-total-grams></strong>, <strong data-total-time></strong>, about <strong data-total-cost></strong> of PLA at $20/kg. A class of 20, printed one at a time: <strong data-class-time></strong> and <strong data-class-cost></strong>. Batch identical parts on one plate to save setup, not extrusion. Bodies are the long prints. Run them when a teacher can check the first layer, including after school if the school allows a supervised printer.</p>
+              <p>Downloads, starter templates to remix: <a href="projects/desk-buddy-bot/desk-buddy.scad">desk-buddy.scad</a>,
+                <a href="projects/desk-buddy-bot/body.stl">body</a>,
+                <a href="projects/desk-buddy-bot/head.stl">head</a>,
+                <a href="projects/desk-buddy-bot/arm.stl">arm</a>,
+                <a href="projects/desk-buddy-bot/leg.stl">leg</a>,
+                <a href="projects/desk-buddy-bot/name-plate.stl">name plate</a>,
+                <a href="projects/desk-buddy-bot/pin.stl">pin</a>.
+                STL files were generated from these dimensions in <code>projects/build_models.py</code>. Open the <code>.scad</code> in OpenSCAD to change a size and export again.</p>
+              <h3>Assembly checklist</h3>
+              <ul class="check-list">
+                <li><label><input type="checkbox" data-step="b1"> Print every part in PLA. Check the first layer with a teacher.</label></li>
+                <li><label><input type="checkbox" data-step="b2"> Press both feet into the body. They should stay with a push, not fall out.</label></li>
+                <li><label><input type="checkbox" data-step="b3"> Pin both arms. 0.2 mm clearance should feel snug.</label></li>
+                <li><label><input type="checkbox" data-step="b4"> Set the head on its pin. It should swivel, not flop.</label></li>
+                <li><label><input type="checkbox" data-step="b5"> Personalize: remix the name plate in Tinkercad with your name, or draw on the plate.</label></li>
+                <li><label><input type="checkbox" data-step="b6"> Slide the plate tab into the pocket.</label></li>
+                <li><label><input type="checkbox" data-step="b7"> Test: a pen fits the cup, a phone can lean on the back, the head still turns.</label></li>
+                <li><label><input type="checkbox" data-step="b8"> Improve one thing and write what changed.</label></li>
+              </ul>
+              <p><a href="print/desk-buddy.html">Printable build sheet and rubric</a></p>
+              <div class="celebrate" data-celebrate="56">
+                <h3>Take it home!</h3>
+                <p>Your Desk Buddy is ready to leave school with you. Type your name and print a certificate.</p>
+                <form action="print/certificate.html" method="get">
+                  <input type="hidden" name="project" value="Desk Buddy Bot">
+                  <input type="hidden" name="track" value="Grades 5–6">
+                  <label>Your name <input name="name" required></label>
+                  <button class="btn primary" type="submit">Open certificate</button>
+                </form>
+              </div>
+            </div>
+
+            <div class="track-78" data-project="catapult">
+              <div class="callout"><strong>Safety.</strong> Launch pom-poms or a soft foam ball only. Point at a cardboard box. Nobody stands downrange. No pencils, no hardware, no marbles. A teacher watches the test.</div>
+              <h3>Catapult parts</h3>
+              <p>Module 1.5 mm gears: pinion 12 teeth, gear 36 teeth, center distance 36 mm, ratio 3. Moving holes are 0.3 mm over a 5.0 mm axle (5.3 mm). The crank uses a 0.2 mm clearance and a flat so it turns the axle instead of spinning free. The stop peg picks one of three holes to change the launch. Tie this to the gear slider in the VEX module: driven ÷ driver.</p>
+              <figure class="info-card reveal">
+                <svg viewBox="0 0 880 260" role="img" aria-labelledby="catExp catExpD">
+                  <title id="catExp">Exploded catapult</title>
+                  <desc id="catExpD">Numbered parts: base, pinion, large gear, crank, axles, launch arm, hinge pin, stop peg, name plate.</desc>
+                  <rect width="880" height="260" rx="20" fill="#102033"/>
+                  <g fill="#edf3ff" font-family="Outfit, sans-serif" font-size="13">
+                    <g class="pop"><rect x="30" y="80" width="120" height="28" fill="#8aa0b8"/><text x="30" y="140">1 Base</text></g>
+                    <g class="pop"><circle cx="210" cy="90" r="16" fill="none" stroke="#2ee6d6" stroke-width="4"/><text x="180" y="140">2 Pinion 12T</text></g>
+                    <g class="pop"><circle cx="300" cy="90" r="28" fill="none" stroke="#ff4d8d" stroke-width="6"/><text x="270" y="150">3 Gear 36T</text></g>
+                    <g class="pop"><rect x="380" y="80" width="50" height="10" fill="#ffb020"/><text x="370" y="140">4 Crank</text></g>
+                    <g class="pop"><rect x="470" y="70" width="8" height="40" fill="#b6ef4a"/><text x="450" y="140">5 Axles</text></g>
+                    <g class="pop"><path d="M540 110 L620 60" stroke="#8d7bff" stroke-width="8"/><text x="530" y="140">6 Arm</text></g>
+                    <g class="pop"><rect x="680" y="80" width="8" height="36" fill="#fff"/><text x="650" y="140">7 Hinge</text></g>
+                    <g class="pop"><circle cx="760" cy="90" r="8" fill="#ffb020"/><text x="730" y="140">8 Stop</text></g>
+                  </g>
+                </svg>
+              </figure>
+              <table class="parts">
+                <thead><tr><th>Part</th><th>Suggested slice</th><th>Qty</th><th>Grams</th><th>Time</th></tr></thead>
+                <tbody>
+                  <tr data-part data-volume="90835.7" data-layer="0.2" data-infill="25" data-perimeters="4" data-qty="1"><td>Base with towers and stop holes</td><td>PLA · 0.20 mm · 25% · 4 walls</td><td>1</td><td data-grams></td><td data-time></td></tr>
+                  <tr data-part data-volume="1192.3" data-layer="0.16" data-infill="40" data-perimeters="4" data-qty="1"><td>Pinion, 12 teeth</td><td>PLA · 0.16 mm · 40% · 4 walls</td><td>1</td><td data-grams></td><td data-time></td></tr>
+                  <tr data-part data-volume="13193.1" data-layer="0.16" data-infill="35" data-perimeters="4" data-qty="1"><td>Gear, 36 teeth</td><td>PLA · 0.16 mm · 35% · 4 walls</td><td>1</td><td data-grams></td><td data-time></td></tr>
+                  <tr data-part data-volume="4011.8" data-layer="0.2" data-infill="30" data-perimeters="4" data-qty="1"><td>Crank</td><td>PLA · 0.20 mm · 30% · 4 walls</td><td>1</td><td data-grams></td><td data-time></td></tr>
+                  <tr data-part data-volume="681.3" data-layer="0.16" data-infill="100" data-perimeters="4" data-qty="2"><td>Axle</td><td>PLA · 0.16 mm · 100%</td><td>2</td><td data-grams></td><td data-time></td></tr>
+                  <tr data-part data-volume="11332.6" data-layer="0.2" data-infill="35" data-perimeters="4" data-qty="1"><td>Launch arm and scoop</td><td>PLA · 0.20 mm · 35% · 4 walls</td><td>1</td><td data-grams></td><td data-time></td></tr>
+                  <tr data-part data-volume="647.6" data-layer="0.16" data-infill="100" data-perimeters="4" data-qty="1"><td>Hinge pin</td><td>PLA · 0.16 mm · 100%</td><td>1</td><td data-grams></td><td data-time></td></tr>
+                  <tr data-part data-volume="368.9" data-layer="0.16" data-infill="100" data-perimeters="4" data-qty="1"><td>Stop peg</td><td>PLA · 0.16 mm · 100%</td><td>1</td><td data-grams></td><td data-time></td></tr>
+                  <tr data-part data-volume="1293.6" data-layer="0.2" data-infill="15" data-perimeters="3" data-qty="1"><td>Name plate</td><td>PLA · 0.20 mm · 15%</td><td>1</td><td data-grams></td><td data-time></td></tr>
+                </tbody>
+              </table>
+              <p>One catapult: <strong data-total-grams></strong>, <strong data-total-time></strong>, about <strong data-total-cost></strong> at $20/kg. Class of 20: <strong data-class-time></strong>, <strong data-class-cost></strong>. Print all pinions in one batch and all gears in another so tooth settings stay consistent. Add a rubber band only at test time.</p>
+              <p>Downloads: <a href="projects/crank-catapult/crank-catapult.scad">crank-catapult.scad</a>,
+                <a href="projects/crank-catapult/base.stl">base</a>,
+                <a href="projects/crank-catapult/pinion-12t.stl">pinion</a>,
+                <a href="projects/crank-catapult/gear-36t.stl">gear</a>,
+                <a href="projects/crank-catapult/crank.stl">crank</a>,
+                <a href="projects/crank-catapult/axle.stl">axle</a>,
+                <a href="projects/crank-catapult/arm.stl">arm</a>,
+                <a href="projects/crank-catapult/hinge-pin.stl">hinge pin</a>,
+                <a href="projects/crank-catapult/stop-peg.stl">stop</a>,
+                <a href="projects/crank-catapult/name-plate.stl">name plate</a>.</p>
+              <h3>Assembly checklist</h3>
+              <ul class="check-list">
+                <li><label><input type="checkbox" data-step="c1"> Print the set in PLA. Inspect gear teeth before assembly.</label></li>
+                <li><label><input type="checkbox" data-step="c2"> Write the ratio: 36 ÷ 12 = 3. One arm turn takes three crank turns.</label></li>
+                <li><label><input type="checkbox" data-step="c3"> Fit axles. They should slide, not rattle. Adjust 0.1 mm if needed.</label></li>
+                <li><label><input type="checkbox" data-step="c4"> Mesh the gears. They must turn without skipping or locking.</label></li>
+                <li><label><input type="checkbox" data-step="c5"> Add the crank on the flat of the pinion axle.</label></li>
+                <li><label><input type="checkbox" data-step="c6"> Pin the arm hinge. Choose a stop hole.</label></li>
+                <li><label><input type="checkbox" data-step="c7"> Personalize the name plate in CAD and set it in the recess.</label></li>
+                <li><label><input type="checkbox" data-step="c8"> Test with a pom-pom into a box, teacher present. Move the stop and test again.</label></li>
+                <li><label><input type="checkbox" data-step="c9"> Record one improvement: tooth backlash, stop position, or rubber-band hook.</label></li>
+              </ul>
+              <p><a href="print/catapult.html">Printable build sheet and rubric</a></p>
+              <div class="celebrate" data-celebrate="78">
+                <h3>Take it home!</h3>
+                <p>Your catapult is a desk project, not a launcher for the hallway. Certificate time.</p>
+                <form action="print/certificate.html" method="get">
+                  <input type="hidden" name="project" value="Crank-Gear Mini Catapult">
+                  <input type="hidden" name="track" value="Grades 7–8">
+                  <label>Your name <input name="name" required></label>
+                  <button class="btn primary" type="submit">Open certificate</button>
+                </form>
+              </div>
+            </div>
+            <div class="ok-note">
+              <h3>Teacher prep</h3>
+              <p>Budget the class totals above as extrusion time, then add first-layer checks. One printer cannot finish 20 robots in a single class period. Queue bodies or bases overnight only under the school’s supervised-printer rule. Buy a little extra PLA for holes that need a second try. Pom-poms and size-32 or smaller rubber bands are shared supplies, not printed parts. Grades 7–8 should calculate 36/12 before they wind the arm. Grades 5–6 personalize in Tinkercad rather than editing the mesh by hand.</p>
+            </div>
+          </div>
+        </div>
+
+        <form class="panel quiz track-56" data-section="capstone" data-pass="3">
+          <h3>Quick check · grades 5–6</h3>
+          <fieldset><legend>The take-home bot includes…</legend><label><input type="radio" name="k56a" value="1"> a pen cup, a swivel head, arms, feet, and a name plate</label><label><input type="radio" name="k56a" value="0"> a single solid lump with no moving parts</label><p class="why" hidden>It is a multi-part assembly you personalize.</p></fieldset>
+          <fieldset><legend>0.2 to 0.3 mm clearance means…</legend><label><input type="radio" name="k56b" value="1"> the hole is a little bigger than the pin so it can assemble</label><label><input type="radio" name="k56b" value="0"> the pin and the hole are the same size on purpose with no test</label><p class="why" hidden>FDM holes shrink. A planned gap, then a test, is the method.</p></fieldset>
+          <fieldset><legend>The checklist ticks are saved…</legend><label><input type="radio" name="k56c" value="1"> in this browser, for this track</label><label><input type="radio" name="k56c" value="0"> on the printer</label><p class="why" hidden>localStorage keeps your build list on this device.</p></fieldset>
+          <fieldset><legend>Before you call it done you…</legend><label><input type="radio" name="k56d" value="1"> test the pen, the stand, and the swivel, then change one thing</label><label><input type="radio" name="k56d" value="0"> hide a failed print</label><p class="why" hidden>The test-and-improve step is part of the grade.</p></fieldset>
+          <button class="btn primary" type="submit">Check answers</button><p class="quiz-result" aria-live="polite"></p>
+        </form>
+        <form class="panel quiz track-78" data-section="capstone" data-pass="3">
+          <h3>Quick check · grades 7–8</h3>
+          <fieldset><legend>The starter gear ratio is…</legend><label><input type="radio" name="k78a" value="1"> 3, because 36 ÷ 12 = 3</label><label><input type="radio" name="k78a" value="0"> 48, the sum of the teeth</label><p class="why" hidden>Add the teeth only if you are computing center distance with the module, not the ratio.</p></fieldset>
+          <fieldset><legend>A legal launch object in this lab is…</legend><label><input type="radio" name="k78b" value="1"> a pom-pom or soft foam ball, aimed at a box</label><label><input type="radio" name="k78b" value="0"> a pencil</label><p class="why" hidden>Hard objects are out. People are never the target.</p></fieldset>
+          <fieldset><legend>If the gears lock, you…</legend><label><input type="radio" name="k78c" value="1"> change one thing, such as backlash, and reprint the test</label><label><input type="radio" name="k78c" value="0"> force them with pliers</label><p class="why" hidden>Forcing a PLA tooth breaks it. The OpenSCAD backlash number is there to remix.</p></fieldset>
+          <fieldset><legend>The certificate belongs to…</legend><label><input type="radio" name="k78d" value="1"> the student who designed, printed, tested, and can explain the ratio</label><label><input type="radio" name="k78d" value="0"> anyone who clicks the button without a build</label><p class="why" hidden>The celebration follows the checklist. The learning is the build.</p></fieldset>
+          <button class="btn primary" type="submit">Check answers</button><p class="quiz-result" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section class="panel sources" id="sources">
+        <h2>Sources and tool links</h2>
+        <ul>
+          <li>Nat Geo Kids, NASA Marshall, NASA Science, Jared Owen, Digital Trends, CNC Kitchen, MakerBuildIt, Autodesk Tinkercad, University of Guelph Library, 3D Revolution, Teaching Tech, VEX Robotics, Jerry Palardy’s Onshape for VEX series, Fairmont State SciTech, TED, Crick Kids. Video IDs were checked against YouTube’s oEmbed endpoint.</li>
+          <li>NIOSH, <a href="https://www.cdc.gov/niosh/docs/2024-103/pdfs/2024-103.pdf">Approaches to Safe 3D Printing</a> and <a href="https://www.cdc.gov/niosh/docs/2020-115/pdfs/2020-115.pdf">3D Printing with Filaments</a>. <a href="https://doh.wa.gov/community-and-environment/schools/3d-printers">Washington State Department of Health, 3D printers in schools</a>.</li>
+          <li>VEX IQ dimensions: <a href="https://content.vexrobotics.com/vexiq/pdf/VEX-IQ-3D-Print-Dimensions_v20140326.PDF">3D-print dimensions drawing, 2014-03-26</a>; <a href="https://kb.vex.com/hc/en-us/articles/360035592872-Understanding-the-VEX-IQ-Plastic-Construction-System">plastic construction system</a>; <a href="https://kb.vex.com/hc/en-us/articles/360044560952-Creating-Your-Own-Parts-for-VEX-IQ">creating your own parts</a>.</li>
+          <li>V5 hole size from VEX product pages for <a href="https://www.vexrobotics.com/plates.html">plates</a> and <a href="https://www.vexrobotics.com/channel.html">C-channels</a> (0.182 in square, 0.500 in pitch). #8-32 hardware is listed on the <a href="https://www.vexrobotics.com/v5-classroom-starter-kit.html">V5 Classroom Starter Kit</a>.</li>
+          <li>Competition text reviewed: <a href="https://content.vexrobotics.com/docs/2026-2027/level-up/files/levelup-2.0.pdf">VIQRC Level Up Game Manual 2.0</a> and <a href="https://content.vexrobotics.com/docs/2026-2027/override/files/v5rc-override-0.1.2.pdf">V5RC Override 0.1.2, 14 May 2026</a>. Q&amp;A lives on RobotEvents. Rules change.</li>
+          <li>History: Chuck Hull SLA patent filing 1984 (US 4,575,330 granted 1986); S. Scott Crump FDM, late 1980s; Adrian Bowyer, RepRap, University of Bath, 2005; key FDM patent expiry around 2009; ISS 3D printer, 2014.</li>
+          <li><a href="https://creativecommons.org/cc-licenses/">Creative Commons license explanations</a>.</li>
+        </ul>
+      </section>
+
+      </section>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <p><strong>Created for Jordan Glen School by Vector Design Group</strong></p>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js" defer></script>
+  <script src="js/estimate.js" defer></script>
+  <script src="js/hero.js" defer></script>
+  <script src="js/app.js" defer></script>
+</body>
+</html>
