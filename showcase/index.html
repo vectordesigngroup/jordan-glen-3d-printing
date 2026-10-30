@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Showcase night kit · Jordan Glen</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/kit.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="../index.html"><strong>Jordan Glen 3D</strong></a>
+    <nav class="section-nav" aria-label="Studio">
+      <a href="../teacher/">Teacher kit</a>
+      <a href="../lab/queue.html">Print queue</a>
+      <a href="../challenges/">Challenges</a>
+      <a href="../gallery/">Gallery</a>
+      <a href="../portfolio/">Portfolio</a>
+      <a href="../careers/">Careers</a>
+      <a href="../showcase/" aria-current="page">Showcase</a>
+    </nav>
+    <button class="icon-btn no-print" type="button" data-theme-toggle>Dark mode</button>
+  </header>
+  <main id="main" class="wrap">
+    <p class="kicker no-print">Event kit</p>
+    <h1>Showcase night</h1>
+    <p class="no-print page-intro">Print the pieces you need. Each block is one handout. The 60-second pitch uses the same choice as the <a href="../index.html#business">business module</a>: make and sell, or license.</p>
+
+    <section class="sheet" id="run">
+      <h2>Run of show, about 70 minutes</h2>
+      <ol>
+        <li>0:00 Doors, table labels already up, printers off and cool.</li>
+        <li>0:10 Welcome from a teacher. Safety line: look, do not touch nozzles.</li>
+        <li>0:15 Student pitches, 60 seconds each, one project per table.</li>
+        <li>0:50 Families walk the tables. Judges use the sheet below.</li>
+        <li>1:05 Thank-you and certificates if the teacher is ready.</li>
+      </ol>
+    </section>
+
+    <section class="sheet" id="program">
+      <h2>Program template</h2>
+      <p>Jordan Glen School 3D printing showcase</p>
+      <label>Date <input id="show-date"></label>
+      <label>Room <input id="show-room" value="Maker space"></label>
+      <table class="data">
+        <thead><tr><th>Order</th><th>Name</th><th>Project</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td><input aria-label="Name 1"></td><td><input aria-label="Project 1"></td></tr>
+          <tr><td>2</td><td><input aria-label="Name 2"></td><td><input aria-label="Project 2"></td></tr>
+          <tr><td>3</td><td><input aria-label="Name 3"></td><td><input aria-label="Project 3"></td></tr>
+          <tr><td>4</td><td><input aria-label="Name 4"></td><td><input aria-label="Project 4"></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="sheet" id="pitch">
+      <h2>60-second pitch</h2>
+      <p>Tie this to the business lesson. Pick one path and say it out loud.</p>
+      <label>Who has the problem? <textarea class="pitch-box"></textarea></label>
+      <label>What I made <textarea class="pitch-box"></textarea></label>
+      <label>Make and sell, or license? One sentence why. <textarea class="pitch-box"></textarea></label>
+      <label>One test and one change <textarea class="pitch-box"></textarea></label>
+      <p>I will not say patent pending unless an adult has actually filed.</p>
+    </section>
+
+    <section class="sheet" id="tent">
+      <h2>Table tent / project label</h2>
+      <svg viewBox="0 0 360 140" role="img" aria-label="Folded table tent outline">
+        <rect x="10" y="10" width="340" height="120" rx="12" fill="#102033"/>
+        <text x="24" y="48" fill="#2ee6d6" font-family="sans-serif" font-size="14">Project</text>
+        <text x="24" y="78" fill="#fff" font-family="sans-serif" font-size="22">________________</text>
+        <text x="24" y="110" fill="#ffb020" font-family="sans-serif" font-size="14">Maker initials ________</text>
+      </svg>
+      <p>Fold on the long edge. Initials only on the public side if you want.</p>
+    </section>
+
+    <section class="sheet" id="judge">
+      <h2>Judging sheet</h2>
+      <p>Score 1 to 4. 4 means a visitor can see the evidence.</p>
+      <table class="data">
+        <thead><tr><th>Project</th><th>Design</th><th>Process notes</th><th>Print quality</th><th>Pitch</th></tr></thead>
+        <tbody>
+          <tr><td><input aria-label="Judge project"></td><td><input aria-label="Design score" size="3"></td><td><input aria-label="Process score" size="3"></td><td><input aria-label="Print score" size="3"></td><td><input aria-label="Pitch score" size="3"></td></tr>
+        </tbody>
+      </table>
+      <p>Kind comment: ________________________________</p>
+    </section>
+
+    <section class="sheet" id="flyer">
+      <h2>Family invite</h2>
+      <svg viewBox="0 0 640 200" role="img" aria-label="Flyer banner of stacked layers">
+        <rect width="640" height="200" fill="#102033"/>
+        <rect x="40" y="120" width="220" height="16" fill="#2ee6d6"/>
+        <rect x="60" y="100" width="180" height="16" fill="#ff4d8d"/>
+        <rect x="80" y="80" width="140" height="16" fill="#ffb020"/>
+        <text x="300" y="90" fill="#fff" font-family="Georgia, serif" font-size="28">You are invited</text>
+        <text x="300" y="130" fill="#b6ef4a" font-family="sans-serif" font-size="16">Jordan Glen 3D showcase</text>
+      </svg>
+      <p>Date ________ Time ________ Place ________</p>
+      <p>Come see what we designed, printed, and improved. Prints stay on the tables. Please do not touch a printer.</p>
+    </section>
+
+    <section class="sheet" id="setup">
+      <h2>Setup checklist</h2>
+      <ul>
+        <li>Printers off and cool. Signs say do not touch the nozzle.</li>
+        <li>Tables labeled. Cords taped down.</li>
+        <li>One project per student on the table, plus a pitch card.</li>
+        <li>Judging sheets and programs printed.</li>
+        <li>A teacher at the door and one near the machines.</li>
+      </ul>
+    </section>
+    <p class="no-print"><button class="btn" type="button" onclick="print()">Print the kit</button></p>
+  </main>
+  <footer class="site-footer"><p><strong>Created for Jordan Glen School by Vector Design Group</strong></p></footer>
+  <script src="../js/kit.js"></script>
+</body>
+</html>

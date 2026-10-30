@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gallery · Jordan Glen</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/kit.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="../index.html"><strong>Jordan Glen 3D</strong></a>
+    <nav class="section-nav" aria-label="Studio">
+      <a href="../teacher/">Teacher kit</a>
+      <a href="../lab/queue.html">Print queue</a>
+      <a href="../challenges/">Challenges</a>
+      <a href="../gallery/" aria-current="page">Gallery</a>
+      <a href="../portfolio/">Portfolio</a>
+      <a href="../careers/">Careers</a>
+      <a href="../showcase/">Showcase</a>
+    </nav>
+    <button class="icon-btn" type="button" data-theme-toggle>Dark mode</button>
+  </header>
+  <main id="main" class="wrap">
+    <p class="kicker">Class gallery</p>
+    <h1>First names or initials only</h1>
+    <p class="page-intro">Pieces come from <code>gallery/gallery.json</code>. Votes stay on this computer. They do not travel to other browsers. Teachers: read <a href="README.md">how to add an entry</a>.</p>
+    <div class="gallery-grid" data-gallery></div>
+  </main>
+  <footer class="site-footer"><p><strong>Created for Jordan Glen School by Vector Design Group</strong></p></footer>
+  <script src="../js/kit.js"></script>
+  <script>
+    (function () {
+      const KEY = "jg3d-gallery-votes";
+      const host = document.querySelector("[data-gallery]");
+      function votes() {
+        try { return JSON.parse(localStorage.getItem(KEY) || "{}"); }
+        catch (err) { return {}; }
+      }
+      function save(data) { localStorage.setItem(KEY, JSON.stringify(data)); }
+      fetch("gallery.json").then(function (res) { return res.json(); }).then(function (items) {
+        const mine = votes();
+        host.innerHTML = items.map(function (item) {
+          const count = Number(mine[item.id]) || 0;
+          return "<article class='mini-card'><img src='" + item.image + "' alt=''><h2>" + item.title + "</h2><p>" + item.name + " · " + item.challenge + "</p><p>" + item.blurb + "</p><button class='btn vote' type='button' data-vote='" + item.id + "'>Vote <span>" + count + "</span></button></article>";
+        }).join("");
+        host.querySelectorAll("[data-vote]").forEach(function (button) {
+          button.addEventListener("click", function () {
+            const data = votes();
+            const id = button.dataset.vote;
+            data[id] = (Number(data[id]) || 0) + 1;
+            save(data);
+            button.querySelector("span").textContent = String(data[id]);
+          });
+        });
+      }).catch(function () {
+        host.textContent = "The gallery file did not load. Open this page from a local server or GitHub Pages, not as a loose file, so gallery.json can be read.";
+      });
+    })();
+  </script>
+</body>
+</html>

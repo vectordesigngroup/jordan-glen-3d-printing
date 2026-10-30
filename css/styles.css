@@ -658,6 +658,24 @@ table.parts th, table.parts td {
   .course-map, .course-map svg { min-height: 70vh; height: 70vh; }
   .map-actions { left: 12px; right: auto; }
 }
+.studio-nav {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 8px 20px 10px;
+  border-bottom: 1px solid var(--line);
+}
+.studio-nav a {
+  flex: 0 0 auto;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--ink);
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--card);
+}
 .site-footer {
   padding: 28px 20px 48px;
   text-align: center;

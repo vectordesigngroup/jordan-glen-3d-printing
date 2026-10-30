@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Drawing of a truss bridge">
+  <rect width="320" height="200" fill="#102033"/>
+  <path d="M30 140 H290 M50 140 L90 80 H230 L270 140 M90 80 L140 140 L190 80 L230 140" fill="none" stroke="#8d7bff" stroke-width="8"/>
+  <circle cx="160" cy="60" r="10" fill="#ffb020"/>
+  <text x="20" y="28" fill="#edf3ff" font-family="sans-serif" font-size="16">J.R.</text>
+</svg>
