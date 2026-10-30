@@ -23,6 +23,7 @@
       <span><strong>Jordan Glen 3D</strong><span>Grades 5–8 makers</span></span>
     </a>
     <nav class="section-nav" aria-label="Course sections">
+      <a href="#course-map">Map</a>
       <a href="#what-is-3d-printing">1 What</a>
       <a href="#how-a-printer-works">2 Printer</a>
       <a href="#safety">3 Safety</a>
@@ -66,6 +67,24 @@
     </section>
 
     <div class="wrap">
+      <section class="course-map-section" id="course-map" aria-labelledby="course-map-title">
+        <div class="module-head">
+          <div>
+            <p class="module-index">Course map</p>
+            <h2 id="course-map-title">See the whole course</h2>
+          </div>
+          <p><a href="mindmap/course-map.html">Open full-screen mind map</a> · <a href="mindmap/course-map.png">Printable map</a></p>
+        </div>
+        <p>Click a module name to jump there. Drag to pan, and scroll to zoom. Circles fold a branch.</p>
+        <div class="course-map">
+          <div class="map-actions">
+            <button class="btn" type="button" data-map-expand>Expand all</button>
+            <button class="btn" type="button" data-map-fit>Fit</button>
+          </div>
+          <svg id="course-map-svg" role="img" aria-label="Mind map of the Jordan Glen 3D printing course"></svg>
+          <p class="map-fallback" data-map-fallback hidden>The interactive map did not start. <a href="mindmap/course-map.html">Open the full-screen mind map</a> instead.</p>
+        </div>
+      </section>
       <div class="badge-shelf" aria-label="Badges for this track">
         <div class="badge" data-badge="what-is-3d-printing"><strong>Layer One</strong>What</div>
         <div class="badge" data-badge="how-a-printer-works"><strong>Machine Reader</strong>Printer</div>
@@ -1226,6 +1245,10 @@
     <p><a href="assets/videos/scripts.md">Video transcripts</a></p>
     <p><strong>Created for Jordan Glen School by Vector Design Group</strong></p>
   </footer>
+  <script src="assets/vendor/d3.min.js" defer></script>
+  <script src="assets/vendor/markmap-view.js" defer></script>
+  <script src="js/course-map-data.js" defer></script>
+  <script src="js/mindmap.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js" defer></script>
   <script src="js/estimate.js" defer></script>
   <script src="js/hero.js" defer></script>

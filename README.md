@@ -4,6 +4,10 @@ Interactive static course for grades 5–6 and 7–8. Open `index.html` in a bro
 
 Created for Jordan Glen School by Vector Design Group.
 
+## Course map
+
+`mindmap/course-map.md` is the markmap source. The home page draws it with vendored Markmap files in `assets/vendor/` (no CDN). `mindmap/course-map.html` is a full-screen offline copy, and `mindmap/course-map.png` is the printable expanded map.
+
 ## Tracks
 
 The header toggle switches reading level, projects, quizzes, and the take-home lab. Progress and the build checklist are stored in `localStorage` on this device, separately for each track.
