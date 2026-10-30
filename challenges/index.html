@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Design challenges · Jordan Glen</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/kit.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="../index.html"><strong>Jordan Glen 3D</strong></a>
+    <nav class="section-nav" aria-label="Studio">
+      <a href="../teacher/">Teacher kit</a>
+      <a href="../lab/queue.html">Print queue</a>
+      <a href="../challenges/" aria-current="page">Challenges</a>
+      <a href="../gallery/">Gallery</a>
+      <a href="../portfolio/">Portfolio</a>
+      <a href="../careers/">Careers</a>
+      <a href="../showcase/">Showcase</a>
+    </nav>
+    <button class="icon-btn" type="button" data-theme-toggle>Dark mode</button>
+  </header>
+  <main id="main" class="wrap">
+    <p class="kicker">Weekly challenges</p>
+    <h1>Constraints make the design smarter</h1>
+    <p class="page-intro">Nine prompts. Score each from 1 to 4 on the card. Print a card from the browser. Finished pieces can go in the <a href="../gallery/">gallery</a> under initials only.</p>
+    <div class="track-toggle no-print" role="group" aria-label="Grade track">
+      <button type="button" data-track="56" aria-pressed="true">Grades 5–6</button>
+      <button type="button" data-track="78" aria-pressed="false">Grades 7–8</button>
+    </div>
+
+    <article class="challenge-card sheet" id="phone-stand">
+      <div class="icon-row"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#102033"/><rect x="16" y="40" width="32" height="8" rx="2" fill="#2ee6d6"/><rect x="30" y="14" width="12" height="28" rx="2" fill="#ffb020"/></svg><h2>1. Light phone stand</h2></div>
+      <p><strong>Constraint:</strong> holds a phone and the slicer estimate is under 20 g. Flat on the bed, no supports if you can.</p>
+      <p class="track-56">Use Tinkercad. Three shapes maximum.</p>
+      <p class="track-78">Record grams, time, and one change after a tip test on a table.</p>
+      <p><strong>Score:</strong> stands (1), under 20 g (1), does not tip with a gentle push (1), you explain one improvement (1).</p>
+    </article>
+    <article class="challenge-card sheet" id="penny-bridge">
+      <div class="icon-row"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#102033"/><path d="M8 46 H56 M14 46 L24 24 H40 L50 46" fill="none" stroke="#8d7bff" stroke-width="4"/></svg><h2>2. Penny bridge</h2></div>
+      <p><strong>Constraint:</strong> span at least 80 mm between two books. Pennies stay in a tray. No launching them.</p>
+      <p class="track-56">Count how many pennies it holds before it bends.</p>
+      <p class="track-78">Report pennies per gram. Stronger is not the only win. Lighter can win too.</p>
+      <p><strong>Score:</strong> spans the gap (1), holds at least 10 pennies (1), you measured grams (1), you say why the shape works (1).</p>
+    </article>
+    <article class="challenge-card sheet" id="tower">
+      <div class="icon-row"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#102033"/><rect x="28" y="10" width="8" height="40" fill="#ff4d8d"/><rect x="22" y="48" width="20" height="6" fill="#2ee6d6"/></svg><h2>3. Tallest tower per gram</h2></div>
+      <p><strong>Constraint:</strong> stands on its own. Height in millimeters divided by grams is the score number. It must not be a solid brick.</p>
+      <p class="track-78">Print it upright or on its side on purpose, and say which is stronger.</p>
+      <p><strong>Score:</strong> stands (1), you measured height and grams (1), infill is not 100% (1), you name the weak layer (1).</p>
+    </article>
+    <article class="challenge-card sheet" id="maze">
+      <div class="icon-row"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#102033"/><path d="M12 16 H40 V32 H24 V48 H52" fill="none" stroke="#b6ef4a" stroke-width="4"/></svg><h2>4. Marble maze tile</h2></div>
+      <p><strong>Constraint:</strong> one tile, about 80 mm square, walls a marble can follow. Test over a box, not across the room.</p>
+      <p><strong>Score:</strong> marble stays in the path (1), start and finish are marked (1), no supports left on (1), a classmate can solve it (1).</p>
+    </article>
+    <article class="challenge-card sheet" id="vex-part">
+      <div class="icon-row"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#102033"/><circle cx="22" cy="32" r="4" fill="#2ee6d6"/><circle cx="42" cy="32" r="4" fill="#2ee6d6"/></svg><h2>5. VEX practice part</h2></div>
+      <p><strong>Constraint:</strong> holes on a 12.7 mm pitch. Label the file PRACTICE. It does not go on a competition robot unless the current manual allows it.</p>
+      <p class="track-56">Two IQ snap holes, tested with a real pin.</p>
+      <p class="track-78">A sensor mount or cable guide. Write the hole size you tested.</p>
+      <p><strong>Score:</strong> pitch is right (1), pin or screw fits (1), labeled practice (1), you cite the manual check (1).</p>
+    </article>
+    <article class="challenge-card sheet" id="fidget">
+      <div class="icon-row"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#102033"/><circle cx="26" cy="34" r="10" fill="none" stroke="#ff4d8d" stroke-width="4"/><circle cx="40" cy="34" r="8" fill="none" stroke="#ffb020" stroke-width="4"/></svg><h2>6. Gear fidget</h2></div>
+      <p><strong>Constraint:</strong> two gears that turn on pins. Clearance 0.2 to 0.3 mm. No sharp teeth facing a hand.</p>
+      <p class="track-78">Write the tooth ratio, driven divided by driver.</p>
+      <p><strong>Score:</strong> they mesh (1), they turn (1), clearance is written down (1), one reprint note (1).</p>
+    </article>
+    <article class="challenge-card sheet" id="clip">
+      <div class="icon-row"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#102033"/><path d="M16 40c8-20 24-20 32 0" fill="none" stroke="#2ee6d6" stroke-width="4"/></svg><h2>7. Three-cord clip</h2></div>
+      <p><strong>Constraint:</strong> holds three cords or strings without pinching a finger. PLA is fine for a first try.</p>
+      <p><strong>Score:</strong> holds three (1), lets go without breaking (1), under 10 g if you can (1), edges are smooth (1).</p>
+    </article>
+    <article class="challenge-card sheet" id="tag">
+      <div class="icon-row"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#102033"/><rect x="18" y="16" width="28" height="18" rx="3" fill="#fff"/><text x="22" y="29" font-size="8" fill="#102033">JG</text></svg><h2>8. Standing name tag</h2></div>
+      <p><strong>Constraint:</strong> your initials, and it stands on a desk without tape. Grades 5–6 stay in Tinkercad.</p>
+      <p><strong>Score:</strong> letters readable (1), stands (1), a hole or slot was planned (1), you credit any remix (1).</p>
+    </article>
+    <article class="challenge-card sheet" id="drop">
+      <div class="icon-row"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#102033"/><circle cx="32" cy="24" r="8" fill="#ffb020"/><path d="M32 32 V50" stroke="#edf3ff" stroke-width="3"/></svg><h2>9. Soft drop keychain</h2></div>
+      <p><strong>Constraint:</strong> a keychain with a hole. Drop it from desk height onto a towel, not onto tile, and not at a person.</p>
+      <p><strong>Score:</strong> hole fits a ring (1), survives one drop (1), you name the layer that might split (1), grams are recorded (1).</p>
+    </article>
+    <p class="no-print"><button class="btn" type="button" onclick="print()">Print these cards</button> · <a href="../gallery/">Gallery</a></p>
+  </main>
+  <footer class="site-footer"><p><strong>Created for Jordan Glen School by Vector Design Group</strong></p></footer>
+  <script src="../js/kit.js"></script>
+</body>
+</html>

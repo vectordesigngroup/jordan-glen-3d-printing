@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio and certificate · Jordan Glen</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/kit.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="../index.html"><strong>Jordan Glen 3D</strong></a>
+    <nav class="section-nav" aria-label="Studio">
+      <a href="../teacher/">Teacher kit</a>
+      <a href="../lab/queue.html">Print queue</a>
+      <a href="../challenges/">Challenges</a>
+      <a href="../gallery/">Gallery</a>
+      <a href="../portfolio/" aria-current="page">Portfolio</a>
+      <a href="../careers/">Careers</a>
+      <a href="../showcase/">Showcase</a>
+    </nav>
+    <button class="icon-btn" type="button" data-theme-toggle>Dark mode</button>
+  </header>
+  <main id="main" class="wrap">
+    <p class="kicker">Your work</p>
+    <h1>Portfolio and Printer Operator badge</h1>
+    <p class="page-intro">This page saves on this browser. Photos become data inside the save, so keep them small. Printing this page is the PDF: choose Save as PDF in the print dialog.</p>
+    <div class="track-toggle no-print" role="group" aria-label="Grade track">
+      <button type="button" data-track="56" aria-pressed="true">Grades 5–6</button>
+      <button type="button" data-track="78" aria-pressed="false">Grades 7–8</button>
+    </div>
+
+    <section class="panel" id="operator">
+      <h2>Printer Operator badge</h2>
+      <p class="note">This checklist does not lock the print queue. A teacher still approves every job. The queue only reads this note.</p>
+      <p id="safety-line"></p>
+      <label>Supervised prints I helped with <input id="op-prints" type="number" min="0" value="0"></label>
+      <label><input id="op-maint" type="checkbox"> I did a maintenance task with a teacher: wiped the bed, checked the filament end, or reported a tangle.</label>
+      <p id="op-status"></p>
+    </section>
+
+    <section class="panel" id="projects">
+      <h2>Projects</h2>
+      <form class="form-grid no-print" id="project-form">
+        <label>Project title <input name="title" required></label>
+        <label>What I tried, and what I changed <textarea name="note" rows="3" required></textarea></label>
+        <button class="btn primary" type="submit">Add to portfolio</button>
+      </form>
+      <div id="project-list"></div>
+    </section>
+
+    <section class="panel" id="photos">
+      <h2>Photos</h2>
+      <p class="no-print">Each picture must be under about 250 KB after it is stored. Four pictures maximum. The browser keeps them on this device only.</p>
+      <input class="no-print" id="photo" type="file" accept="image/*">
+      <p id="photo-msg" class="no-print" aria-live="polite"></p>
+      <div class="gallery-grid" id="photo-list"></div>
+    </section>
+
+    <section class="cert-frame" id="certificate">
+      <svg viewBox="0 0 800 80" aria-hidden="true">
+        <rect width="800" height="80" fill="none"/>
+        <path d="M20 50 H780" stroke="#12c2b3" stroke-width="6"/>
+        <path d="M20 62 H780" stroke="#ff4d8d" stroke-width="4"/>
+        <circle cx="40" cy="28" r="10" fill="#ffb020"/>
+        <circle cx="760" cy="28" r="10" fill="#8d7bff"/>
+      </svg>
+      <p class="kicker">Jordan Glen School</p>
+      <h2>Certificate of completion</h2>
+      <form class="form-grid no-print" id="cert-form">
+        <label>Student name <input id="cert-name" required></label>
+        <label>Grade band
+          <select id="cert-band"><option>Grades 5–6</option><option>Grades 7–8</option></select>
+        </label>
+        <label>Date <input id="cert-date" type="date"></label>
+      </form>
+      <p>This certifies that <strong id="show-name">_______________</strong> finished the 3D printing course for <strong id="show-band">Grades 5–6</strong> on <strong id="show-date">__________</strong>.</p>
+      <p>They can explain a design, a print, a test, and one improvement.</p>
+      <p>Teacher signature <span class="sig-line"></span></p>
+      <svg viewBox="0 0 800 40" aria-hidden="true"><path d="M20 10 H780" stroke="#b6ef4a" stroke-width="4"/></svg>
+      <p><strong>Created for Jordan Glen School by Vector Design Group</strong></p>
+      <button class="btn no-print" type="button" onclick="print()">Print portfolio and certificate</button>
+    </section>
+  </main>
+  <footer class="site-footer"><p><strong>Created for Jordan Glen School by Vector Design Group</strong></p></footer>
+  <script src="../js/kit.js"></script>
+  <script>
+    (function () {
+      const KEY = "jg3d-portfolio";
+      const CAP = 250000;
+      function load() {
+        try { return JSON.parse(localStorage.getItem(KEY) || "{\"projects\":[],\"photos\":[]}"); }
+        catch (err) { return { projects: [], photos: [] }; }
+      }
+      function save(data) {
+        localStorage.setItem(KEY, JSON.stringify(data));
+        const prints = Number(document.getElementById("op-prints").value) || 0;
+        const maintenance = document.getElementById("op-maint").checked;
+        localStorage.setItem("jg3d-operator", JSON.stringify({ prints: prints, maintenance: maintenance }));
+        refreshOperator();
+      }
+      const data = load();
+      function refreshOperator() {
+        let safety = false;
+        try {
+          const course = JSON.parse(localStorage.getItem("jg3d-course-v1") || "{}");
+          const track = document.body.dataset.track === "78" ? "78" : "56";
+          safety = Boolean(course[track] && course[track].safety);
+        } catch (err) { safety = false; }
+        document.getElementById("safety-line").textContent = safety
+          ? "Safety quiz for this track is marked passed on this browser."
+          : "Safety quiz for this track is not marked passed yet. Finish it on the course page.";
+        const prints = Number(document.getElementById("op-prints").value) || 0;
+        const maintenance = document.getElementById("op-maint").checked;
+        const ready = safety && prints >= 3 && maintenance;
+        document.getElementById("op-status").textContent = ready
+          ? "Checklist complete. Show a teacher before you call yourself a Printer Operator."
+          : "Still needed: safety quiz, " + Math.max(0, 3 - prints) + " more supervised prints, and the maintenance box if it is empty.";
+      }
+      const op = JSON.parse(localStorage.getItem("jg3d-operator") || "{}");
+      document.getElementById("op-prints").value = op.prints || 0;
+      document.getElementById("op-maint").checked = Boolean(op.maintenance);
+      document.getElementById("op-prints").addEventListener("input", function () { save(data); });
+      document.getElementById("op-maint").addEventListener("change", function () { save(data); });
+      document.querySelectorAll(".track-toggle button").forEach(function (button) {
+        button.addEventListener("click", refreshOperator);
+      });
+      function drawProjects() {
+        document.getElementById("project-list").innerHTML = data.projects.map(function (item) {
+          return "<article class='mini-card'><h3>" + escapeHtml(item.title) + "</h3><p>" + escapeHtml(item.note) + "</p></article>";
+        }).join("") || "<p>No projects saved yet.</p>";
+      }
+      function drawPhotos() {
+        document.getElementById("photo-list").innerHTML = data.photos.map(function (src, index) {
+          return "<figure><img alt='Portfolio photo " + (index + 1) + "' src='" + src + "'></figure>";
+        }).join("");
+      }
+      function escapeHtml(value) {
+        return String(value).replace(/[&<>]/g, function (ch) { return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" })[ch]; });
+      }
+      document.getElementById("project-form").addEventListener("submit", function (event) {
+        event.preventDefault();
+        const form = new FormData(event.target);
+        data.projects.push({ title: String(form.get("title")), note: String(form.get("note")) });
+        save(data);
+        event.target.reset();
+        drawProjects();
+      });
+      document.getElementById("photo").addEventListener("change", function (event) {
+        const file = event.target.files && event.target.files[0];
+        const msg = document.getElementById("photo-msg");
+        if (!file) return;
+        if (data.photos.length >= 4) { msg.textContent = "Four photos already. Remove one by clearing site data if you must start over."; return; }
+        const reader = new FileReader();
+        reader.onload = function () {
+          const url = String(reader.result || "");
+          if (url.length > CAP) { msg.textContent = "That picture is over the 250 KB stored limit. Export a smaller image."; return; }
+          data.photos.push(url);
+          save(data);
+          drawPhotos();
+          msg.textContent = "Photo saved on this browser.";
+        };
+        reader.readAsDataURL(file);
+      });
+      const certName = document.getElementById("cert-name");
+      const certBand = document.getElementById("cert-band");
+      const certDate = document.getElementById("cert-date");
+      certDate.value = new Date().toISOString().slice(0, 10);
+      function paintCert() {
+        document.getElementById("show-name").textContent = certName.value || "_______________";
+        document.getElementById("show-band").textContent = certBand.value;
+        document.getElementById("show-date").textContent = certDate.value || "__________";
+      }
+      [certName, certBand, certDate].forEach(function (el) { el.addEventListener("input", paintCert); });
+      paintCert();
+      drawProjects();
+      drawPhotos();
+      refreshOperator();
+    })();
+  </script>
+</body>
+</html>

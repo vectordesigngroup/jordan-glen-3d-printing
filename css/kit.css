@@ -1,0 +1,88 @@
+/* Shared layout for studio pages. Uses the course palette in css/styles.css. */
+
+.studio-nav {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 8px 20px 10px;
+  border-bottom: 1px solid var(--line);
+  background: color-mix(in srgb, var(--bg) 78%, transparent);
+}
+.studio-nav a {
+  flex: 0 0 auto;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--ink);
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--card);
+}
+.studio-nav a[aria-current="page"] {
+  background: var(--ink);
+  color: var(--bg);
+}
+.page-intro { max-width: 70ch; }
+.card-grid, .printer-board, .career-grid, .challenge-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+}
+.mini-card, .printer-card, .career-card, .challenge-card, .sheet {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 14px;
+}
+.mini-card h3, .career-card h3, .challenge-card h3 { margin: 8px 0; }
+.icon-row { display: flex; gap: 10px; align-items: center; }
+.icon-row svg { width: 42px; height: 42px; flex: 0 0 auto; }
+table.data { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+table.data th, table.data td { text-align: left; padding: 8px 6px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.lab-day { background: color-mix(in srgb, var(--amber-2) 28%, transparent); font-weight: 700; }
+.status {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 2px 8px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  background: var(--bg-2);
+}
+.status.approved, .status.done { background: color-mix(in srgb, var(--lime-2) 45%, var(--card-solid)); }
+.status.printing { background: color-mix(in srgb, var(--cyan-2) 40%, var(--card-solid)); }
+.status.failed, .status.rejected { background: color-mix(in srgb, var(--hot) 28%, var(--card-solid)); }
+.answer-key { display: none; }
+body.teacher-view .answer-key { display: block; }
+.note {
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--amber-2) 18%, var(--card-solid));
+  border: 1px solid var(--line);
+}
+.vote { font-weight: 800; }
+.cert-frame {
+  border: 0;
+  padding: 18px;
+  background:
+    linear-gradient(var(--bg), var(--bg)) padding-box,
+    linear-gradient(120deg, var(--cyan-2), var(--magenta-2), var(--amber-2)) border-box;
+  border: 10px solid transparent;
+  border-radius: 28px;
+}
+.sig-line { border-bottom: 1px solid var(--ink); min-width: 220px; display: inline-block; height: 1.4em; }
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+.gallery-grid img, .gallery-grid svg { width: 100%; height: auto; border-radius: 12px; background: #102033; }
+.pitch-box { min-height: 4.5rem; }
+@media (max-width: 700px) {
+  .site-header { flex-wrap: wrap; }
+  .section-nav { order: 3; flex: 1 0 100%; }
+  table.data { display: block; overflow-x: auto; }
+}
+@media print {
+  .site-header, .studio-nav, .no-print, .icon-btn, .map-actions { display: none !important; }
+  body { background: white !important; color: black !important; }
+  .panel, .mini-card, .sheet, .challenge-card, .career-card { box-shadow: none; break-inside: avoid; }
+  .answer-key { display: block !important; }
+  a { color: black; }
+}

@@ -149,3 +149,44 @@ markmap:
 - Ratio 3 to 1
 - 0.2–0.3 mm pin clearance
 - Pom-poms only, aimed at a box
+
+## [Teacher kit](teacher/)
+
+- 9-week and 18-week plans
+- Lesson plans and exit tickets
+- Answer keys in teacher view
+- Rubric and print handouts
+
+## [Print queue](lab/queue.html)
+
+- Nine printers
+- Approve, print, done, or failed
+- Grams and hours
+- CSV export and import
+
+## [Design challenges](challenges/)
+
+- Phone stand under 20 g
+- Penny bridge and tower
+- Maze, fidget, VEX practice part
+- [Gallery of initials](gallery/)
+
+## [Portfolio and certificate](portfolio/)
+
+- Projects and short reflections
+- Small photos on this browser
+- Printer Operator checklist
+- Printable certificate
+
+## [Careers spotlight](careers/)
+
+- Hands, aircraft, cars, teeth
+- Buildings, shoes, tissue, robots
+- Read the source, do not invent numbers
+
+## [Showcase night](showcase/)
+
+- Run of show
+- 60-second pitch
+- Table tent, judges, invite
+- Setup checklist

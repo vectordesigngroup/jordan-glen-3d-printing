@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Print queue and log · Jordan Glen</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/kit.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="../index.html"><strong>Jordan Glen 3D</strong></a>
+    <nav class="section-nav" aria-label="Studio">
+      <a href="../teacher/">Teacher kit</a>
+      <a href="../lab/queue.html" aria-current="page">Print queue</a>
+      <a href="../challenges/">Challenges</a>
+      <a href="../gallery/">Gallery</a>
+      <a href="../portfolio/">Portfolio</a>
+      <a href="../careers/">Careers</a>
+      <a href="../showcase/">Showcase</a>
+    </nav>
+    <button class="icon-btn" type="button" data-theme-toggle>Dark mode</button>
+  </header>
+  <main id="main" class="wrap">
+    <p class="kicker">Lab</p>
+    <h1>Print queue and print log</h1>
+    <p class="page-intro">Jobs stay in this browser until you export a CSV. There is no login. Anyone at this computer can press Approve. That is a reminder for the room, not a security system.</p>
+    <p class="note" data-operator-gate></p>
+    <h2>Nine printers</h2>
+    <div class="printer-board" data-board></div>
+    <h2>Jobs</h2>
+    <div class="panel">
+      <table class="data">
+        <thead><tr><th>Name</th><th>Band</th><th>File</th><th>Time</th><th>Grams</th><th>Printer</th><th>Color</th><th>Status</th></tr></thead>
+        <tbody data-jobs></tbody>
+      </table>
+    </div>
+    <h2>Totals</h2>
+    <div data-totals></div>
+    <form class="panel form-grid no-print" data-job-form>
+      <h2>Submit a job</h2>
+      <label>Name <input name="name" required autocomplete="nickname"></label>
+      <label>Grade band
+        <select name="band"><option value="56">Grades 5–6</option><option value="78">Grades 7–8</option></select>
+      </label>
+      <label>File name or link <input name="file" required placeholder="desk-buddy-body.stl"></label>
+      <label>Estimated minutes <input name="minutes" type="number" min="1" value="30" required></label>
+      <label>Estimated grams <input name="grams" type="number" min="0.1" step="0.1" value="15" required></label>
+      <label>Printer
+        <select name="printer">
+          <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option>
+        </select>
+      </label>
+      <label>Color <input name="color" value="cyan PLA"></label>
+      <button class="btn primary" type="submit">Add job</button>
+      <p data-form-msg aria-live="polite"></p>
+    </form>
+    <div class="panel no-print">
+      <h2>Move the log to another computer</h2>
+      <div class="row">
+        <button class="btn" type="button" data-export>Export CSV</button>
+        <label class="btn">Import CSV <input data-import type="file" accept=".csv,text/csv" hidden></label>
+      </div>
+      <label>Optional Google Form link for a paper sign-up
+        <input data-form-link type="url" placeholder="https://docs.google.com/forms/...">
+      </label>
+      <p>Paste a form link if your teacher already collects jobs that way. The queue on this page is still the board the class can see.</p>
+    </div>
+    <p><a href="../index.html">Back to the course</a></p>
+  </main>
+  <footer class="site-footer"><p><strong>Created for Jordan Glen School by Vector Design Group</strong></p></footer>
+  <script src="../js/kit.js"></script>
+  <script src="queue.js"></script>
+</body>
+</html>

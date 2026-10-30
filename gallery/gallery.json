@@ -1,0 +1,26 @@
+[
+  {
+    "id": "am-stand",
+    "name": "A.M.",
+    "title": "Phone stand under 20 g",
+    "challenge": "Light phone stand",
+    "image": "images/am-stand.svg",
+    "blurb": "A folded PLA stand. The class estimate was 14 g."
+  },
+  {
+    "id": "jr-bridge",
+    "name": "J.R.",
+    "title": "Penny bridge",
+    "challenge": "Penny bridge",
+    "image": "images/jr-bridge.svg",
+    "blurb": "A truss that held practice pennies in the tray, not on the floor."
+  },
+  {
+    "id": "lk-gear",
+    "name": "L.K.",
+    "title": "Gear fidget",
+    "challenge": "Gear fidget",
+    "image": "images/lk-gear.svg",
+    "blurb": "Two gears with 0.3 mm clearance. They turn after one reprint."
+  }
+]
