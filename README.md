@@ -10,7 +10,9 @@ The header toggle switches reading level, projects, quizzes, and the take-home l
 
 ## Custom explainer clips
 
-Drop silent or narrated 16:9 mp4 files here:
+Narrated 16:9 clips and poster images are already in this folder. The animated poster remains the fallback if a file is removed. Transcripts: [assets/videos/scripts.md](assets/videos/scripts.md).
+
+Expected names:
 
 - `assets/videos/what-is-3d-printing.mp4`
 - `assets/videos/how-a-printer-works.mp4`
@@ -25,7 +27,7 @@ Drop silent or narrated 16:9 mp4 files here:
 - `assets/videos/capstone.mp4`
 - `assets/videos/take-home-project.mp4`
 
-`assets/videos/manifest.json` maps each slug to its file, title, and poster. Until a file exists, that section keeps an animated poster and on-screen caption. Players do not assume narration audio.
+`assets/videos/manifest.json` maps each slug to its file, title, poster, duration, and caption. If a clip is missing, that section keeps the animated poster. The jpg poster is the `poster` attribute on each player.
 
 ## Take-home starters
 

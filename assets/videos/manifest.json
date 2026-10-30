@@ -1,74 +1,98 @@
-{
-  "what-is-3d-printing": {
+[
+  {
+    "slug": "what-is-3d-printing",
+    "title": "What Is 3D Printing?",
     "file": "assets/videos/what-is-3d-printing.mp4",
-    "title": "What is 3D printing?",
-    "poster": "inline-animated-poster",
-    "caption": "A printer builds a solid by stacking thin layers of plastic."
+    "poster": "assets/videos/what-is-3d-printing-poster.jpg",
+    "duration_s": 37.5,
+    "caption": "Imagine building something from nothing, one thin layer at a time! That's 3D printing, also called additive manufacturing."
   },
-  "how-a-printer-works": {
+  {
+    "slug": "how-a-printer-works",
+    "title": "How a 3D Printer Works",
     "file": "assets/videos/how-a-printer-works.mp4",
-    "title": "How a printer works",
-    "poster": "inline-animated-poster",
-    "caption": "Filament goes in solid, comes out as a thin hot line, and freezes into the layer under it."
+    "poster": "assets/videos/how-a-printer-works-poster.jpg",
+    "duration_s": 38.53,
+    "caption": "Let's meet the parts of an FDM 3D printer! Plastic string called filament starts on a spool."
   },
-  "safety": {
+  {
+    "slug": "safety",
+    "title": "Stay Safe in the Maker Space",
     "file": "assets/videos/safety.mp4",
-    "title": "Safety and the maker space",
-    "poster": "inline-animated-poster",
-    "caption": "Hands off the nozzle. Hair and sleeves back. A teacher stays in charge."
+    "poster": "assets/videos/safety-poster.jpg",
+    "duration_s": 34.13,
+    "caption": "Great makers are safe makers! The nozzle gets very hot, and so does the build plate, so never touch them while a printer is running or cooling."
   },
-  "materials": {
+  {
+    "slug": "materials",
+    "title": "Choosing Your Material",
     "file": "assets/videos/materials.mp4",
-    "title": "Materials",
-    "poster": "inline-animated-poster",
-    "caption": "PLA is the school filament. Four plastics, four jobs."
+    "poster": "assets/videos/materials-poster.jpg",
+    "duration_s": 37.0,
+    "caption": "Different jobs need different filaments! PLA is the best choice for school."
   },
-  "cad-design": {
+  {
+    "slug": "cad-design",
+    "title": "Design Your Own in CAD",
     "file": "assets/videos/cad-design.mp4",
-    "title": "Designing in free CAD",
-    "poster": "inline-animated-poster",
-    "caption": "A flat shape pulled upward becomes a solid. Export a file the slicer can read."
+    "poster": "assets/videos/cad-design-poster.jpg",
+    "duration_s": 34.7,
+    "caption": "Every print starts as an idea on a screen! CAD means computer-aided design, and there's free software to try."
   },
-  "model-libraries": {
+  {
+    "slug": "model-libraries",
+    "title": "Find Free 3D Models",
     "file": "assets/videos/model-libraries.mp4",
-    "title": "Free 3D model libraries",
-    "poster": "inline-animated-poster",
-    "caption": "Read the license and credit the maker."
+    "poster": "assets/videos/model-libraries-poster.jpg",
+    "duration_s": 35.03,
+    "caption": "You don't always have to start from scratch! Free libraries are packed with ready-to-print models."
   },
-  "slicing": {
+  {
+    "slug": "slicing",
+    "title": "Slicing: Model to Layers",
     "file": "assets/videos/slicing.mp4",
-    "title": "Slicing and printing",
-    "poster": "inline-animated-poster",
-    "caption": "The slicer turns a shape into layers, infill, supports, and a time estimate."
+    "poster": "assets/videos/slicing-poster.jpg",
+    "duration_s": 36.23,
+    "caption": "A printer can't read a 3D model directly."
   },
-  "troubleshooting": {
+  {
+    "slug": "troubleshooting",
+    "title": "Fix Common Print Problems",
     "file": "assets/videos/troubleshooting.mp4",
-    "title": "Troubleshooting",
-    "poster": "inline-animated-poster",
-    "caption": "Stringing, warping, spaghetti, and a bad first layer each have a first fix."
+    "poster": "assets/videos/troubleshooting-poster.jpg",
+    "duration_s": 34.87,
+    "caption": "Even experts have prints that go wrong, and that's okay! Warping is when corners curl up."
   },
-  "vex-robotics": {
-    "file": "assets/videos/vex-robotics.mp4",
-    "title": "3D printing for VEX Robotics",
-    "poster": "inline-animated-poster",
-    "caption": "Design to the half-inch grid and label the part practice until the manual says otherwise."
-  },
-  "business": {
+  {
+    "slug": "business",
+    "title": "From Idea to Business",
     "file": "assets/videos/business.mp4",
-    "title": "From idea to business",
-    "poster": "inline-animated-poster",
-    "caption": "Make and sell each one, or license it and earn a slice."
+    "poster": "assets/videos/business-poster.jpg",
+    "duration_s": 36.0,
+    "caption": "Your invention could be a real business! First, make a prototype and test it."
   },
-  "capstone": {
+  {
+    "slug": "capstone",
+    "title": "Your Capstone Invention",
     "file": "assets/videos/capstone.mp4",
-    "title": "Capstone",
-    "poster": "inline-animated-poster",
-    "caption": "Design it, slice it, print it, test it, and tell the class one thing you changed."
+    "poster": "assets/videos/capstone-poster.jpg",
+    "duration_s": 34.63,
+    "caption": "It's time for your big project! Start by finding a real problem, then design a solution in CAD."
   },
-  "take-home-project": {
+  {
+    "slug": "vex-robotics",
+    "title": "3D Printing for VEX Robotics",
+    "file": "assets/videos/vex-robotics.mp4",
+    "poster": "assets/videos/vex-robotics-poster.jpg",
+    "duration_s": 34.53,
+    "caption": "Want a faster, smarter robot? Print your own custom parts! Make sensor mounts, cable guides, and intakes that fit your exact design."
+  },
+  {
+    "slug": "take-home-project",
+    "title": "Your Take-Home Project",
     "file": "assets/videos/take-home-project.mp4",
-    "title": "Take-Home Lab Project",
-    "poster": "inline-animated-poster",
-    "caption": "Print the parts, personalize them, test them, and take the project home."
+    "poster": "assets/videos/take-home-project-poster.jpg",
+    "duration_s": 29.33,
+    "caption": "Time to make something to keep! Grades five and six build the Desk Buddy Bot, a snap-together pen-holder robot with a swivel head and a name plate."
   }
-}
+]
