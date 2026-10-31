@@ -200,12 +200,47 @@
             <button class="choice" type="button" data-make="add" aria-pressed="true">Add layers</button>
             <button class="choice" type="button" data-make="sub" aria-pressed="false">Carve a block</button>
           </div>
-          <p data-make-result>Additive: the gear appears as layers stack up. Waste is mostly support plastic and a skirt, not a pile of chips.</p>
-          <svg viewBox="0 0 360 120" aria-hidden="true" id="make-art">
-            <g data-add-art>
-              <rect x="40" y="78" width="120" height="12" fill="#2ee6d6"/>
-              <rect x="55" y="64" width="90" height="12" fill="#ff4d8d"/>
-              <rect x="70" y="50" width="60" height="12" fill="#ffb020"/>
+          <p data-make-result aria-live="polite">Additive: the shape grows as layers stack. You only melt the plastic the part needs, plus a little skirt or support.</p>
+          <svg viewBox="0 0 360 180" aria-hidden="true" id="make-art">
+            <g class="make-scene is-playing" data-mode="add">
+              <g class="add-layers">
+                <rect class="add-layer" style="--i:0" x="110" y="108" width="140" height="16" fill="#2ee6d6"/>
+                <rect class="add-layer" style="--i:1" x="130" y="92" width="100" height="16" fill="#ff4d8d"/>
+                <rect class="add-layer" style="--i:2" x="150" y="76" width="60" height="16" fill="#ffb020"/>
+              </g>
+              <g class="sub-scene">
+                <g class="sub-core">
+                  <rect x="110" y="108" width="140" height="16" fill="#2ee6d6"/>
+                  <rect x="130" y="92" width="100" height="16" fill="#ff4d8d"/>
+                  <rect x="150" y="76" width="60" height="16" fill="#ffb020"/>
+                </g>
+                <g class="scrap" style="--i:0; --dx:0px; --dy:96px">
+                  <rect x="90" y="48" width="180" height="28" fill="#c4a574"/>
+                </g>
+                <g class="scrap" style="--i:1; --dx:-84px; --dy:10px">
+                  <rect x="90" y="76" width="60" height="16" fill="#c4a574"/>
+                </g>
+                <g class="scrap" style="--i:1; --dx:84px; --dy:10px">
+                  <rect x="210" y="76" width="60" height="16" fill="#b8956a"/>
+                </g>
+                <g class="scrap" style="--i:2; --dx:-72px; --dy:20px">
+                  <rect x="90" y="92" width="40" height="16" fill="#c4a574"/>
+                </g>
+                <g class="scrap" style="--i:2; --dx:72px; --dy:20px">
+                  <rect x="230" y="92" width="40" height="16" fill="#b8956a"/>
+                </g>
+                <g class="scrap" style="--i:3; --dx:-52px; --dy:28px">
+                  <rect x="90" y="108" width="20" height="16" fill="#c4a574"/>
+                </g>
+                <g class="scrap" style="--i:3; --dx:52px; --dy:28px">
+                  <rect x="250" y="108" width="20" height="16" fill="#b8956a"/>
+                </g>
+                <g class="carve-tool" aria-hidden="true">
+                  <rect x="166" y="18" width="8" height="26" rx="2" fill="#d7dee8"/>
+                  <rect x="156" y="42" width="28" height="10" rx="2" fill="#8aa0b8"/>
+                  <circle cx="170" cy="56" r="5" fill="#4d5c6b"/>
+                </g>
+              </g>
             </g>
           </svg>
         </div>
@@ -292,31 +327,59 @@
         </div>
         <div class="panel printer-layout">
           <figure class="info-card reveal">
-            <svg viewBox="0 0 640 420" role="img" aria-labelledby="printerTitle printerDesc">
+            <svg class="printer-diagram" viewBox="0 0 640 420" role="img" aria-labelledby="printerTitle printerDesc">
               <title id="printerTitle">Cutaway of a desktop FDM printer</title>
               <desc id="printerDesc">A spool feeds filament into an extruder, through a hotend and nozzle. The nozzle rides a gantry above a heated bed where a part is stacked in layers.</desc>
               <rect width="640" height="420" rx="20" fill="#102033"/>
-              <g data-part-shape="bed"><rect x="90" y="300" width="420" height="22" rx="4" fill="#8aa0b8"/><rect x="120" y="278" width="150" height="10" fill="#2ee6d6"/><rect x="130" y="266" width="130" height="10" fill="#7af0e4"/><rect x="145" y="254" width="100" height="10" fill="#ff4d8d"/></g>
-              <g data-part-shape="gantry"><rect x="70" y="70" width="16" height="250" fill="#d7dee8"/><rect x="520" y="70" width="16" height="250" fill="#d7dee8"/><rect x="70" y="150" width="466" height="14" fill="#ffb020"/></g>
-              <g data-part-shape="extruder"><rect x="300" y="118" width="54" height="36" rx="6" fill="#8d7bff"/><circle cx="318" cy="136" r="8" fill="#1a1030"/></g>
-              <g data-part-shape="hotend"><rect x="316" y="154" width="22" height="28" fill="#ff4d8d"/></g>
-              <g data-part-shape="nozzle"><path d="M316 182 h22 l-6 16 h-10 z" fill="#ffb020"/></g>
-              <g data-part-shape="spool"><circle cx="80" cy="120" r="36" fill="none" stroke="#2ee6d6" stroke-width="10"/><path class="draw" d="M110 120 C180 80 240 160 320 130" fill="none" stroke="#2ee6d6" stroke-width="4"/></g>
-              <g data-part-shape="part"><text x="150" y="250" fill="#edf3ff" font-size="13" font-family="Outfit, sans-serif">layers</text></g>
+              <g data-part-shape="bed">
+                <rect x="90" y="300" width="420" height="22" rx="4" fill="#8aa0b8"/>
+                <text class="part-label" x="90" y="348">Bed</text>
+              </g>
+              <g data-part-shape="part">
+                <rect class="layer-bit" x="120" y="290" width="150" height="10" fill="#2ee6d6"/>
+                <rect class="layer-bit" x="130" y="278" width="130" height="10" fill="#7af0e4"/>
+                <rect class="layer-bit" x="145" y="266" width="100" height="10" fill="#ff4d8d"/>
+                <text class="part-label" x="290" y="274">Layers</text>
+              </g>
+              <g data-part-shape="gantry">
+                <rect x="70" y="70" width="16" height="250" fill="#d7dee8"/>
+                <rect x="520" y="70" width="16" height="250" fill="#d7dee8"/>
+                <rect class="gantry-bar" x="70" y="150" width="466" height="14" fill="#ffb020"/>
+                <text class="part-label" x="250" y="140">Gantry</text>
+              </g>
+              <g data-part-shape="extruder">
+                <rect x="300" y="118" width="54" height="36" rx="6" fill="#8d7bff"/>
+                <circle class="extruder-gear" cx="318" cy="136" r="8" fill="#1a1030"/>
+                <text class="part-label" x="360" y="140">Extruder</text>
+              </g>
+              <g data-part-shape="hotend">
+                <rect x="316" y="154" width="22" height="28" fill="#ff4d8d"/>
+                <text class="part-label" x="348" y="174">Hotend</text>
+              </g>
+              <g data-part-shape="nozzle">
+                <path d="M316 182 h22 l-6 16 h-10 z" fill="#ffb020"/>
+                <circle class="nozzle-drip" cx="327" cy="206" r="3" fill="#ffb020"/>
+                <text class="part-label" x="348" y="210">Nozzle</text>
+              </g>
+              <g data-part-shape="spool">
+                <circle cx="80" cy="120" r="36" fill="none" stroke="#2ee6d6" stroke-width="10"/>
+                <path class="filament-flow" d="M110 120 C180 80 240 160 320 130" fill="none" stroke="#2ee6d6" stroke-width="4"/>
+                <text class="part-label" x="40" y="180">Filament</text>
+              </g>
             </svg>
             <figcaption>Click a name. The matching part lights up. The extruder pushes. The hotend melts. The nozzle deposits. The gantry moves. The bed holds the part.</figcaption>
           </figure>
           <div>
             <div class="row">
-              <button class="chip" type="button" data-printer-part="spool">Filament</button>
-              <button class="chip" type="button" data-printer-part="extruder">Extruder</button>
-              <button class="chip" type="button" data-printer-part="hotend">Hotend</button>
-              <button class="chip" type="button" data-printer-part="nozzle">Nozzle</button>
-              <button class="chip" type="button" data-printer-part="gantry">Gantry</button>
-              <button class="chip" type="button" data-printer-part="bed">Bed</button>
-              <button class="chip" type="button" data-printer-part="part">Layers</button>
+              <button class="chip" type="button" data-printer-part="spool" aria-pressed="false">Filament</button>
+              <button class="chip" type="button" data-printer-part="extruder" aria-pressed="false">Extruder</button>
+              <button class="chip" type="button" data-printer-part="hotend" aria-pressed="false">Hotend</button>
+              <button class="chip" type="button" data-printer-part="nozzle" aria-pressed="false">Nozzle</button>
+              <button class="chip" type="button" data-printer-part="gantry" aria-pressed="false">Gantry</button>
+              <button class="chip" type="button" data-printer-part="bed" aria-pressed="false">Bed</button>
+              <button class="chip" type="button" data-printer-part="part" aria-pressed="false">Layers</button>
             </div>
-            <p class="detail" data-printer-detail>Pick a part of the printer.</p>
+            <p class="detail" data-printer-detail aria-live="polite">Pick a part of the printer.</p>
           </div>
         </div>
         <div class="two">
@@ -383,13 +446,73 @@
         </figure>
         <div class="panel">
           <h3>Interactive: spot the hazard</h3>
-          <div class="scene" style="height:220px;background:linear-gradient(#d9e6f5,#fff);border-radius:16px;position:relative">
-            <button class="hazard" style="left:18%;top:30%" type="button" data-safe="0" data-note="The nozzle is hot, often near 200°C for PLA. Look, do not touch." aria-label="Hand near the nozzle">!</button>
-            <button class="hazard" style="left:62%;top:24%" type="button" data-safe="1" data-note="Moving air out of the room is a good control. Standing in the exhaust is not." aria-label="Window fan">ok</button>
-            <button class="hazard" style="left:40%;top:62%" type="button" data-safe="0" data-note="Food and drinks stay off the printer table. Wash hands before you eat." aria-label="Drink cup">!</button>
-            <button class="hazard" style="left:74%;top:58%" type="button" data-safe="0" data-note="Loose hair and hoodie strings can catch in belts. Tie them back." aria-label="Loose hair near belts">!</button>
+          <div class="hazard-scene" id="hazard-scene">
+            <svg viewBox="0 0 800 440" role="img" aria-labelledby="hazardSceneTitle hazardSceneDesc">
+              <title id="hazardSceneTitle">Classroom 3D printer workstation</title>
+              <desc id="hazardSceneDesc">A desktop printer on a table, with a hot nozzle, a heated bed, a fresh part, a scraper, a power cord, safety glasses, a drink, a window fan, and a student with loose hair near the belt.</desc>
+              <rect width="800" height="440" fill="#d7e6f5"/>
+              <rect x="0" y="300" width="800" height="140" fill="#e7d7c3"/>
+              <rect x="620" y="36" width="140" height="110" rx="8" fill="#b9d4ea" stroke="#6e8ea8" stroke-width="4"/>
+              <g data-hazard-target="fan">
+                <circle cx="690" cy="90" r="34" fill="#f4f8fb" stroke="#6e8ea8" stroke-width="4"/>
+                <path d="M690 58 v64 M658 90 h64 M668 68 l44 44 M668 112 l44-44" stroke="#8aa0b8" stroke-width="4" fill="none"/>
+                <circle cx="690" cy="90" r="6" fill="#4d5c6b"/>
+              </g>
+              <text x="636" y="168" fill="#3c4c63" font-family="Outfit, sans-serif" font-size="14">Window fan</text>
+              <rect x="700" y="210" width="36" height="28" rx="4" fill="#f7f1e4" stroke="#142033" stroke-width="3"/>
+              <circle cx="712" cy="224" r="3" fill="#142033"/><circle cx="724" cy="224" r="3" fill="#142033"/>
+              <path d="M460 300 C540 280 640 250 706 224" fill="none" stroke="#142033" stroke-width="4"/>
+              <rect x="80" y="308" width="560" height="16" rx="4" fill="#8aa0b8"/>
+              <g>
+                <rect x="210" y="286" width="230" height="18" rx="3" fill="#9aa8b8"/>
+                <rect x="210" y="300" width="230" height="6" fill="#ffb020"/>
+              </g>
+              <g>
+                <rect x="250" y="274" width="70" height="8" fill="#2ee6d6"/>
+                <rect x="262" y="266" width="46" height="8" fill="#ff4d8d"/>
+              </g>
+              <rect x="188" y="150" width="14" height="150" fill="#d7dee8"/>
+              <rect x="448" y="150" width="14" height="150" fill="#d7dee8"/>
+              <rect x="188" y="186" width="274" height="12" fill="#ffb020"/>
+              <path d="M196 170 v110" stroke="#142033" stroke-width="3" stroke-dasharray="6 5"/>
+              <rect x="300" y="156" width="48" height="30" rx="6" fill="#8d7bff"/>
+              <g data-hazard-target="nozzle">
+                <rect x="314" y="186" width="20" height="26" fill="#ff4d8d"/>
+                <path d="M314 212 h20 l-5 16 h-10 z" fill="#ffb020"/>
+                <circle cx="324" cy="236" r="4" fill="#ff4d3a"/>
+              </g>
+              <g data-hazard-target="hair">
+                <circle cx="118" cy="210" r="28" fill="#f0c9a0"/>
+                <path d="M96 198 C110 170 150 176 168 196 C150 188 130 206 118 214" fill="#3a2414"/>
+                <path d="M150 188 C176 176 196 168 210 188" fill="none" stroke="#3a2414" stroke-width="5"/>
+              </g>
+              <g data-hazard-target="drink">
+                <rect x="560" y="252" width="26" height="40" rx="4" fill="#7ec8e3" stroke="#142033" stroke-width="3"/>
+                <rect x="554" y="246" width="38" height="10" rx="3" fill="#e8eef5" stroke="#142033" stroke-width="3"/>
+                <path d="M586 252 h16 v10" fill="none" stroke="#142033" stroke-width="3"/>
+              </g>
+              <g data-hazard-target="glasses">
+                <circle cx="132" cy="348" r="14" fill="none" stroke="#142033" stroke-width="4"/>
+                <circle cx="168" cy="348" r="14" fill="none" stroke="#142033" stroke-width="4"/>
+                <path d="M146 348 h8" stroke="#142033" stroke-width="4"/>
+                <path d="M118 344 h-16 M182 344 h16" stroke="#142033" stroke-width="3"/>
+              </g>
+              <g>
+                <rect x="610" y="286" width="46" height="10" rx="2" fill="#c9d6e5" stroke="#142033"/>
+                <path d="M648 291 l22 -16" stroke="#8aa0b8" stroke-width="4"/>
+              </g>
+            </svg>
+            <button class="hazard" style="left:40.5%;top:53.6%" type="button" aria-pressed="false" data-hazard="nozzle" data-safe="0" data-glyph="!" data-note="The nozzle is hot, often near 200°C for PLA. Look, do not touch." aria-label="Hot nozzle">!</button>
+            <button class="hazard" style="left:26%;top:43%" type="button" aria-pressed="false" data-hazard="hair" data-safe="0" data-glyph="!" data-note="Loose hair and hoodie strings can catch in belts. Tie them back." aria-label="Loose hair near the belts">!</button>
+            <button class="hazard" style="left:71.6%;top:61.8%" type="button" aria-pressed="false" data-hazard="drink" data-safe="0" data-glyph="!" data-note="Food and drinks stay off the printer table. Wash hands before you eat." aria-label="Drink on the printer table">!</button>
+            <button class="hazard" style="left:18.8%;top:79%" type="button" aria-pressed="false" data-hazard="glasses" data-safe="1" data-glyph="ok" data-note="Safety glasses are a safe choice. Wear them when a teacher scrapes a print or cuts plastic. This spot is okay." aria-label="Safety glasses">ok</button>
+            <button class="hazard" style="left:86.3%;top:20.5%" type="button" aria-pressed="false" data-hazard="fan" data-safe="1" data-glyph="ok" data-note="Moving air out of the room is a good control. Standing in the exhaust is not." aria-label="Window fan">ok</button>
           </div>
-          <p data-hazard-note>Tap a mark. Gold means you have not checked it yet.</p>
+          <div class="hazard-bar">
+            <p data-hazard-count aria-live="polite">Found 0 of 5</p>
+            <button class="btn" type="button" data-hazard-reset>Reset</button>
+          </div>
+          <p data-hazard-note aria-live="polite">Tap a mark on the object. Gold means you have not checked it yet. A checkmark means you found it.</p>
         </div>
         <div class="two">
           <article class="panel track-56"><h3>Project: safety card</h3><p>Make a four-panel card: hot nozzle, no food, hair back, get a teacher. You may draw it or print a flat tag later. Put it by the printer only if your teacher says the wording is right.</p></article>
@@ -438,11 +561,11 @@
             <title id="matTitle">Filament comparison</title>
             <desc id="matDesc">Four spools. PLA is easy and colorful. PETG is tougher. TPU bends. ABS is fume-heavy and not for this classroom.</desc>
             <rect width="880" height="340" rx="24" fill="#102033"/>
-            <g class="pop" font-family="Outfit, sans-serif" fill="#edf3ff">
-              <g transform="translate(40,40)"><circle cx="70" cy="70" r="48" fill="none" stroke="#b6ef4a" stroke-width="14"/><path d="M70 40c10 16 8 28 0 40c-8-12-10-24 0-40z" fill="#b6ef4a"/><text x="20" y="150" font-size="20">PLA</text><text x="20" y="172" font-size="13" fill="#d5e2f2">Easy · colors · school default</text></g>
-              <g transform="translate(250,40)"><circle cx="70" cy="70" r="48" fill="none" stroke="#2ee6d6" stroke-width="14"/><path d="M50 78h40l-8 18h-24z" fill="#2ee6d6"/><text x="20" y="150" font-size="20">PETG</text><text x="20" y="172" font-size="13" fill="#d5e2f2">Tougher · can string</text></g>
-              <g transform="translate(460,40)"><circle cx="70" cy="70" r="48" fill="none" stroke="#ff4d8d" stroke-width="14"/><path d="M40 80c20-30 40-30 60 0" fill="none" stroke="#ff4d8d" stroke-width="6"/><text x="20" y="150" font-size="20">TPU</text><text x="20" y="172" font-size="13" fill="#d5e2f2">Flexible · print slowly</text></g>
-              <g transform="translate(670,40)"><circle cx="70" cy="70" r="48" fill="none" stroke="#ffb020" stroke-width="14"/><path d="M70 40 v30 M55 78c0 16 30 16 30 0" fill="none" stroke="#ffb020" stroke-width="5"/><text x="20" y="150" font-size="20">ABS</text><text x="20" y="172" font-size="13" fill="#d5e2f2">Warps · fumes · not here</text></g>
+            <g class="pop filament-board" font-family="Outfit, sans-serif" fill="#edf3ff">
+              <g data-filament="pla" transform="translate(40,40)"><circle cx="70" cy="70" r="48" fill="none" stroke="#b6ef4a" stroke-width="14"/><path d="M70 40c10 16 8 28 0 40c-8-12-10-24 0-40z" fill="#b6ef4a"/><text x="20" y="150" font-size="20">PLA</text><text x="20" y="172" font-size="13" fill="#d5e2f2">Easy · colors · school default</text></g>
+              <g data-filament="petg" transform="translate(250,40)"><circle cx="70" cy="70" r="48" fill="none" stroke="#2ee6d6" stroke-width="14"/><path d="M50 78h40l-8 18h-24z" fill="#2ee6d6"/><text x="20" y="150" font-size="20">PETG</text><text x="20" y="172" font-size="13" fill="#d5e2f2">Tougher · can string</text></g>
+              <g data-filament="tpu" transform="translate(460,40)"><circle cx="70" cy="70" r="48" fill="none" stroke="#ff4d8d" stroke-width="14"/><path d="M40 80c20-30 40-30 60 0" fill="none" stroke="#ff4d8d" stroke-width="6"/><text x="20" y="150" font-size="20">TPU</text><text x="20" y="172" font-size="13" fill="#d5e2f2">Flexible · print slowly</text></g>
+              <g data-filament="abs" transform="translate(670,40)"><circle cx="70" cy="70" r="48" fill="none" stroke="#ffb020" stroke-width="14"/><path d="M70 40 v30 M55 78c0 16 30 16 30 0" fill="none" stroke="#ffb020" stroke-width="5"/><text x="20" y="150" font-size="20">ABS</text><text x="20" y="172" font-size="13" fill="#d5e2f2">Warps · fumes · not here</text></g>
             </g>
           </svg>
           <figcaption>PLA wins at Jordan Glen because it prints cooler, warps less, and is widely available. “Plant-based” does not mean you can compost a failed print in the garden or use it for food. Layer grooves and some brass nozzles make food contact a no.</figcaption>
@@ -455,7 +578,7 @@
             <button class="choice" type="button" data-job="wheel">A bendy tire</button>
             <button class="choice" type="button" data-job="car">A part for a hot car dashboard</button>
           </div>
-          <p data-job-result>Pick a job.</p>
+          <p data-job-result aria-live="polite">Pick a job. The matching spool lights up in the comparison above.</p>
         </div>
         <div class="two">
           <article class="panel track-56"><h3>Project: color plan</h3><p>Choose three PLA colors for a name tag. Write what each color means (name, border, hole). You are designing with PLA only.</p></article>
@@ -533,7 +656,7 @@
               <button class="chip" type="button" data-shape="wedge">Wedge</button>
               <button class="chip" type="button" data-shape="hole">With a hole</button>
             </div>
-            <label class="slider">Height <span data-extrude-label>48 mm tall in this sketch</span>
+            <label class="slider">Height <span data-extrude-label aria-live="polite">48 mm tall in this sketch</span>
               <input id="extrude-height" data-extrude-height type="range" min="16" max="120" value="48">
             </label>
             <p>This is a sketch, not a saved STL. Rebuild the same idea in Tinkercad and export it.</p>
@@ -614,7 +737,8 @@
             <button class="chip" type="button" data-license="zero">CC0</button>
             <button class="chip" type="button" data-license="all">All rights reserved</button>
           </div>
-          <p data-license-result>Pick a license mark.</p>
+          <p class="license-badge" data-license-badge data-kind="none" aria-hidden="true">License</p>
+          <p data-license-result aria-live="polite">Pick a license mark.</p>
         </div>
         <div class="two">
           <article class="panel track-56"><h3>Project: credit strip</h3><p>Find one keychain or animal on Printables or Thingiverse that is CC BY or CC0. Write the title, the maker, and the license on a paper strip you could tape to the print. Do not download an NC model if you hope to sell anything later.</p></article>
@@ -748,22 +872,30 @@
             <title id="fixTitle">Four print failures</title>
             <desc id="fixDesc">Stringing shown as hairs between two towers, warping shown as a curled corner, spaghetti shown as a tangle, and a first layer that is too squished beside one that is too loose.</desc>
             <rect width="880" height="300" rx="24" fill="#102033"/>
-            <g class="pop" font-family="Outfit, sans-serif" fill="#edf3ff" font-size="14">
-              <rect x="30" y="30" width="190" height="160" rx="12" fill="#1c3148"/>
-              <rect x="60" y="70" width="24" height="70" fill="#2ee6d6"/><rect x="150" y="70" width="24" height="70" fill="#2ee6d6"/>
-              <path d="M84 90 C110 110 120 80 150 100 M84 120 C120 90 130 140 150 120" stroke="#ff4d8d" fill="none"/>
-              <text x="48" y="215">Stringing</text>
-              <rect x="240" y="30" width="190" height="160" rx="12" fill="#1c3148"/>
-              <path d="M270 150 h120 l-10-20 h-90 z" fill="#ffb020"/>
-              <path d="M270 150 q10 -30 20 0" fill="none" stroke="#ff4d8d" stroke-width="4"/>
-              <text x="258" y="215">Warping</text>
-              <rect x="450" y="30" width="190" height="160" rx="12" fill="#1c3148"/>
-              <path d="M480 150 c20-40 10-20 30-50 c10 30 20 10 40-20 c-10 40 20 10 30 40z" fill="#ff4d8d"/>
-              <text x="468" y="215">Spaghetti</text>
-              <rect x="660" y="30" width="190" height="160" rx="12" fill="#1c3148"/>
-              <path d="M690 120 h60" stroke="#2ee6d6" stroke-width="10"/>
-              <path d="M690 145 h14 M710 145 h14 M730 145 h14" stroke="#ffb020" stroke-width="6"/>
-              <text x="678" y="215">First layer</text>
+            <g class="failure-board" font-family="Outfit, sans-serif" fill="#edf3ff" font-size="14">
+              <g data-failure="stringing">
+                <rect x="30" y="30" width="190" height="160" rx="12" fill="#1c3148"/>
+                <rect x="60" y="70" width="24" height="70" fill="#2ee6d6"/><rect x="150" y="70" width="24" height="70" fill="#2ee6d6"/>
+                <path d="M84 90 C110 110 120 80 150 100 M84 120 C120 90 130 140 150 120" stroke="#ff4d8d" fill="none"/>
+                <text x="48" y="215">Stringing</text>
+              </g>
+              <g data-failure="warping">
+                <rect x="240" y="30" width="190" height="160" rx="12" fill="#1c3148"/>
+                <path d="M270 150 h120 l-10-20 h-90 z" fill="#ffb020"/>
+                <path d="M270 150 q10 -30 20 0" fill="none" stroke="#ff4d8d" stroke-width="4"/>
+                <text x="258" y="215">Warping</text>
+              </g>
+              <g data-failure="spaghetti">
+                <rect x="450" y="30" width="190" height="160" rx="12" fill="#1c3148"/>
+                <path d="M480 150 c20-40 10-20 30-50 c10 30 20 10 40-20 c-10 40 20 10 30 40z" fill="#ff4d8d"/>
+                <text x="468" y="215">Spaghetti</text>
+              </g>
+              <g data-failure="first">
+                <rect x="660" y="30" width="190" height="160" rx="12" fill="#1c3148"/>
+                <path d="M690 120 h60" stroke="#2ee6d6" stroke-width="10"/>
+                <path d="M690 145 h14 M710 145 h14 M730 145 h14" stroke="#ffb020" stroke-width="6"/>
+                <text x="678" y="215">First layer</text>
+              </g>
             </g>
           </svg>
           <figcaption>Too-close first layers look smashed and transparent. Too-far first layers look like separate ropes. A good one is slightly squished and stuck. Reference pictures: <a href="https://help.prusa3d.com/article/first-layer-issues_1804">Prusa, first layer issues</a>.</figcaption>
@@ -776,7 +908,7 @@
             <button class="symptom" type="button" data-symptom="spaghetti">A bird’s nest</button>
             <button class="symptom" type="button" data-symptom="first">Loose or smashed first layer</button>
           </div>
-          <p data-symptom-result>Pick a picture in words.</p>
+          <p data-symptom-result aria-live="polite">Pick a failure. The matching picture lights up above.</p>
         </div>
         <div class="two">
           <article class="panel track-56"><h3>Project: failure comic</h3><p>Draw a four-panel comic of one failure and the fix you would ask a teacher to try. No knobs unless they hand them to you.</p></article>
@@ -855,7 +987,7 @@
             <button class="chip" type="button" data-platform="v5" aria-pressed="false">VEX V5</button>
           </div>
           <div class="grid-builder">
-            <div class="pitch-grid" role="group" aria-label="Hole grid, 8 by 5">
+            <div class="pitch-grid" data-grid-platform="iq" role="group" aria-label="Hole grid, 8 by 5">
               <script>
                 document.currentScript.insertAdjacentHTML("afterend", Array.from({length:40}, (_,i)=>{
                   const c=i%8, r=Math.floor(i/8);
@@ -863,12 +995,12 @@
                 }).join(""));
               </script>
             </div>
-            <p data-grid-result>Tap holes to grow a practice plate.</p>
+            <p data-grid-result aria-live="polite">Tap holes to grow a practice plate.</p>
           </div>
           <h3>Gear ratio, same math as the catapult</h3>
           <label class="slider">Driver teeth (crank gear) <input id="driver-teeth" type="range" min="8" max="24" value="12"></label>
           <label class="slider">Driven teeth (arm gear) <input id="driven-teeth" type="range" min="12" max="60" value="36"></label>
-          <p data-gear-result></p>
+          <p data-gear-result aria-live="polite"></p>
         </div>
         <div class="two">
           <article class="panel track-56"><h3>Project: practice cable guide</h3><p>In Tinkercad, draw a plate with two holes 12.7 mm apart. Make the holes 4.4 mm so a test pin can start, then open them toward 4.20 mm only if your printer runs large. Label the file PRACTICE. Do not put it on a competition robot. VEX recommends drilling to 4.2 mm if the printer is not precise, and says not to print the pins themselves.</p></article>

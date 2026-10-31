@@ -169,13 +169,23 @@
     add: "Additive: the shape grows as layers stack. You only melt the plastic the part needs, plus a little skirt or support.",
     sub: "Subtractive: you start with a bigger block and cut the scrap away. Carving, drilling, and milling work this way.",
   };
+  function playMake(mode) {
+    const scene = document.querySelector("#make-art .make-scene");
+    if (!scene) return;
+    scene.classList.remove("is-playing");
+    scene.dataset.mode = mode === "sub" ? "sub" : "add";
+    void scene.getBoundingClientRect();
+    scene.classList.add("is-playing");
+  }
   document.querySelectorAll("[data-make]").forEach(function (button) {
     button.addEventListener("click", function () {
+      const mode = button.dataset.make === "sub" ? "sub" : "add";
       document.querySelectorAll("[data-make]").forEach(function (other) {
         other.setAttribute("aria-pressed", other === button ? "true" : "false");
       });
       const target = document.querySelector("[data-make-result]");
-      if (target) target.textContent = makeCopy[button.dataset.make];
+      if (target) target.textContent = makeCopy[mode];
+      playMake(mode);
     });
   });
 
@@ -194,6 +204,8 @@
       document.querySelectorAll("[data-printer-part]").forEach(function (other) {
         other.setAttribute("aria-pressed", other === button ? "true" : "false");
       });
+      const diagram = document.querySelector(".printer-diagram");
+      if (diagram) diagram.classList.add("is-lit");
       document.querySelectorAll("[data-part-shape]").forEach(function (shape) {
         shape.classList.toggle("is-on", shape.dataset.partShape === name);
       });
@@ -202,15 +214,49 @@
     });
   });
 
-  document.querySelectorAll(".hazard").forEach(function (button) {
+  const hazardScene = document.querySelector(".hazard-scene");
+  const hazardButtons = hazardScene ? Array.from(hazardScene.querySelectorAll(".hazard")) : [];
+  function hazardFoundCount() {
+    return hazardButtons.filter(function (button) {
+      return button.classList.contains("found-bad") || button.classList.contains("found-ok");
+    }).length;
+  }
+  function updateHazardCount() {
+    const count = document.querySelector("[data-hazard-count]");
+    if (count) count.textContent = "Found " + hazardFoundCount() + " of " + hazardButtons.length;
+  }
+  hazardButtons.forEach(function (button) {
     button.addEventListener("click", function () {
       const bad = button.dataset.safe === "0";
       button.classList.add(bad ? "found-bad" : "found-ok");
       button.setAttribute("aria-pressed", "true");
+      button.textContent = "✓";
+      if (hazardScene) hazardScene.classList.add("is-lit");
+      document.querySelectorAll("[data-hazard-target]").forEach(function (shape) {
+        shape.classList.toggle("is-on", shape.dataset.hazardTarget === button.dataset.hazard);
+      });
       const note = document.querySelector("[data-hazard-note]");
       if (note) note.textContent = button.dataset.note;
+      updateHazardCount();
     });
   });
+  const hazardReset = document.querySelector("[data-hazard-reset]");
+  if (hazardReset) {
+    hazardReset.addEventListener("click", function () {
+      hazardButtons.forEach(function (button) {
+        button.classList.remove("found-bad", "found-ok");
+        button.setAttribute("aria-pressed", "false");
+        button.textContent = button.dataset.glyph || "!";
+      });
+      if (hazardScene) hazardScene.classList.remove("is-lit");
+      document.querySelectorAll("[data-hazard-target]").forEach(function (shape) {
+        shape.classList.remove("is-on");
+      });
+      const note = document.querySelector("[data-hazard-note]");
+      if (note) note.textContent = "Tap a mark on the object. Gold means you have not checked it yet. A checkmark means you found it.";
+      updateHazardCount();
+    });
+  }
 
   const jobs = {
     keychain: "PLA. It is the easiest school filament, comes in bright colors, and a keychain does not need to bend or get hot.",
@@ -218,6 +264,7 @@
     wheel: "TPU, the flexible one. Print it slowly. A PLA wheel would be too stiff and brittle.",
     car: "Not ABS in this makerspace. ABS needs an enclosure and makes stronger fumes. Keep hot-car parts as a design problem, not a school print.",
   };
+  const jobFilament = { keychain: "pla", clip: "petg", wheel: "tpu", car: "abs" };
   document.querySelectorAll("[data-job]").forEach(function (button) {
     button.addEventListener("click", function () {
       document.querySelectorAll("[data-job]").forEach(function (other) {
@@ -225,6 +272,14 @@
       });
       const target = document.querySelector("[data-job-result]");
       if (target) target.textContent = jobs[button.dataset.job];
+      const board = document.querySelector(".filament-board");
+      const filament = jobFilament[button.dataset.job];
+      if (board && filament) {
+        board.classList.add("is-lit");
+        board.querySelectorAll("[data-filament]").forEach(function (spool) {
+          spool.classList.toggle("is-on", spool.dataset.filament === filament);
+        });
+      }
     });
   });
 
@@ -259,6 +314,14 @@
     zero: "CC0 or public domain: the maker gave up the rights they can. Credit is still good manners.",
     all: "All rights reserved: look only, unless the page clearly says you may download and print.",
   };
+  const licenseMarks = {
+    by: "CC BY",
+    sa: "CC BY-SA",
+    nc: "CC BY-NC",
+    nd: "CC BY-ND",
+    zero: "CC0",
+    all: "All rights reserved",
+  };
   document.querySelectorAll("[data-license]").forEach(function (button) {
     button.addEventListener("click", function () {
       document.querySelectorAll("[data-license]").forEach(function (other) {
@@ -266,6 +329,12 @@
       });
       const target = document.querySelector("[data-license-result]");
       if (target) target.textContent = licenses[button.dataset.license];
+      const badge = document.querySelector("[data-license-badge]");
+      const kind = button.dataset.license;
+      if (badge && licenseMarks[kind]) {
+        badge.dataset.kind = kind;
+        badge.textContent = licenseMarks[kind];
+      }
     });
   });
 
@@ -311,6 +380,13 @@
       });
       const target = document.querySelector("[data-symptom-result]");
       if (target) target.textContent = fixes[button.dataset.symptom];
+      const board = document.querySelector(".failure-board");
+      if (board) {
+        board.classList.add("is-lit");
+        board.querySelectorAll("[data-failure]").forEach(function (card) {
+          card.classList.toggle("is-on", card.dataset.failure === button.dataset.symptom);
+        });
+      }
     });
   });
 
@@ -318,6 +394,8 @@
   function updateGrid() {
     const platform = document.querySelector("[data-platform].is-selected, [data-platform][aria-pressed='true']");
     const iq = !platform || platform.dataset.platform !== "v5";
+    const grid = document.querySelector(".pitch-grid");
+    if (grid) grid.dataset.gridPlatform = iq ? "iq" : "v5";
     const selected = Array.from(holes).filter(function (hole) { return hole.getAttribute("aria-pressed") === "true"; });
     const out = document.querySelector("[data-grid-result]");
     if (!out) return;
