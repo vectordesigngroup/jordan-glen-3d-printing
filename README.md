@@ -35,8 +35,8 @@ Expected names:
 
 ## Take-home starters
 
-- `projects/desk-buddy-bot/` — Desk Buddy Bot (grades 5–6)
-- `projects/crank-catapult/` — Crank-Gear Mini Catapult (grades 7–8)
+- `projects/desk-buddy-bot/` — Desk Buddy Bot (grades 5–6). `projects/desk-buddy-bot.zip` is the six STLs plus `desk-buddy.scad`.
+- `projects/crank-catapult/` — Crank-Gear Mini Catapult (grades 7–8). `projects/crank-catapult.zip` is the nine STLs plus `crank-catapult.scad`.
 
 OpenSCAD files are the remix templates. The STL files were exported from `projects/build_models.py` at the same dimensions. Re-run that script after a geometry change, or render the `.scad` with OpenSCAD:
 
