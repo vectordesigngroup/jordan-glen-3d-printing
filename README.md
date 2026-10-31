@@ -33,6 +33,10 @@ Expected names:
 
 `assets/videos/manifest.json` maps each slug to its file, title, poster, duration, and caption. If a clip is missing, that section keeps the animated poster. The jpg poster is the `poster` attribute on each player.
 
+## Student survey
+
+`survey/index.html` is an eleven-question end-of-course survey for students. It prints on one letter page, and `survey/jordan-glen-3d-student-survey.pdf` is the blank copy. Answers are not collected by the site: students tap or write, then print. `teacher/survey-guide.html` has the teacher notes and a tally sheet. It is the last step of week 9 (9-week term) and week 18 (18-week term).
+
 ## Take-home starters
 
 - `projects/desk-buddy-bot/` — Desk Buddy Bot (grades 5–6). `projects/desk-buddy-bot.zip` is the six STLs plus `desk-buddy.scad`.

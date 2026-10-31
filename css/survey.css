@@ -1,0 +1,70 @@
+/* Student survey. Screen layout first, then a one-page letter print layout. */
+.survey-sheet { max-width: 860px; margin: 0 auto; }
+.lede { font-size: 1.1rem; max-width: 60ch; }
+.who { display: flex; gap: 14px; flex-wrap: wrap; margin: 14px 0 6px; }
+.who label { display: flex; flex-direction: column; gap: 4px; font-weight: 700; font-size: 0.9rem; }
+.who input[type="text"] { font: inherit; padding: 8px 10px; border-radius: 12px; border: 1px solid var(--line); background: var(--card-solid); color: var(--ink); width: 14rem; }
+.who label:nth-child(2) input { width: 6rem; }
+.questions { list-style: none; counter-reset: q; padding: 0; margin: 14px 0; display: grid; gap: 12px; }
+.q { counter-increment: q; background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 14px; }
+.q > p, .q > label { margin: 0 0 8px; font-weight: 800; display: block; }
+.q > p::before, .q > label::before { content: counter(q) ". "; color: var(--cyan); }
+.scale { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+.scale label { cursor: pointer; }
+.scale input, .choices input { position: absolute; opacity: 0; pointer-events: none; }
+.pick { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 8px 4px; border-radius: 14px; border: 2px solid var(--line); background: var(--card-solid); text-align: center; height: 100%; }
+.pick .n { font-weight: 800; font-size: 0.9rem; }
+.pick .w { font-size: 0.75rem; color: var(--muted); line-height: 1.15; }
+.num-dot { width: 34px; height: 34px; border-radius: 50%; border: 2px solid var(--ink); display: grid; place-items: center; font-weight: 800; background: #ffd45e; color: #142033; }
+.scale input:checked + .pick { border-color: var(--cyan); background: color-mix(in srgb, var(--cyan-2) 25%, var(--card-solid)); box-shadow: 0 0 0 3px var(--cyan); }
+.scale input:checked + .pick .w { color: var(--ink); font-weight: 800; }
+.scale input:focus-visible + .pick, .choices input:focus-visible + .box { outline: 3px solid var(--violet); outline-offset: 2px; }
+.choices { display: grid; gap: 6px; }
+.choices label { display: flex; align-items: center; gap: 10px; cursor: pointer; padding: 6px 4px; }
+.choices .box { width: 20px; height: 20px; border: 2px solid var(--ink); border-radius: 50%; flex: 0 0 auto; display: inline-block; }
+.choices input:checked + .box { background: radial-gradient(circle, var(--ink) 0 45%, transparent 50%); }
+.choices label:has(input:checked) { font-weight: 800; }
+textarea { width: 100%; font: inherit; padding: 8px 10px; border-radius: 12px; border: 1px solid var(--line); background: var(--card-solid); color: var(--ink); resize: vertical; }
+.thanks { font-weight: 700; }
+.teacher-box { font-size: 0.85rem; color: var(--muted); border-top: 1px dashed var(--line); padding-top: 8px; }
+.actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.actions .btn { text-decoration: none; }
+@media (max-width: 560px) { .scale { gap: 4px; } .pick .w { font-size: 0.65rem; } .pick svg, .num-dot { width: 28px; height: 28px; } }
+
+/* Guide page tally table */
+.tally td, .tally th { text-align: center; border: 1px solid var(--line); padding: 6px; }
+.tally td:first-child, .tally th:first-child { text-align: left; }
+.tally td { height: 2rem; }
+
+@page { size: letter; margin: 0.35in; }
+@media print {
+  html, body { background: #fff !important; color: #000 !important; font-size: 11pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .site-header, .site-footer, .skip, .no-print, .actions { display: none !important; }
+  body { min-height: 0 !important; }
+  .wrap { padding: 0; max-width: none; }
+  .survey-sheet { max-width: none; }
+  .survey-sheet h1 { font-size: 17pt; margin: 0 0 2px; }
+  .lede { font-size: 10.5pt; margin: 0 0 6px; max-width: none; }
+  .who { margin: 4px 0; gap: 18px; }
+  .who label { flex-direction: row; align-items: baseline; gap: 6px; font-size: 10.5pt; }
+  .who input[type="text"] { border: 0; border-bottom: 1px solid #000; border-radius: 0; background: transparent; padding: 0 2px; width: 3in; font-size: 10pt; color: #000; }
+  .who label:nth-child(2) input { width: 0.8in; }
+  .questions { gap: 3px; margin: 4px 0; display: block; }
+  .q { border: 0; border-bottom: 1px solid #ccc; border-radius: 0; background: transparent; padding: 4px 0; break-inside: avoid; margin: 0; }
+  .q > p, .q > label { font-size: 10.5pt; margin: 0 0 3px; }
+  .q > p::before, .q > label::before { color: #000; }
+  .q.rate { display: grid; grid-template-columns: 2.3in 1fr; align-items: center; gap: 6px; }
+  .q.rate > p { margin: 0; }
+  .scale { gap: 4px; }
+  .pick { flex-direction: row; flex-wrap: wrap; justify-content: center; padding: 4px 2px; gap: 1px 4px; border-width: 1.5px; border-color: #777; border-radius: 8px; background: #fff; }
+  .pick svg, .num-dot { width: 28px; height: 28px; }
+  .pick .n { font-size: 8.5pt; }
+  .pick .w { flex: 0 0 100%; font-size: 7.5pt; color: #000; }
+  .scale input:checked + .pick { border: 3px solid #000; background: #cfeff0 !important; box-shadow: none; }
+  .choices { grid-template-columns: 1fr 1fr; gap: 0 12px; }
+  .choices label { padding: 2px 0; font-size: 10.5pt; gap: 6px; }
+  .choices .box { width: 13px; height: 13px; }
+  textarea { border: 0; border-bottom: 0; background: repeating-linear-gradient(transparent 0 17px, #888 17px 18px); border-radius: 0; padding: 0; line-height: 18px; height: 50px; font-size: 10.5pt; color: #000; resize: none; overflow: hidden; }
+  .thanks { margin: 8px 0 4px; font-size: 10.5pt; }
+  .teacher-box { font-size: 9pt; margin: 2px 0 0; color: #000; }
+}
