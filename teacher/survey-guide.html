@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Run the student survey · Jordan Glen</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/kit.css">
+  <link rel="stylesheet" href="../css/survey.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="../index.html"><strong>Jordan Glen 3D</strong></a>
+    <nav class="section-nav" aria-label="Studio">
+      <a href="../teacher/" aria-current="page">Teacher kit</a>
+      <a href="../lab/queue.html">Print queue</a>
+      <a href="../challenges/">Challenges</a>
+      <a href="../gallery/">Gallery</a>
+      <a href="../portfolio/">Portfolio</a>
+      <a href="../careers/">Careers</a>
+      <a href="../showcase/">Showcase</a>
+      <a href="../survey/">Survey</a>
+    </nav>
+    <button class="icon-btn" type="button" data-theme-toggle>Dark mode</button>
+  </header>
+  <main id="main" class="wrap">
+    <p class="kicker no-print">Teacher kit</p>
+    <h1>Run the student survey and use the results</h1>
+    <p class="page-intro no-print">An eleven-question, five-minute survey for the last day of the course. Students answer on paper. You tally by hand, which takes about 15 minutes for a group of 12.</p>
+
+    <section class="sheet no-print" id="get">
+      <h2>Get it</h2>
+      <ul>
+        <li><a href="../survey/">Student survey page</a>: students can tap answers on screen, then press Print. Nothing is saved or sent anywhere.</li>
+        <li><a href="../survey/jordan-glen-3d-student-survey.pdf">Blank one-page PDF</a>: print one per student. This is the easiest option and works with no devices.</li>
+      </ul>
+    </section>
+
+    <section class="sheet no-print" id="run">
+      <h2>When and how to run it</h2>
+      <ol>
+        <li><strong>When:</strong> it is the last step of the course. In the 9-week term, Friday of week 9 after the showcase lab. In the 18-week term, the last day of week 18.</li>
+        <li><strong>Before:</strong> fill in the small Teacher use box at the bottom of each copy: class or club, date, students in the group, and printers in the group. Use a pencil on the blank copies or stamp them all the same.</li>
+        <li><strong>Say this:</strong> "This is not graded. You can leave your name off. Be honest, because your answers decide what we change." Read the questions aloud for younger students or readers who need help.</li>
+        <li><strong>Time:</strong> 5 to 10 minutes, at desks, away from the printers.</li>
+        <li><strong>Collect:</strong> a student passes the pile face down into a folder. Do not look at answers while students are in the room.</li>
+        <li><strong>Keep it anonymous:</strong> name and grade are optional. Do not ask students to add more. If a student writes a name, do not use it to single out their answers in front of others.</li>
+        <li><strong>Different groups:</strong> if you run a club or younger students, use the same sheet and note the group in the Teacher use box so you can compare groups.</li>
+      </ol>
+    </section>
+
+    <section class="sheet" id="tally">
+      <h2>Tally sheet</h2>
+      <p>Make one tally per group. For each question, mark how many students gave each answer (1 to 5), then work out the average.</p>
+      <table class="data tally">
+        <thead><tr><th>Question</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>Average</th></tr></thead>
+        <tbody>
+          <tr><td>1. Enjoyed it</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>2. How hard (3 is just right)</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>3. Felt safe</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>4. Enough printer time</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>6. Next-level class</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>7. Tell a friend</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>8. After-school club</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+      <p>Question 5 (what students did in lab time): own printer ____ shared with 1 ____ shared with 2 or more ____ mostly watching ____</p>
+      <p>Group: ______________ Students ____ Printers ____ Students per printer ____ Surveys returned ____</p>
+      <p class="no-print"><button class="btn" type="button" onclick="print()">Print this page</button></p>
+    </section>
+
+    <section class="sheet no-print" id="use">
+      <h2>How to use the results</h2>
+      <ul>
+        <li><strong>Printer time (questions 4 and 5).</strong> This is the evidence for how many students should share a printer. Write down the students per printer for the group, then compare it with the answers. A suggested bar: if most students rate question 4 as a 4 or 5 and most say they ran a printer on their own or with one other person, that ratio works. If many say they mostly watched or waited, the ratio is too high. Compare groups with different ratios if you run more than one.</li>
+        <li><strong>Safety (question 3).</strong> Any 1 or 2 deserves attention. Review the safety contract and the room rules with the whole group the next week. If a comment describes a real injury or danger, tell the school right away through its normal process.</li>
+        <li><strong>Difficulty (question 2).</strong> An average near 3 is right. Above 3.5, slow down the CAD and slicing weeks. Below 2.5, add the 7 to 8 extension tasks.</li>
+        <li><strong>Demand (questions 6, 7, and 8).</strong> Count the students who answered 4 or 5. These numbers help decide whether to offer a next-level class, an after-school club, or more printers, and they are fair numbers to show the school director and parents.</li>
+        <li><strong>Open answers (9 to 11).</strong> Read them all, group them by topic, and pick the top two changes for the next session. Copy two or three short quotes if you want them for a report, with no names.</li>
+        <li><strong>Keep it simple.</strong> Share results as counts and averages. Do not report one student's answers, and shred or recycle the paper at the end of the term.</li>
+      </ul>
+    </section>
+
+    <section class="note no-print" id="upgrade">
+      <h2>Optional: collect answers online</h2>
+      <p>This course site has no server, so it cannot collect answers by itself. If you would rather skip the tally, make a free Google Form with the same eleven questions, share the link with students, and turn off email collection so answers stay anonymous. The form shows totals for you automatically. Use the paper version if students will not have devices.</p>
+    </section>
+  </main>
+  <footer class="site-footer no-print"><p><strong>Created for Jordan Glen School by Vector Design Group</strong></p></footer>
+  <script src="../js/kit.js"></script>
+</body>
+</html>
